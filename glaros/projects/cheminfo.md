@@ -50,7 +50,7 @@ geometric). The topological version of this algorithm, called FSG, is currently
 available as part of our pattern discovery toolkit PAFI, which can be downloaded and
 used for educational and research purposes.
 
-Another recent development is the [AFGen](/glaros/software/overview.md) program that
+Another recent development is the [AFGen](../software/overview.md) program that
 operates on a database of chemical compounds and generates their descriptor-based
 representation by considering all bounded length acyclic fragments that they contain.
 These descriptors are quite effective in capturing the structural characteristics of
