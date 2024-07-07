@@ -27,7 +27,6 @@ After downloading METIS you need to uncompress it and untar it. This is achieved
 executing the following commands:
 
     gunzip metis-5.x.y.tar.gz
-
     tar -xvf metis-5.x.y.tar
 
 At this point you should have a directory named metis-5.x.y. This directory contains
@@ -115,7 +114,7 @@ Latest stable release (1.5.3):
 Latest experimental release (2.0pre1):
   - [hmetis-2.0pre1.tar.gz](/glaros/files/sw/hmetis/hmetis-2.0pre1.tar.gz).
 
-Older versions of hMETIS can be found [here](/glaros/files/sw/hmetis/OLD)..
+Older versions of hMETIS can be found [here](/glaros/files/sw/hmetis/OLD).
 
 After downloading hMETIS you need to uncompress and untar it. This is achieved by
 executing the following command:

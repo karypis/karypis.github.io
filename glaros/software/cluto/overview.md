@@ -31,31 +31,25 @@ The CLUTO data clustering package is currently distributed as a single file that
 contains binary distributions for Linux, OSX, and MS Windows platforms.
 
 
-**Getting the files**
-
 The first step in getting and using CLUTO is to download the binary distribution
 file. CLUTO's distribution is available as either a Unix gziped tar file or as a
 Windows zip file.
 
-Available files for download
+Latest experimental release (2.1.2a):
+- [cluto-2.1.2a.tar.gz](/glaros/files/sw/cluto/cluto-2.1.2a.tar.gz).
+- [cluto-2.1.2a.zip](/glaros/files/sw/cluto/cluto-2.1.2a.zip). 
 
-- Latest experimental release (2.1.2a):
-  - [cluto-2.1.2a.tar.gz](/glaros/files/sw/cluto/cluto-2.1.2a.tar.gz).
-  - [cluto-2.1.2a.zip](/glaros/files/sw/cluto/cluto-2.1.2a.zip). 
-
-- Latest stable release (2.1.1):
-  - [cluto-2.1.1.tar.gz](/glaros/files/sw/cluto/cluto-2.1.1.tar.gz).
-  - [cluto-2.1.1.zip](/glaros/files/sw/cluto/cluto-2.1.1.zip).
+Latest stable release (2.1.1):
+- [cluto-2.1.1.tar.gz](/glaros/files/sw/cluto/cluto-2.1.1.tar.gz).
+- [cluto-2.1.1.zip](/glaros/files/sw/cluto/cluto-2.1.1.zip).
 
 Older versions of CLUTO can be found [here](/glaros/files/sw/cluto/OLD).
 
-**Installing**
 
 On Unix systems, after downloading CLUTO you need to uncompress and untar it. This is
 achieved by executing the following command:
 
     gunzip cluto-xxx.tar.gz
-
     tar -xvf cluto-xxx.tar
 
 Of course, 'xxx' is CLUTO's release number that you have downloaded. On Windows
@@ -66,21 +60,15 @@ be unzipped automatically.
 At this point you should have a directory named cluto-xxx. This directory contains
 CLUTO's library, stand-alone clustering programs, and some test datasets.
 
-**Documentation**
-
 Instructions describing how to use CLUTO can be found at cluto-xxx/manual.pdf. You
 can get a PDF copy from [here](/glaros/files/sw/cluto/manual.pdf).
-
-**Converting Documents into CLUTO's Format**
 
 A simple perl script called doc2mat that convertes a set of documents into the
 vector-space format used by CLUTO is provided by downloading the following tar file:
 [doc2mat-1.0.tar.gz](/glaros/files/sw/cluto/doc2mat-1.0.tar.gz).
 
 You can read its online documentation from
-[here](/glaros/files/sw/cluto/doc2mat.html)..
-
-**Datasets**
+[here](/glaros/files/sw/cluto/doc2mat.html).
 
 The various datasets used in evaluating the performance of CLUTO's clustering
 algorithms are available by downloading
@@ -119,8 +107,6 @@ matrix, and an OpenGL-based mountain visualization.
 The gCLUTO data clustering package is distributed as a single file that contains
 binary distributions for Linux, and MS Windows platforms.
 
-**Getting the files**
-
 The first step in setting up gCLUTO is to download the binary distribution file.
 gCLUTO's distribution is available as either a Unix gziped tar file or as a Windows
 zip file.
@@ -131,13 +117,10 @@ Available files for download:
 
 Older versions of gCLUTO can be found [here](/glaros/files/sw/gcluto/OLD).
 
-**Installing**
-
 On Unix systems, after downloading gCLUTO you need to uncompress and untar it. This
 is achieved by executing the following command:
 
     gunzip gcluto-1.0.tar.gz
-
     tar -xvf gcluto-1.0.tar
 
 On Windows systems, you need to have a zip/unzip program (e.g., winzip) in order to
@@ -146,8 +129,6 @@ the file will be unzipped automatically.
 
 At this point you should have a directory named gcluto-1.0. This directory contains
 gCLUTO's programs and some test datasets.
-
-**Documentation**
 
 Instructions describing how to use gCLUTO can be found at gcluto-1.0/doc/index.html.
 You can view a local copy of this documentation by clicking

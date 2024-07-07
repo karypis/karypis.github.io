@@ -106,11 +106,8 @@ outperform previously developed schemes based on the widely used fingerprint- an
 Maccs keys-based descriptors, as well as recently introduced descriptors obtained by
 mining and analyzing the structure of the molecular graphs.
 
-**Getting the files**
-
-* [afgen-2.0.0.tar.gz Linux (i686/x86_64)](files/afgen/afgen-2.0.0.tar.gz)
-
-**Installing**
+Getting the latest release:
+ - [afgen-2.0.0.tar.gz Linux (i686/x86_64)](files/afgen/afgen-2.0.0.tar.gz)
 
 On Unix systems, after downloading AFGen you need to uncompress and untar it. This is
 achieved by executing the following command:
@@ -121,9 +118,8 @@ achieved by executing the following command:
 At this point you should have a directory named afgen-2.0.0. This directory contains
 AFGen's stand-alone programs, its documentation, and a sample dataset.
 
-**Documentation**
-
-Instructions describing how to use AFGen can be found at afgen-2.0/doc/index.html.
+Instructions describing how to use AFGen can be found at
+[afgen-2.0/doc/index.html](/glaros/files/sw/afgen/doc/index.html).
 
 
 
@@ -143,32 +139,26 @@ the most successful and widely used framework for building recommender systems.
 SUGGEST implements two classes of collaborative filtering-based top-N recommendation
 algorithms, called user-based and item-based.
 
-SUGGEST is currently distributed in a binary format and consists a stand-alone
-executable program and a library, which can be used to call SUGGEST's routines
-directly from another application.
-
-**Getting the files**
-
-The first step in using SUGGEST is to download the distribution file for your architecture.
-
-- [suggest-1.0-linux.tar.gz](/glaros/files/sw/suggest/suggest-1.0-linux.tar.gz).
-- [suggest-1.0-win32.zip](/glaros/files/sw/suggest/suggest-1.0-win32.zip).
-
-**Installing**
-
-After downloading SUGGEST you need to uncompress and untar it. This is achieved by executing the following command:
-
-    gunzip suggest-1.0-xxxxx.tar.gz
-    tar -xvf suggest-1.0-xxxxx.tar
-
-At this point you should have a directory named suggest-1.5-xxxxx. This directory
-contains SUGGEST's stand-alone programs and its user-callable library.
-
-**Documentation**
-
-Instructions describing how SUGGEST is used can be found at suggest-1.0-xxxxx/manual.pdf.
-You can get a local copy of this manual in PDF format from
-[here](/glaros/files/sw/suggest/manual.pdf)..
+> SUGGEST is currently distributed in a binary format and consists a stand-alone
+> executable program and a library, which can be used to call SUGGEST's routines
+> directly from another application.
+> 
+> The first step in using SUGGEST is to download the distribution file for your architecture.
+> 
+> - [suggest-1.0-linux.tar.gz](/glaros/files/sw/suggest/suggest-1.0-linux.tar.gz).
+> - [suggest-1.0-win32.zip](/glaros/files/sw/suggest/suggest-1.0-win32.zip).
+> 
+> After downloading SUGGEST you need to uncompress and untar it. This is achieved by executing the following command:
+> 
+>     gunzip suggest-1.0-xxxxx.tar.gz
+>     tar -xvf suggest-1.0-xxxxx.tar
+> 
+> At this point you should have a directory named suggest-1.5-xxxxx. This directory
+> contains SUGGEST's stand-alone programs and its user-callable library.
+> 
+> Instructions describing how SUGGEST is used can be found at suggest-1.0-xxxxx/manual.pdf.
+> You can get a local copy of this manual in PDF format from
+> [here](/glaros/files/sw/suggest/manual.pdf).
 
 
 
