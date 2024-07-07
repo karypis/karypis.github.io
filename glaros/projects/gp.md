@@ -61,4 +61,4 @@ general better than those produced by the serial graph partitioning algorithm in
 METIS.
 
 All of these tools are available for download from our [Software
-page](/glaros/software/overview.md).
+page](../software/overview.md).

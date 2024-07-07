@@ -44,6 +44,6 @@ recommendation algorithms, and the PAFI pattern finding toolkit that contains va
 algorithms to find frequent patterns in transaction, sequence, and graph databases.
 
 All of these tools are available for download from our [Software
-page](/glaros/software/overview.md).
+page](../software/overview.md).
 
 
