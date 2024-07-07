@@ -43,6 +43,7 @@ algorithms, the SUGGEST and SLIM libraries of scalable collaborative-filtering b
 recommendation algorithms, and the PAFI pattern finding toolkit that contains various
 algorithms to find frequent patterns in transaction, sequence, and graph databases.
 
-All of these tools are available for download from our Software page.
+All of these tools are available for download from our [Software
+page](/glaros/software/overview.md).
 
 

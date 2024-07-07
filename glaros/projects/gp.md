@@ -60,4 +60,5 @@ algorithms. In fact, the quality of the partitionings produced by CLUTO are in
 general better than those produced by the serial graph partitioning algorithm in
 METIS.
 
-All of these tools are available for download from our Software page.
+All of these tools are available for download from our [Software
+page](/glaros/software/overview.md).

@@ -50,12 +50,12 @@ geometric). The topological version of this algorithm, called FSG, is currently
 available as part of our pattern discovery toolkit PAFI, which can be downloaded and
 used for educational and research purposes.
 
-Another recent development is the AFGen program that operates on a database of
-chemical compounds and generates their descriptor-based representation by considering
-all bounded length acyclic fragments that they contain. These descriptors are quite
-effective in capturing the structural characteristics of chemical compounds.
-Experiments in the context of SVM-based classification and ranked-retrieval show that
-these descriptors consistently and statistically outperform previously developed
-schemes based on the widely used fingerprint- and Maccs keys-based descriptors, as
-well as recently introduced descriptors obtained by mining and analyzing the
-structure of the molecular graphs.
+Another recent development is the [AFGen](/glaros/software/overview.md) program that
+operates on a database of chemical compounds and generates their descriptor-based
+representation by considering all bounded length acyclic fragments that they contain.
+These descriptors are quite effective in capturing the structural characteristics of
+chemical compounds. Experiments in the context of SVM-based classification and
+ranked-retrieval show that these descriptors consistently and statistically
+outperform previously developed schemes based on the widely used fingerprint- and
+Maccs keys-based descriptors, as well as recently introduced descriptors obtained by
+mining and analyzing the structure of the molecular graphs.
