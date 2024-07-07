@@ -23,23 +23,6 @@ scalable (remain efficient and effective as we increase the size of the problem
 and/or the number of processors). Quite often I consider my research as that of
 algorithm engineering.
 
-### Projects
-
-Over the years I have developed many algorithms for a variety of problems including
-dynamic load balancing of unstructured parallel computations, graph and circuit
-partitioning, protein remote homology prediction and fold recognition, protein
-structure prediction, recommender systems, data clustering, document classification
-and clustering, frequent pattern discovery in diverse datasets (transactions,
-sequences, graphs), parallel Cholesky factorization, and parallel preconditioners.
-
-The following links provide more information about specific projects:
-
-* [Data mining](glaros/projects/dm.md)
-* [Graph partitioning](glaros/projects/gp.md)
-* [Chemical informatics](glaros/projects/cheminfo.md)
-* [Bioinformatics](glaros/projects/bio.md)
-
-
 ### Software
 
 The research of my group research has resulted in the development of software
@@ -62,6 +45,24 @@ More information can be be found at my
 [Google Scholar](https://scholar.google.com/citations?user=ElqwScwAAAAJ),
 [DBLP](https://dblp.org/pid/k/GeorgeKarypis.html), and
 [arXiv](https://arxiv.org/search/cs?searchtype=author&query=Karypis,+G) pages.
+
+
+### Projects
+
+Over the years I have developed many algorithms for a variety of problems including
+dynamic load balancing of unstructured parallel computations, graph and circuit
+partitioning, protein remote homology prediction and fold recognition, protein
+structure prediction, recommender systems, data clustering, document classification
+and clustering, frequent pattern discovery in diverse datasets (transactions,
+sequences, graphs), parallel Cholesky factorization, and parallel preconditioners.
+
+The following links provide more information about specific projects:
+
+* [Data mining](glaros/projects/dm.md)
+* [Graph partitioning](glaros/projects/gp.md)
+* [Chemical informatics](glaros/projects/cheminfo.md)
+* [Bioinformatics](glaros/projects/bio.md)
+
 
 
 ## Education, Mentoring, and Advising
