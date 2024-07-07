@@ -1,0 +1,2617 @@
+%PDF-1.5%‚„œ”
+1 0 obj<</Pages 2 0 R/Outlines 6 0 R/Type/Catalog/Names 59 0 R/StructTreeRoot 7 0 R/Metadata 204 0 R/SpiderInfo 190 0 R>>endobj2 0 obj<</Count 13/Kids[112 0 R 111 0 R]/Type/Pages>>endobj3 0 obj<</ModDate(D:20030830105640-05'00')/CreationDate(D:20030830105635Z)/Title(Dynamic Repartitioning of Adaptively Refined Meshes)/Producer(Acrobat Web Capture 6.0)>>endobj5 0 obj nullendobj6 0 obj<</Count 2/Type/Outlines/First 202 0 R/Last 202 0 R>>endobj7 0 obj<</Type/StructTreeRoot/K 9 0 R/ClassMap 8 0 R/ParentTree 12 0 R/ParentTreeNextKey 13>>endobj8 0 obj<</SpdrArt<</O/WebCapture>>>>endobj9 0 obj<</K 10 0 R/P 7 0 R/S/Document>>endobj10 0 obj<</K[0<</Type/MCR/MCID 0/Pg 25 0 R>><</Type/MCR/MCID 0/Pg 27 0 R>><</Type/MCR/MCID 0/Pg 50 0 R>><</Type/MCR/MCID 0/Pg 52 0 R>><</Type/MCR/MCID 0/Pg 66 0 R>><</Type/MCR/MCID 0/Pg 74 0 R>><</Type/MCR/MCID 0/Pg 84 0 R>><</Type/MCR/MCID 0/Pg 91 0 R>><</Type/MCR/MCID 0/Pg 99 0 R>><</Type/MCR/MCID 0/Pg 110 0 R>><</Type/MCR/MCID 0/Pg 127 0 R>><</Type/MCR/MCID 0/Pg 139 0 R>>]/C/SpdrArt/P 9 0 R/S/Article/Pg 11 0 R>>endobj11 0 obj<</ID 196 0 R/Annots 15 0 R/Contents 164 0 R/Type/Page/Parent 112 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 113 0 R/T1_2 115 0 R/T1_3 116 0 R>>/ProcSet[/PDF/Text]>>/StructParents 0>>endobj12 0 obj<</Nums[0 13 0 R 1 26 0 R 2 28 0 R 3 51 0 R 4 53 0 R 5 67 0 R 6 75 0 R 7 85 0 R 8 92 0 R 9 100 0 R 10 119 0 R 11 132 0 R 12 142 0 R]>>endobj13 0 obj[10 0 R]endobj14 0 obj<</Rect[10.0 652.153809 192.126007 667.153809]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®copy)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#copy)/S/URI>>>>endobj15 0 obj[14 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R]endobj16 0 obj<</Rect[10.0 614.353882 98.283997 629.353882]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®auth1)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#auth1)/S/URI>>>>endobj17 0 obj<</Rect[10.0 528.353882 136.0 543.353882]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(mailto:kirk@cs.umn.edu)/S/URI>>>>endobj18 0 obj<</Rect[10.0 509.553833 236.800003 524.553833]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(http://www.cs.umn.edu/~kirk)/S/URI>>>>endobj19 0 obj<</Rect[10.0 471.753845 105.270004 486.753845]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®auth2)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#auth2)/S/URI>>>>endobj20 0 obj<</Rect[10.0 385.753845 161.199997 400.753845]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(mailto:karypis@cs.umn.edu)/S/URI>>>>endobj21 0 obj<</Rect[10.0 366.953857 262.0 381.953857]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(http://www.cs.umn.edu/~karypis)/S/URI>>>>endobj22 0 obj<</Rect[10.0 329.153839 90.514008 344.153839]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®auth3)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#auth3)/S/URI>>>>endobj23 0 obj<</Rect[10.0 243.153839 144.399994 258.153839]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(mailto:kumar@cs.umn.edu)/S/URI>>>>endobj24 0 obj<</Rect[10.0 224.353851 245.199997 239.353851]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(http://www.cs.umn.edu/~kumar)/S/URI>>>>endobj25 0 obj<</ID 196 0 R/Contents 166 0 R/Type/Page/Parent 112 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 128 0 R/T1_2 115 0 R/T1_3 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 1>>endobj26 0 obj[10 0 R]endobj27 0 obj<</ID 196 0 R/Annots 30 0 R/Contents 168 0 R/Type/Page/Parent 112 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 2>>endobj28 0 obj[10 0 R]endobj29 0 obj<</Rect[52.378006 732.799988 59.378006 747.799988]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/node10.html#bui93siam)/S/URI>>>>endobj30 0 obj[29 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R]endobj31 0 obj<</Rect[62.878006 732.799988 69.878006 747.799988]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/node10.html#hendrickson93tr)/S/URI>>>>endobj32 0 obj<</Rect[73.378006 732.799988 80.378006 747.799988]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/node10.html#karypis97siam)/S/URI>>>>endobj33 0 obj<</Rect[418.23999 348.138458 425.23999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®biswasoliker97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#biswasoliker97)/S/URI>>>>endobj34 0 obj<</Rect[428.73999 348.138458 435.73999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#olikerbiswas97plum)/S/URI>>>>endobj35 0 obj<</Rect[439.23999 348.138458 453.23999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-sc98)/S/URI>>>>endobj36 0 obj<</Rect[456.73999 348.138458 470.73999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-jpdc97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-jpdc97)/S/URI>>>>endobj37 0 obj<</Rect[474.23999 348.138458 488.23999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumarbiswasoliker-pdcs98)/S/URI>>>>endobj38 0 obj<</Rect[491.73999 348.138458 505.73999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrosseverett97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrosseverett97)/S/URI>>>>endobj39 0 obj<</Rect[509.23999 348.138458 523.23999 363.138458]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrosseverett97-par)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrosseverett97-par)/S/URI>>>>endobj40 0 obj<</Rect[357.171997 329.33844 364.171997 344.33844]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®biswasoliker97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#biswasoliker97)/S/URI>>>>endobj41 0 obj<</Rect[367.671997 329.33844 374.671997 344.33844]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#olikerbiswas97plum)/S/URI>>>>endobj42 0 obj<</Rect[378.171997 329.33844 392.171997 344.33844]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumarbiswasoliker-pdcs98)/S/URI>>>>endobj43 0 obj<</Rect[14.662003 310.538452 28.662003 325.538452]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-sc98)/S/URI>>>>endobj44 0 obj<</Rect[32.162003 310.538452 46.162003 325.538452]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-jpdc97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-jpdc97)/S/URI>>>>endobj45 0 obj<</Rect[49.662003 310.538452 63.662003 325.538452]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrosseverett97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrosseverett97)/S/URI>>>>endobj46 0 obj<</Rect[67.162003 310.538452 81.162003 325.538452]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrosseverett97-par)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrosseverett97-par)/S/URI>>>>endobj47 0 obj<</Rect[73.783997 87.938461 80.783997 102.938461]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®biswasoliker97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#biswasoliker97)/S/URI>>>>endobj48 0 obj<</Rect[84.283997 87.938461 98.283997 102.938461]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-jpdc97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-jpdc97)/S/URI>>>>endobj49 0 obj<</Rect[101.783997 87.938461 115.783997 102.938461]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumarbiswasoliker-pdcs98)/S/URI>>>>endobj50 0 obj<</ID 196 0 R/Contents 172 0 R/Type/Page/Parent 112 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 113 0 R/T1_2 128 0 R>>/ProcSet[/PDF/Text]>>/StructParents 3>>endobj51 0 obj[10 0 R]endobj52 0 obj<</ID 196 0 R/Annots 55 0 R/Contents 174 0 R/Type/Page/Parent 112 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 113 0 R/T1_2 128 0 R>>/ProcSet[/PDF/Text]>>/StructParents 4>>endobj53 0 obj[10 0 R]endobj54 0 obj<</Rect[150.727997 537.138428 157.727997 552.138428]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#olikerbiswas97plum)/S/URI>>>>endobj55 0 obj[54 0 R 56 0 R 57 0 R 58 0 R 63 0 R 64 0 R 65 0 R]endobj56 0 obj<</Rect[213.742004 467.938477 220.742004 482.938477]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®karypis97siam)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#karypis97siam)/S/URI>>>>endobj57 0 obj<</Rect[224.242004 467.938477 238.242004 482.938477]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrossjohnsoneverett94)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrossjohnsoneverett94)/S/URI>>>>endobj58 0 obj<</Rect[476.59198 398.738464 490.59198 413.738464]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumarbiswasoliker-pdcs98)/S/URI>>>>endobj59 0 obj<</Dests 60 0 R/IDS 200 0 R/URLS 201 0 R>>endobj60 0 obj<</Names[(cH¿>ºs—7	ˇWñ®auth1)137 0 R(cH¿>ºs—7	ˇWñ®auth2)138 0 R(cH¿>ºs—7	ˇWñ®auth3)143 0 R(cH¿>ºs—7	ˇWñ®biswasoliker97)107 0 R(cH¿>ºs—7	ˇWñ®bui93siam)108 0 R(cH¿>ºs—7	ˇWñ®copy)144 0 R(cH¿>ºs—7	ˇWñ®diekmannfrommermonien98)109 0 R(cH¿>ºs—7	ˇWñ®hendrickson93tr)120 0 R(cH¿>ºs—7	ˇWñ®karypis95tr-mlevel-kway)121 0 R(cH¿>ºs—7	ˇWñ®karypis97metis)123 0 R(cH¿>ºs—7	ˇWñ®karypis97siam)122 0 R(cH¿>ºs—7	ˇWñ®karypisschloegelkumar-parmetis97)124 0 R(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)125 0 R(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-jpdc97)126 0 R(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)131 0 R(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)133 0 R(cH¿>ºs—7	ˇWñ®sec:helicopter)96 0 R(cH¿>ºs—7	ˇWñ®sec:parallel_results)87 0 R(cH¿>ºs—7	ˇWñ®sec:wavefront)62 0 R(cH¿>ºs—7	ˇWñ®walshawcrosseverett97)134 0 R(cH¿>ºs—7	ˇWñ®walshawcrosseverett97-par)135 0 R(cH¿>ºs—7	ˇWñ®walshawcrossjohnsoneverett94)136 0 R]>>endobj62 0 obj[52 0 R/XYZ 0 125.71402 null]endobj63 0 obj<</Rect[73.783997 43.276917 87.783997 58.276917]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-jpdc97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-jpdc97)/S/URI>>>>endobj64 0 obj<</Rect[91.283997 43.276917 105.283997 58.276917]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumarbiswasoliker-pdcs98)/S/URI>>>>endobj65 0 obj<</Rect[108.783997 43.276917 122.783997 58.276917]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrosseverett97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrosseverett97)/S/URI>>>>endobj66 0 obj<</ID 196 0 R/Annots 69 0 R/Contents 176 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 128 0 R/T1_2 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 5>>endobj67 0 obj[10 0 R]endobj68 0 obj<</Rect[328.416016 732.799988 342.416016 747.799988]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-jpdc97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-jpdc97)/S/URI>>>>endobj69 0 obj[68 0 R 70 0 R 71 0 R 72 0 R 73 0 R]endobj70 0 obj<</Rect[345.916016 732.799988 352.916016 747.799988]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®biswasoliker97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#biswasoliker97)/S/URI>>>>endobj71 0 obj<</Rect[322.619995 697.200012 329.619995 712.200012]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®diekmannfrommermonien98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#diekmannfrommermonien98)/S/URI>>>>endobj72 0 obj<</Rect[435.390015 50.320679 449.390015 65.320679]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-sc98)/S/URI>>>>endobj73 0 obj<</Rect[452.890015 50.320679 466.890015 65.320679]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®walshawcrosseverett97-par)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#walshawcrosseverett97-par)/S/URI>>>>endobj74 0 obj<</ID 196 0 R/Annots 77 0 R/Contents 178 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 128 0 R/T1_2 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 6>>endobj75 0 obj[10 0 R]endobj76 0 obj<</Rect[320.674011 510.905334 327.674011 525.905334]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®sec:wavefront)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#sec:wavefront)/S/URI>>>>endobj77 0 obj[76 0 R 78 0 R 79 0 R 80 0 R 81 0 R]endobj78 0 obj<</Rect[354.497986 388.396423 361.497986 403.396423]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®sec:wavefront)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#sec:wavefront)/S/URI>>>>endobj79 0 obj<</Rect[434.984009 266.596436 448.984009 281.596436]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-sc98)/S/URI>>>>endobj80 0 obj<</Rect[328.429993 247.796448 335.429993 262.796448]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®karypis97siam)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#karypis97siam)/S/URI>>>>endobj81 0 obj<</Rect[190.432007 128.196442 204.432007 143.196442]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-sc98)/S/URI>>>>endobj84 0 obj<</ID 196 0 R/Annots 89 0 R/Contents 180 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 128 0 R/T1_2 115 0 R>>/ProcSet[/PDF/Text]>>/StructParents 7>>endobj85 0 obj[10 0 R]endobj87 0 obj[84 0 R/XYZ 0 395.814209 null]endobj88 0 obj<</Rect[170.173996 362.614227 177.173996 377.614227]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#olikerbiswas97plum)/S/URI>>>>endobj89 0 obj[88 0 R 90 0 R]endobj90 0 obj<</Rect[365.768005 362.614227 379.768005 377.614227]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumarbiswasoliker-pdcs98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumarbiswasoliker-pdcs98)/S/URI>>>>endobj91 0 obj<</ID 196 0 R/Annots 94 0 R/Contents 182 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 115 0 R/T1_2 128 0 R/T1_3 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 8>>endobj92 0 obj[10 0 R]endobj93 0 obj<</Rect[324.608002 749.599976 331.608002 764.599976]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®karypisschloegelkumar-parmetis97)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#karypisschloegelkumar-parmetis97)/S/URI>>>>endobj94 0 obj[93 0 R 97 0 R 98 0 R]endobj96 0 obj[91 0 R/XYZ 0 193.824448 null]endobj97 0 obj<</Rect[223.485992 111.387344 230.485992 126.387344]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®sec:parallel_results)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#sec:parallel_results)/S/URI>>>>endobj98 0 obj<</Rect[298.903992 58.98735 312.903992 73.98735]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®schloegelkarypiskumar-sc98)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#schloegelkarypiskumar-sc98)/S/URI>>>>endobj99 0 obj<</ID 196 0 R/Annots 102 0 R/Contents 184 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 128 0 R/T1_2 115 0 R/T1_3 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 9>>endobj100 0 obj[10 0 R]endobj101 0 obj<</Rect[422.523987 716.0 429.523987 731.0]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#olikerbiswas97plum)/S/URI>>>>endobj102 0 obj[101 0 R 103 0 R 104 0 R 105 0 R 106 0 R]endobj103 0 obj<</Rect[325.029999 658.491089 332.029999 673.491089]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®karypis95tr-mlevel-kway)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#karypis95tr-mlevel-kway)/S/URI>>>>endobj104 0 obj<</Rect[335.529999 658.491089 342.529999 673.491089]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®karypis97metis)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#karypis97metis)/S/URI>>>>endobj105 0 obj<</Rect[144.147995 513.164429 151.147995 528.164429]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®olikerbiswas97plum)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#olikerbiswas97plum)/S/URI>>>>endobj106 0 obj<</Rect[247.593994 357.764465 254.593994 372.764465]/Border[0 0 0]/BS<</W 0/Type/Border/S/S>>/Subtype/Link/A<</D(cH¿>ºs—7	ˇWñ®sec:parallel_results)/S/GoTo>>/PA<</URI(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm#sec:parallel_results)/S/URI>>>>endobj107 0 obj[99 0 R/XYZ 0 219.927353 null]endobj108 0 obj[99 0 R/XYZ 0 133.727356 null]endobj109 0 obj[99 0 R/XYZ 0 47.527344 null]endobj110 0 obj<</ID 196 0 R/Contents 186 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 115 0 R/T1_2 128 0 R>>/ProcSet[/PDF/Text]>>/StructParents 10>>endobj111 0 obj<</Count 8/Kids[66 0 R 74 0 R 84 0 R 91 0 R 99 0 R 110 0 R 127 0 R 139 0 R]/Type/Pages/Parent 2 0 R>>endobj112 0 obj<</Count 5/Kids[11 0 R 25 0 R 27 0 R 50 0 R 52 0 R]/Type/Pages/Parent 2 0 R>>endobj113 0 obj<</Type/Font/Encoding/WinAnsiEncoding/BaseFont/Helvetica-Bold/Subtype/Type1>>endobj114 0 obj<</Type/Font/Encoding/WinAnsiEncoding/BaseFont/Times-Roman/Subtype/Type1>>endobj115 0 obj<</Type/Font/Encoding/WinAnsiEncoding/BaseFont/Times-Bold/Subtype/Type1>>endobj116 0 obj<</Type/Font/Encoding/WinAnsiEncoding/BaseFont/Courier/Subtype/Type1>>endobj119 0 obj[10 0 R]endobj120 0 obj[110 0 R/XYZ 0 663.0 null]endobj121 0 obj[110 0 R/XYZ 0 576.799988 null]endobj122 0 obj[110 0 R/XYZ 0 490.600006 null]endobj123 0 obj[110 0 R/XYZ 0 387.600006 null]endobj124 0 obj[110 0 R/XYZ 0 301.399994 null]endobj125 0 obj[110 0 R/XYZ 0 198.399994 null]endobj126 0 obj[110 0 R/XYZ 0 112.199997 null]endobj127 0 obj<</ID 196 0 R/Contents 188 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 115 0 R/T1_2 128 0 R/T1_3 113 0 R>>/ProcSet[/PDF/Text]>>/StructParents 11>>endobj128 0 obj<</Type/Font/Encoding/WinAnsiEncoding/BaseFont/Times-Italic/Subtype/Type1>>endobj131 0 obj[127 0 R/XYZ 0 756.0 null]endobj132 0 obj[10 0 R]endobj133 0 obj[127 0 R/XYZ 0 669.799988 null]endobj134 0 obj[127 0 R/XYZ 0 583.599976 null]endobj135 0 obj[127 0 R/XYZ 0 497.399994 null]endobj136 0 obj[127 0 R/XYZ 0 411.200012 null]endobj137 0 obj[127 0 R/XYZ 0 268.738464 null]endobj138 0 obj[127 0 R/XYZ 0 199.338455 null]endobj139 0 obj<</ID 196 0 R/Contents 170 0 R/Type/Page/Parent 111 0 R/MediaBox[0.0 0.0 612.0 792.0]/Resources<</Font<</T1_0 114 0 R/T1_1 115 0 R>>/ProcSet[/PDF/Text]>>/StructParents 12>>endobj142 0 obj[10 0 R]endobj143 0 obj[139 0 R/XYZ 0 730.200012 null]endobj144 0 obj[139 0 R/XYZ 0 460.0 null]endobj163 0 obj 3480endobj164 0 obj<</Length 163 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_1 1 Tf
+24.76923 0 0 24.76923 33.48892 725.29675 Tm
+(Dynamic Repartitioning of Adaptively Refined )Tj
+9.168 -1.2 Td
+(Meshes )Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+10 654.4126 m
+192.12601 654.4126 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 10 656.52936 Tm
+(\251 Copyright 1998 by IEEE, Inc.)Tj
+0 0 0 rg
+( )Tj
+ET
+1.1676 w 
+10 615.22662 m
+98.28401 615.22662 l
+S
+0 0 1 rg
+BT
+/T1_2 1 Tf
+14 0 0 14 10 618.72937 Tm
+(Kirk Schloegel)Tj
+0 0 0 rg
+/T1_0 1 Tf
+( )Tj
+0 -1.34286 TD
+(Dept. of Computer Science and Engineering )Tj
+0 -1.2 TD
+(University of Minnesota )Tj
+T*
+(Army HPC Research Center )Tj
+T*
+(Minneapolis, Minnesota )Tj
+ET
+0.42841 w 
+10 531.37677 m
+136 531.37677 l
+S
+0 0 1 rg
+BT
+/T1_3 1 Tf
+14 0 0 14 10 532.66205 Tm
+(kirk@cs.umn.edu)Tj
+ET
+10 512.57678 m
+236.8 512.57678 l
+S
+BT
+/T1_3 1 Tf
+14 0 0 14 10 513.862 Tm
+(http://www.cs.umn.edu/~kirk)Tj
+ET
+1.1676 w 
+10 472.62659 m
+105.27 472.62659 l
+S
+BT
+/T1_2 1 Tf
+14 0 0 14 10 476.12936 Tm
+(George Karypis)Tj
+0 0 0 rg
+/T1_0 1 Tf
+( )Tj
+0 -1.34286 TD
+(Dept. of Computer Science and Engineering )Tj
+0 -1.2 TD
+(University of Minnesota )Tj
+T*
+(Army HPC Research Center )Tj
+T*
+(Minneapolis, Minnesota )Tj
+ET
+0.42841 w 
+10 388.77679 m
+161.2 388.77679 l
+S
+0 0 1 rg
+BT
+/T1_3 1 Tf
+14 0 0 14 10 390.06201 Tm
+(karypis@cs.umn.edu)Tj
+ET
+10 369.97681 m
+262 369.97681 l
+S
+BT
+/T1_3 1 Tf
+14 0 0 14 10 371.26199 Tm
+(http://www.cs.umn.edu/~karypis)Tj
+ET
+1.1676 w 
+10 330.02658 m
+90.51401 330.02658 l
+S
+BT
+/T1_2 1 Tf
+14 0 0 14 10 333.52939 Tm
+(Vipin Kumar)Tj
+0 0 0 rg
+/T1_0 1 Tf
+( )Tj
+0 -1.34286 TD
+(Dept. of Computer Science and Engineering )Tj
+0 -1.2 TD
+(University of Minnesota )Tj
+T*
+(Army HPC Research Center )Tj
+T*
+(Minneapolis, Minnesota )Tj
+ET
+0.42841 w 
+10 246.17679 m
+144.39999 246.17679 l
+S
+0 0 1 rg
+BT
+/T1_3 1 Tf
+14 0 0 14 10 247.46201 Tm
+(kumar@cs.umn.edu)Tj
+ET
+10 227.3768 m
+245.2 227.3768 l
+S
+BT
+/T1_3 1 Tf
+14 0 0 14 10 228.66202 Tm
+(http://www.cs.umn.edu/~kumar)Tj
+0 0 0 rg
+/T1_2 1 Tf
+0 -2.69519 TD
+(Abstract:)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(One ingredient which is viewed as vital to the successful conduct of man\y large-scale numerical )Tj
+0 -1.2 TD
+(simulations is the ability to dynamically repartition the underlying ada\ptive finite element mesh )Tj
+T*
+(among the processors so that the computations are balanced and interproc\essor communication is )Tj
+T*
+(minimized. This requires that a sequence of partitions of the computatio\nal mesh be computed )Tj
+T*
+(during the course of the computation in which the amount of data migrati\on necessary to realize )Tj
+T*
+(subsequent partitions is minimized, while all of the domains of a given \partition contain a )Tj
+T*
+(roughly equal amount of computational weight. Recently, parallel multile\vel graph repartitioning )Tj
+T*
+(techniques have been developed that can quickly compute high-quality rep\artitions for adaptive )Tj
+T*
+(and dynamic meshes while minimizing the amount of data which needs to be\ migrated between )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(1 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj165 0 obj 4668endobj166 0 obj<</Length 165 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 50 752.92938 Tm
+(processors. These algorithms can be categorized as either schemes which \compute a new )Tj
+0 -1.2 TD
+(partition from scratch and then intelligently remap this partition to th\e original partition \(hereafter )Tj
+T*
+(referred to as scratch-remap schemes\), or multilevel diffusion schemes.\ Scratch-remap schemes )Tj
+T*
+(work quite well for graphs which are highly imbalanced in localized area\s. On slightly to )Tj
+T*
+(moderately imbalanced graphs and those in which imbalance occurs globall\y throughout the )Tj
+T*
+(graph, however, they result in excessive vertex migration compared to mu\ltilevel diffusion )Tj
+T*
+(algorithms. On the other hand, diffusion-based schemes work well for sli\ghtly imbalanced graphs )Tj
+T*
+(and for those in which imbalance occurs globally throughout the graph. H\owever, these schemes )Tj
+T*
+(perform poorly on graphs that are highly imbalanced in localized areas, \as the propagation of )Tj
+T*
+(diffusion over long distances results in excessive edge-cut and vertex m\igration results. In this )Tj
+T*
+(paper, we present two new schemes for adaptive repartitioning: )Tj
+/T1_1 1 Tf
+(Locally-Matched Multilevel )Tj
+T*
+(Scratch-Remap)Tj
+/T1_0 1 Tf
+( \(or )Tj
+/T1_1 1 Tf
+(LMSR)Tj
+/T1_0 1 Tf
+(\) and )Tj
+/T1_1 1 Tf
+(Wavefront Diffusion)Tj
+/T1_0 1 Tf
+(. The LMSR scheme performs purely local )Tj
+T*
+(coarsening and partition remapping in a multilevel context. In Wavefront\ Diffusion, the flow of )Tj
+T*
+(vertices move in a wavefront from overbalanced to underbalanced domains.\ We present )Tj
+T*
+(experimental evaluations of our LMSR and Wavefront Diffusion algorithms \on synthetically )Tj
+T*
+(generated adaptive meshes as well as on some application meshes. We show\ that our LMSR )Tj
+T*
+(algorithm decreases the amount of vertex migration required to balance t\he graph and produces )Tj
+T*
+(repartitionings of similar quality compared to state-of-the-art scratch-\remap schemes. )Tj
+T*
+(Furthermore, we show that our LMSR algorithm is more scalable in terms o\f execution time )Tj
+T*
+(compared to state-of-the-art scratch-remap schemes. We show that our Wav\efront Diffusion )Tj
+T*
+(algorithm obtains significantly lower vertex migration requirements, whi\le maintaining similar )Tj
+T*
+(edge-cut results compared to state-of-the-art multilevel diffusion algor\ithms, especially for highly )Tj
+T*
+(imbalanced graphs. Furthermore, we compare Wavefront Diffusion with LMSR\ and show that )Tj
+T*
+(the former will result in lower vertex migration requirements and the la\ter will result in higher )Tj
+T*
+(quality edge-cut results. These results hold true regardless of the dist\ance which diffusion is )Tj
+T*
+(required to propagate in order to balance the graph. Finally, we discuss\ the run times of our )Tj
+T*
+(schemes which are both capable of repartitioning an eight million node g\raph in under three )Tj
+T*
+(seconds on a 128-processor Cray T3E. )Tj
+/T1_2 1 Tf
+-2.85715 -2.55714 Td
+(Keywords:)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(Wavefront Diffusion, Multilevel Graph Repartitioning, Scratch-Remap, Mul\tilevel Diffusion )Tj
+/T1_3 1 Tf
+19.38461 0 0 19.38461 10 205.96872 Tm
+(1 Introduction)Tj
+/T1_0 1 Tf
+14 0 0 14 10 168.66786 Tm
+(Graph partitioning is an important problem which has applications in man\y areas, including scientific )Tj
+T*
+(computing. In irregular mesh applications, the computation associated wi\th the mesh can be represented )Tj
+T*
+(by a graph that has weights associated with its vertices and edges. The \weight on the vertices of the )Tj
+T*
+(graph represents the amount of computation associated with a mesh node, \and the weight of the edges )Tj
+T*
+(represents the amount of interaction between the computations associated\ with the incident vertices. )Tj
+T*
+(Efficient parallel execution of these irregular mesh applications requir\es the partitioning of the )Tj
+T*
+(associated graph into a number of parts equal to the number of processor\s with the following two )Tj
+T*
+(criteria. \(i\) Each partition has a roughly equal amount of total verte\x weight. \(ii\) The total weight of the )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(2 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj167 0 obj 7174endobj168 0 obj<</Length 167 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(edges cut by the partitions is minimized. This problem has been well def\ined and discussed in previous )Tj
+0 -1.2 TD
+(works [)Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+52.37801 735.05872 m
+59.37801 735.05872 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 52.37801 737.17554 Tm
+(2)Tj
+0 0 0 rg
+(,)Tj
+ET
+62.87801 735.05872 m
+69.87801 735.05872 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 62.87801 737.17554 Tm
+(4)Tj
+0 0 0 rg
+(,)Tj
+ET
+73.37801 735.05872 m
+80.37801 735.05872 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 73.37801 737.17554 Tm
+(6)Tj
+0 0 0 rg
+(]. )Tj
+-4.52699 -2.7 Td
+(A large class of scientific and engineering simulations and applications\, such as fluid dynamics )Tj
+T*
+(simulations, weather simulations, and mesh generation, utilizes dynamica\lly changing meshes and )Tj
+T*
+(graphs in order to model adaptive computations. In such applications, th\e structure of the graph can )Tj
+T*
+(change from one phase of the computation to the next. Eventually, as the\ graph evolves, it needs to be )Tj
+T*
+(repartitioned and data associated with the nodes has to be moved between\ processors before the )Tj
+T*
+(computation can start again in order to ensure good load balance. The ne\wly computed partition should )Tj
+T*
+(again satisfy the two criteria enumerated above. Additionally, two other\ requirements are necessary. \(iii\) )Tj
+T*
+(The amount of inter-processor data migration required to realize the new\ partition is minimized. \(iv\) The )Tj
+T*
+(new partition is computed quickly. While it is easy to find repartitioni\ng schemes that optimize a subset )Tj
+T*
+(of these criteria \(such as minimizing edge-cuts at the cost of very lar\ge interprocessor data migration\), )Tj
+T*
+(the real challenge is to minimize all four of these simultaneously. A re\partitioning scheme which )Tj
+T*
+(attempts to meet all four criteria is more general because any one of: \(\i\) application computation time, )Tj
+T*
+(\(ii\) application communication time, \(iii\) data migration time, or \(\iv\) repartitioning execution time can )Tj
+T*
+(dominate the overall run time of an application in the general case. )Tj
+/T1_1 1 Tf
+19.38461 0 0 19.38461 10 440.21487 Tm
+(2 Background)Tj
+/T1_0 1 Tf
+14 0 0 14 10 402.914 Tm
+(Two strategies for computing a repartitioning of a graph are to either p\artition the graph again from )Tj
+T*
+(scratch and then attempt to intelligently remap the newly computed parti\tion to the original partition, or )Tj
+T*
+(to use a diffusive process to migrate vertices from overweighted to unde\rweighted domains. Recently, )Tj
+T*
+(repartitioning schemes were presented based on both of these strategies \[)Tj
+ET
+418.23999 350.39722 m
+425.23999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 418.23999 352.51401 Tm
+(1)Tj
+0 0 0 rg
+(,)Tj
+ET
+428.73999 350.39722 m
+435.73999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 428.73999 352.51401 Tm
+(9)Tj
+0 0 0 rg
+(,)Tj
+ET
+439.23999 350.39722 m
+453.23999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 439.23999 352.51401 Tm
+(11)Tj
+0 0 0 rg
+(,)Tj
+ET
+456.73999 350.39722 m
+470.73999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 456.73999 352.51401 Tm
+(10)Tj
+0 0 0 rg
+(,)Tj
+ET
+474.23999 350.39722 m
+488.23999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 474.23999 352.51401 Tm
+(12)Tj
+0 0 0 rg
+(,)Tj
+ET
+491.73999 350.39722 m
+505.73999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 491.73999 352.51401 Tm
+(13)Tj
+0 0 0 rg
+(,)Tj
+ET
+509.23999 350.39722 m
+523.23999 350.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 509.23999 352.51401 Tm
+(14)Tj
+0 0 0 rg
+(]. These )Tj
+-35.66 -1.34286 Td
+(schemes, which we classify as either scratch-remap schemes [)Tj
+ET
+357.17203 331.5972 m
+364.17203 331.5972 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 357.17203 333.71402 Tm
+(1)Tj
+0 0 0 rg
+(,)Tj
+ET
+367.67203 331.5972 m
+374.67203 331.5972 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 367.67203 333.71402 Tm
+(9)Tj
+0 0 0 rg
+(,)Tj
+ET
+378.17203 331.5972 m
+392.17203 331.5972 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 378.17203 333.71402 Tm
+(12)Tj
+0 0 0 rg
+(] or diffusion-based schemes )Tj
+-26.298 -1.34286 Td
+([)Tj
+ET
+14.662 312.79721 m
+28.662 312.79721 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 14.662 314.914 Tm
+(11)Tj
+0 0 0 rg
+(,)Tj
+ET
+32.162 312.79721 m
+46.162 312.79721 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 32.162 314.914 Tm
+(10)Tj
+0 0 0 rg
+(,)Tj
+ET
+49.662 312.79721 m
+63.662 312.79721 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 49.662 314.914 Tm
+(13)Tj
+0 0 0 rg
+(,)Tj
+ET
+67.162 312.79721 m
+81.162 312.79721 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 67.162 314.914 Tm
+(14)Tj
+0 0 0 rg
+(], are all based on the multilevel graph partitioning paradigm. The mult\ilevel graph )Tj
+-4.08299 -1.34286 Td
+(partitioning paradigm is able to compute very high quality partitions qu\ickly by first constructing a )Tj
+T*
+(sequence of coarsened graphs, partitioning the coarsest of these, and th\en refining the computed )Tj
+T*
+(partition at each finer level graph, starting with the coarsest and work\ing up. The benefit of this )Tj
+T*
+(paradigm is that the initial partition can be computed on a very small g\raph and so is done quickly. )Tj
+T*
+(Then, the quality of this partition is greatly improved by simple local \heuristics. Since these are applied )Tj
+T*
+(at each subsequent finer graph, the result is that the partition refinem\ent algorithm sees multiple views )Tj
+T*
+(\(from global to very local\) of the graph. This magnifies the power of \simple heuristics and allows high-)Tj
+T*
+(quality partitions to be computed quickly. Recently developed scratch-re\map repartitioners have used )Tj
+T*
+(this paradigm by partitioning the imbalanced graph from scratch with a m\ultilevel graph partitioner, )Tj
+T*
+(while recently developed diffusion-based repartitioners are modification\s of the multilevel graph )Tj
+T*
+(partitioning algorithm. )Tj
+0 -2.55714 TD
+(Results in [)Tj
+ET
+73.78401 90.19722 m
+80.78401 90.19722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 73.78401 92.31401 Tm
+(1)Tj
+0 0 0 rg
+(,)Tj
+ET
+84.28401 90.19722 m
+98.28401 90.19722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 84.28401 92.31401 Tm
+(10)Tj
+0 0 0 rg
+(,)Tj
+ET
+101.78401 90.19722 m
+115.78401 90.19722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 101.78401 92.31401 Tm
+(12)Tj
+0 0 0 rg
+(] have shown that current diffusion-based schemes are appropriate when d\iffusion is )Tj
+-6.556 -1.34286 Td
+(not required to propagate far in order to balance the graph. This situat\ion occurs on slightly imbalanced )Tj
+0 -1.2 TD
+(graphs and those in which imbalance occurs globally throughout the graph\. Here diffusion can )Tj
+T*
+(significantly reduce the amount of vertex migration required to balance \the graph, while maintaining a )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(3 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj169 0 obj 2989endobj170 0 obj<</Length 169 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97556 Tm
+(a widely used text book ``Introduction to Parallel Computing''. )Tj
+/T1_1 1 Tf
+0 -2.55714 TD
+(Vipin Kumar)Tj
+/T1_0 1 Tf
+( Vipin Kumar received his Ph.D. in Computer Science at the University of\ Maryland, and )Tj
+0 -1.2 TD
+(he is currently a professor at the department of Computer Science & Engi\neering at the University of )Tj
+T*
+(Minnesota. His current research interests include parallel computing, pa\rallel algorithms for scientific )Tj
+T*
+(computing problems, and data mining. His research has resulted in the de\velopment of highly efficient )Tj
+T*
+(parallel algorithms and software for sparse matrix factorization \(PSPAS\ES\), graph partitioning \(METIS )Tj
+T*
+(and ParMETIS\) and dense hierarchical solvers. Kumar's research in perfo\rmance analysis resulted in the )Tj
+T*
+(development of the isoefficiency metric for analyzing the scalability of\ parallel algorithms. He is author )Tj
+T*
+(of over 100 research articles, and a coauthor of a widely used text book\ ``Introduction to Parallel )Tj
+T*
+(Computing''. Kumar has given over 50 invited talks at various conference\s, workshops, national labs, )Tj
+T*
+(and has served as chair/co-chair for many conferences/workshops in the a\rea of parallel computing. )Tj
+T*
+(Kumar serves on the editorial boards of IEEE Parallel and Distributed Te\chnology, Parallel Computing, )Tj
+T*
+(the Journal of Parallel and Distributed Computing, and served on the edi\torial board of IEEE )Tj
+T*
+(Transactions of Data and Knowledge Engineering during 93-97. He is a sen\ior member of IEEE, a )Tj
+T*
+(member of SIAM, and ACM. )Tj
+ET
+0.5 0.5 0.5 rg
+39.60001 467 m
+39.60001 469 l
+572.39999 469 l
+571.39999 468 l
+40.60001 468 l
+40.60001 468 l
+h
+f
+0.875 0.875 0.875 rg
+572.39999 469 m
+572.39999 467 l
+39.60001 467 l
+40.60001 468 l
+571.39999 468 l
+571.39999 468 l
+h
+f
+0 0 0 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 10 447.97556 Tm
+(Permission to make digital or hard copies of part or all of this work or\ personal or classroom use is )Tj
+T*
+(granted without fee provided that copies are not made or distributed for\ profit or commercial advantage )Tj
+T*
+(and that copies bear this notice and the full citation on the first page\. To copy otherwise, to republish, to )Tj
+T*
+(post on servers, or to redistribute to lists, requires prior specific pe\rmission and/or a fee.)Tj
+T*
+(SC '98, Orlando, FL, USA)Tj
+T*
+(\(c\) IEEE 1998 0-89791-984-X/98/0011 $3.50 )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(13 of 13\)8/30/2003 )Tj
+(5:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj171 0 obj 4464endobj172 0 obj<</Length 171 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.11401 Tm
+(high quality edge-cut. )Tj
+0 -2.55714 TD
+(Graphs that are highly imbalanced in localized areas require diffusion t\o propagate over longer )Tj
+0 -1.2 TD
+(distances. For these class of problems, current diffusion-based repartit\ioners produce excessive amounts )Tj
+T*
+(of vertex migration. This is because diffusion repartitioning ties the d\omain labels of the balanced )Tj
+T*
+(partition to those of the original partition. While this strategy is hig\hly effective when diffusion is not )Tj
+T*
+(required to propagate far, it is counter-productive for the opposite cas\e. For extremely imbalanced )Tj
+T*
+(graphs, vertex migration results can exceed those obtained by scratch-re\map algorithms, which do not )Tj
+T*
+(tie the domain labels of the balanced partition to those of the original\ partition. Also, as the amount of )Tj
+T*
+(vertex migration increases so too does the resulting edge-cut \(as well \as the number of iterations of )Tj
+T*
+(diffusion required to balance the graph, and so the run time of the algo\rithm\), since vertex migration )Tj
+T*
+(tends to perturb the quality of the original partition. )Tj
+0 -2.55714 TD
+(Current scratch-remap schemes, on the other hand, are less effective on \graphs in which diffusion is not )Tj
+0 -1.2 TD
+(required to propagate far. This is because such schemes result in excess\ive amounts of vertex migration )Tj
+T*
+(in comparison with diffusion schemes for these class of problems. At the\ same time, the quality of the )Tj
+T*
+(edge-cut produced \(and the run time required\) is similar to diffusion-\based schemes assuming that the )Tj
+T*
+(original partition is of high quality. This is because diffusion-based s\chemes will only minimally perturb )Tj
+T*
+(the edge-cut here. )Tj
+0 -2.55714 TD
+(Scratch-remap schemes are appropriate for graphs in which diffusion is r\equired to propagate over )Tj
+0 -1.2 TD
+(longer distances. This is because scratch-remap schemes can consistently\ produce very high quality )Tj
+T*
+(partitions quickly, regardless of the weight characteristics of the grap\h. Furthermore, since current )Tj
+T*
+(diffusion-based schemes obtain excessively high vertex migration require\ments for these class of )Tj
+T*
+(problems, scratch-remap schemes can match or improve upon them here. )Tj
+0 -2.55714 TD
+(Improving diffusion-based schemes to the point in which they obtain lowe\r vertex migration )Tj
+0 -1.2 TD
+(requirements than scratch-remap schemes for all problems would result in\ a clear tradeoff between the )Tj
+T*
+(two schemes. That is, scratch-remap schemes would produce the highest qu\ality repartitions for all )Tj
+T*
+(problems, while diffusion schemes would produce the lowest amount of ver\tex migration required for all )Tj
+T*
+(problems. Thus, the choice of repartitioners would be clear depending on\ whether the inter-processor )Tj
+T*
+(communications or the cost to redistribute data amoung processors domina\nted the run time. )Tj
+/T1_1 1 Tf
+19.38461 0 0 19.38461 10 182.75334 Tm
+(3 Our Contributions)Tj
+/T1_0 1 Tf
+14 0 0 14 10 145.45247 Tm
+(In this paper, we present two new schemes for adaptive repartitioning: )Tj
+/T1_2 1 Tf
+(Locally-Matched Multilevel )Tj
+T*
+(Scratch-Remap)Tj
+/T1_0 1 Tf
+( \(or )Tj
+/T1_2 1 Tf
+(LMSR)Tj
+/T1_0 1 Tf
+(\) and )Tj
+/T1_2 1 Tf
+(Wavefront Diffusion)Tj
+/T1_0 1 Tf
+(. The LMSR scheme performs purely local )Tj
+T*
+(coarsening and partition remapping in a multilevel context. In Wavefront\ Diffusion, the flow of vertices )Tj
+T*
+(move in a wavefront from overbalanced to underbalanced domains. We prese\nt experimental )Tj
+T*
+(evaluations of our LMSR and Wavefront Diffusion algorithms on synthetica\lly generated adaptive )Tj
+T*
+(meshes as well as on some application meshes. We show that LMSR decrease\s the amount of vertex )Tj
+T*
+(migration required to balance the graph, is more scalable in terms of ex\ecution time, and produces )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(4 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj173 0 obj 5110endobj174 0 obj<</Length 173 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(repartitionings of similar quality compared to current state-of-the-art \scratch-remap schemes. We show )Tj
+0 -1.2 TD
+(that Wavefront Diffusion obtains significantly lower vertex migration re\quirements, while maintaining )Tj
+T*
+(similar edge-cut results compared to current state-of-the-art multilevel\ diffusion algorithms, especially )Tj
+T*
+(for highly imbalanced graphs. Furthermore, we compare Wavefront Diffusio\n with LMSR and show that )Tj
+T*
+(in general the former results in lower vertex migration requirements and\ the later results in higher )Tj
+T*
+(quality edge-cut results. These results hold true regardless of the dist\ance diffusion is required to )Tj
+T*
+(propagate in order to balance the graph. Finally, we discuss the run tim\es of our new schemes which are )Tj
+T*
+(both capable of repartitioning an eight million node graph in under thre\e seconds on a 128-processor )Tj
+T*
+(Cray T3E. )Tj
+/T1_1 1 Tf
+19.38461 0 0 19.38461 10 578.81488 Tm
+(4 LMSR)Tj
+/T1_0 1 Tf
+14 0 0 14 10 541.51398 Tm
+(Scratch-remap schemes [)Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+150.72801 539.39722 m
+157.72801 539.39722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 150.72801 541.51398 Tm
+(9)Tj
+0 0 0 rg
+(] partition the imbalanced graph from scratch utilizing a state-of-the-a\rt graph )Tj
+-10.052 -1.34286 Td
+(partitioner and then remap the newly computed partition to the imbalance\d partition such that the )Tj
+T*
+(amount of data migration required to realize the new partition is minimi\zed. Note that fast and parallel )Tj
+T*
+(multilevel graph partitioning algorithms exist which are able to consist\ently compute high-quality )Tj
+T*
+(partitions for finite-element graphs [)Tj
+ET
+213.742 470.1972 m
+220.742 470.1972 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 213.742 472.314 Tm
+(6)Tj
+0 0 0 rg
+(,)Tj
+ET
+224.242 470.1972 m
+238.242 470.1972 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 224.242 472.314 Tm
+(15)Tj
+0 0 0 rg
+(]. Hence, the edge-cut and run time results obtained by scratch-)Tj
+-15.30299 -1.34286 Td
+(remap schemes are extremely difficult to improve upon. Furthermore, thes\e schemes produce domains )Tj
+T*
+(which are balanced to within a small constant. However, even an intellig\ent remapping of the newly )Tj
+T*
+(computed partition results in vertex migration requirements which are si\gnificantly higher than those of )Tj
+T*
+(diffusion-based repartitioners for all but the most extremely imbalanced\ problems [)Tj
+ET
+476.59201 400.99722 m
+490.59201 400.99722 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 476.59201 403.11401 Tm
+(12)Tj
+0 0 0 rg
+(]. )Tj
+-33.328 -2.7 Td
+(The vertex migration required by scratch-remap schemes can be reduced if\ we can increase the degree of )Tj
+T*
+(overlap between many of the domains of the initial partition with domain\s of the newly computed )Tj
+T*
+(partition. One way to maximize this overlap is to partition the graph fr\om scratch using a purely local )Tj
+T*
+(coarsening during the coarsening phase of multilevel graph partitioning.\ This ensures that each coarse )Tj
+T*
+(vertex contains vertices from exactly one domain of the old partition. H\ence, for any partitioning of this )Tj
+T*
+(coarse graph, significant portions of the domains on the newly computed \partition will overlap with )Tj
+T*
+(domains from the old partition. Also, local coarsening is more scalable \than global coarsening because it )Tj
+T*
+(requires significantly less inter-processor communication. )Tj
+0 -2.55714 TD
+(Another technique is to perform partition remapping immediately after co\mputing the initial partition )Tj
+0 -1.2 TD
+(and before multilevel refinement begins. This makes it possible to minim\ize the edge-cut and maximize )Tj
+T*
+(the overlap between the old and new partitions at each level during the \multilevel refinement phase )Tj
+T*
+(using local refinement heuristics. )Tj
+0 -2.55714 TD
+(We refer to our new scheme that implements both of these enhancements as\ )Tj
+/T1_2 1 Tf
+(LMSR)Tj
+/T1_0 1 Tf
+(. )Tj
+/T1_1 1 Tf
+19.38461 0 0 19.38461 10 84.95335 Tm
+(5 Wavefront Diffusion)Tj
+/T1_0 1 Tf
+14 0 0 14 10 47.65248 Tm
+(Results in [)Tj
+ET
+73.78401 45.53568 m
+87.78401 45.53568 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 73.78401 47.65248 Tm
+(10)Tj
+0 0 0 rg
+(,)Tj
+ET
+91.28401 45.53568 m
+105.28401 45.53568 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 91.28401 47.65248 Tm
+(12)Tj
+0 0 0 rg
+(,)Tj
+ET
+108.78401 45.53568 m
+122.78401 45.53568 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 108.78401 47.65248 Tm
+(13)Tj
+0 0 0 rg
+(] show that multilevel diffusion repartitioning schemes perform well whe\n the )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(5 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj175 0 obj 5738endobj176 0 obj<</Length 175 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(degree of graph imbalance in the original graph is low to moderate. Howe\ver, they tend to break down )Tj
+0 -1.2 TD
+(for graphs that are highly imbalanced in localized areas [)Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+328.41602 735.05872 m
+342.41602 735.05872 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 328.41602 737.17554 Tm
+(10)Tj
+0 0 0 rg
+(,)Tj
+ET
+345.91602 735.05872 m
+352.91602 735.05872 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 345.91602 737.17554 Tm
+(1)Tj
+0 0 0 rg
+(]. The reason is that for such graphs, )Tj
+-23.994 -1.34286 Td
+(diffusion is required to propagate over long distances. As a result, man\y domains are simultaneously )Tj
+T*
+(both recipients and donors of vertices during diffusion [)Tj
+ET
+322.62 699.45874 m
+329.62 699.45874 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 322.62 701.57556 Tm
+(3)Tj
+0 0 0 rg
+(]. For these domains, standard diffusion )Tj
+-22.33 -1.34286 Td
+(algorithms interleave the outgoing flow of vertices with the incoming fl\ow of vertices from neighboring )Tj
+T*
+(domains. Such a domain is often forced to move out vertices before it ha\s received all of the vertices it is )Tj
+T*
+(supposed to receive from its neighbors. Hence, it will have only a limit\ed choice for selecting good )Tj
+T*
+(outgoing vertices with respect to minimizing the edge-cut and the requir\ed vertex migration. )Tj
+0 -2.55714 TD
+(To address this problem, we have developed a new diffusion algorithm. Th\e spirit of the algorithm is to )Tj
+0 -1.2 TD
+(begin the diffusion of vertices from those domains which have no require\d flow of vertices into them. )Tj
+T*
+(Then after these domains reach balance, the diffusion solution is recomp\uted and the next iteration is )Tj
+T*
+(begun on the set of domains whose required flow of vertices into them wa\s satisfied during the previous )Tj
+T*
+(iteration, and so on, until all of the domains are balanced. Furthermore\, vertices which were migrated in )Tj
+T*
+(previous iterations and so are no longer in the same domains as they are\ assigned on the original )Tj
+T*
+(partition \(referred to as )Tj
+/T1_1 1 Tf
+(dirty)Tj
+/T1_0 1 Tf
+( vertices\) are eligible to migrate at any time, since doing so in prefe\rence to )Tj
+T*
+(unmigrated \(or )Tj
+/T1_1 1 Tf
+(clean)Tj
+/T1_0 1 Tf
+(\) vertices will help to minimize the data migration cost. This is becau\se no matter )Tj
+T*
+(how many times a vertex is migrated during the computation of the repart\itioning, the actual data )Tj
+T*
+(migration cost is paid only once at the end. Our experimental results \(\not included in this paper\) have )Tj
+T*
+(shown that as diffusion is required to propagate over greater distances,\ the percentage of previously )Tj
+T*
+(migrated vertices which are again selected to migrate increases as well.\ This reuse of dirty vertices )Tj
+T*
+(results in very low vertex migration requirements, even when diffusion i\s required to propagate over )Tj
+T*
+(extreme distances. We refer to this scheme as )Tj
+/T1_1 1 Tf
+(Wavefront Diffusion)Tj
+/T1_0 1 Tf
+(, since the flow of vertices is in a )Tj
+T*
+(wavefront from overbalanced domains to underbalanced domains. )Tj
+0 -2.55714 TD
+(Our actual serial implementation of Wavefront Diffusion simplifies the a\lgorithm described above. )Tj
+0 -1.2 TD
+(Here, we utilize an array, )Tj
+/T1_1 1 Tf
+(flow)Tj
+/T1_0 1 Tf
+(, with one element per domain. )Tj
+/T1_1 1 Tf
+(flow)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 380.55203 305.19156 Tm
+(i)Tj
+14 0 0 14 383.66559 308.77554 Tm
+( contains the sum of the vertex weight )Tj
+-26.6904 -1.40778 Td
+(which domain )Tj
+/T1_1 1 Tf
+(i)Tj
+/T1_0 1 Tf
+( is required to send out to other domains minus the sum of the vertex we\ight which )Tj
+T*
+(domain )Tj
+/T1_1 1 Tf
+(i)Tj
+/T1_0 1 Tf
+( is required to receive in from other domains. In each iteration, only t\he domain, )Tj
+/T1_1 1 Tf
+(i)Tj
+/T1_0 1 Tf
+(, with the )Tj
+T*
+(maximum value for )Tj
+/T1_1 1 Tf
+(flow)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 148.054 251.88266 Tm
+(i)Tj
+14 0 0 14 151.1676 255.46666 Tm
+( is allowed to migrate clean vertices. All domains are allowed to migrat\e dirty )Tj
+-10.0834 -1.40778 Td
+(vertices. After each iteration, the diffusion solution is recomputed. Th\us, at any iteration, the majority of )Tj
+T*
+(domains will only be able to migrate dirty vertices \(if they possess th\em\). )Tj
+/T1_2 1 Tf
+19.38461 0 0 19.38461 10 178.19711 Tm
+(6 Parallel LMSR and Parallel Wavefront Diffusion Algorithms)Tj
+/T1_0 1 Tf
+14 0 0 14 10 140.89624 Tm
+(Many efficient parallel formulations are available for partitioning grap\hs from scratch. The computation )Tj
+T*
+(of the remapping phase can be performed serially on a single processor, \as its run time is usually much )Tj
+T*
+(smaller than the time to move the nodes to their destinations. Therefore\, parallelizing scratch-remap )Tj
+T*
+(schemes in this way is straightforward. )Tj
+0 -2.55714 TD
+(Parallel versions of multilevel diffusion algorithms have been described\ in [)Tj
+ET
+435.38998 52.57944 m
+449.38998 52.57944 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 435.38998 54.69624 Tm
+(11)Tj
+0 0 0 rg
+(,)Tj
+ET
+452.88998 52.57944 m
+466.88998 52.57944 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 452.88998 54.69624 Tm
+(14)Tj
+0 0 0 rg
+(]. Here, vertices are )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(6 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj177 0 obj 6098endobj178 0 obj<</Length 177 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(initially assumed to be distributed across )Tj
+/T1_1 1 Tf
+(p)Tj
+/T1_0 1 Tf
+( processors. This division of vertices corresponds to the )Tj
+0 -1.2 TD
+(original partition of a static partitioner and is assumed to be of good \quality \(i.e., low edge-cut\). )Tj
+T*
+(However, the sums of the vertex weights of the vertices resident on each\ processor are assumed to be )Tj
+T*
+(variant. Thus, the original partition is not balanced and so there is a \need for repartitioning. )Tj
+0 -2.55714 TD
+(Parallel multilevel repartitioning algorithms begin with a coarsening ph\ase in which a sequence )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 558.646 664.19153 Tm
+(i)Tj
+14 0 0 14 561.75958 667.77551 Tm
+( = \()Tj
+/T1_1 1 Tf
+(V)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 589.87158 664.19153 Tm
+(i)Tj
+14 0 0 14 592.98517 667.77551 Tm
+(, )Tj
+/T1_1 1 Tf
+-41.6418 -1.40778 Td
+(E)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 18.554 644.48267 Tm
+(i)Tj
+14 0 0 14 21.6676 648.06665 Tm
+(\) for )Tj
+/T1_1 1 Tf
+(i)Tj
+/T1_0 1 Tf
+( = 0, 1, ..., )Tj
+/T1_1 1 Tf
+(m)Tj
+/T1_0 1 Tf
+(, of successively coarser graphs is constructed. Graph )Tj
+/T1_1 1 Tf
+(G)Tj
+11.2 0 0 11.2 437.41159 640.89868 Tm
+(i)Tj
+/T1_0 1 Tf
+0.278 0.32001 Td
+(+1)Tj
+14 0 0 14 452.44202 648.06665 Tm
+( is constructed from )Tj
+/T1_1 1 Tf
+(G)Tj
+11.2 0 0 11.2 577.64404 640.89868 Tm
+(i)Tj
+/T1_0 1 Tf
+14 0 0 14 580.75757 648.06665 Tm
+( by )Tj
+-40.7684 -1.66377 Td
+(first computing a matching of vertices of )Tj
+/T1_1 1 Tf
+(G)Tj
+11.2 0 0 11.2 252.242 617.60577 Tm
+(i)Tj
+/T1_0 1 Tf
+14 0 0 14 255.35561 624.77374 Tm
+( and then collapsing together the matched vertices. The )Tj
+-17.52541 -1.66377 Td
+(matchings computed are restricted to vertices residing on the same proce\ssors. By adhering to this )Tj
+0 -1.2 TD
+(restriction, coarsening is almost embarrassingly parallel. )Tj
+0 -2.55714 TD
+(After graph coarsening, the coarsest graph is assembled and broadcast to\ all of the processors. Next, )Tj
+0 -1.2 TD
+(depending on its processor number, each processor simultaneously perform\s some version of the serial )Tj
+T*
+(Wavefront Diffusion algorithm as described in Section )Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+320.67401 513.16406 m
+327.67401 513.16406 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 320.67401 515.28088 Tm
+(5)Tj
+0 0 0 rg
+(. Processor 0 performs \(Sorted\) Wavefront )Tj
+-22.19099 -1.34286 Td
+(Diffusion with the following modifications. \(i\) Vertices are sorted wi\th respect to their amount of edge )Tj
+T*
+(weight which is cut by the current partition prior to each diffusion ite\ration. Thus, vertices which are )Tj
+T*
+(highly connected to vertices in different domains are selected first for\ migration. This modification tends )Tj
+T*
+(to decrease the perturbation to edge-cut. \(ii\) The three domains which\ have the highest values for )Tj
+/T1_1 1 Tf
+(flow)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 581.94202 442.49689 Tm
+(i)Tj
+14 0 0 14 585.0556 446.08087 Tm
+( )Tj
+-41.07539 -1.40778 Td
+(at any given time are allowed to migrate clean vertices. This modificati\on tends to decrease the number )Tj
+T*
+(of iterations required to balance the graph significantly. The remainder\ of the processors perform the )Tj
+T*
+(serial Wavefront Diffusion algorithm as described in Section )Tj
+ET
+354.49802 390.65518 m
+361.49802 390.65518 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 354.49802 392.77203 Tm
+(5)Tj
+0 0 0 rg
+( with modification \(ii\) and a unique )Tj
+-24.60699 -1.34286 Td
+(random number seed. Thus, each processor is likely to explore a differen\t solution path. After at least )Tj
+T*
+(one processor has balanced the graph to within 10%, then all of the comp\uted partitions are compared )Tj
+T*
+(and the partition which has the lowest value for \(edge-cut balance\) is\ selected. Note that multiple runs of )Tj
+T*
+(the sorted version of Wavefront Diffusion will result in identical solut\ions. Therefore, it is not beneficial )Tj
+T*
+(to have more than one processor performing this algorithm. )Tj
+0 -2.55714 TD
+(The parallel formulation of the multilevel refinement phase is described\ in [)Tj
+ET
+434.98398 268.85519 m
+448.98398 268.85519 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 434.98398 270.97202 Tm
+(11)Tj
+0 0 0 rg
+(] and modeled after )Tj
+-30.356 -1.34286 Td
+(coarse-grained parallel multilevel refinement algorithm [)Tj
+ET
+328.42999 250.05521 m
+335.42999 250.05521 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 328.42999 252.17201 Tm
+(6)Tj
+0 0 0 rg
+(]. Each iteration of the parallel multilevel )Tj
+-22.745 -1.34286 Td
+(refinement algorithm consists of two sub-phases. During the first sub-ph\ase, vertices are migrated only )Tj
+0 -1.2 TD
+(from lower- to higher-numbered domains. During the second sub-phase, ver\tices are migrated from )Tj
+T*
+(higher- to lower-numbered domains. In this way, unexpected edge-cut incr\eases caused by the )Tj
+T*
+(simultaneous migration of neighboring vertices is avoided. Furthermore, \these schemes avoid any bias )Tj
+T*
+(towards the lower- or higher-numbered domains by using a random partitio\n ordering at each step. In )Tj
+T*
+(each sub-phase, vertices are visited and selected for migration accordin\g to the )Tj
+/T1_1 1 Tf
+(refinement phase vertex )Tj
+T*
+(migration criteria)Tj
+/T1_0 1 Tf
+( described in [)Tj
+ET
+190.43201 130.4552 m
+204.43201 130.4552 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 190.43201 132.57201 Tm
+(11)Tj
+0 0 0 rg
+(]. )Tj
+/T1_2 1 Tf
+19.38461 0 0 19.38461 10 89.81133 Tm
+(7 Experimental Results)Tj
+/T1_0 1 Tf
+14 0 0 14 10 52.51047 Tm
+(In this section, we present experimental results for the parallel implem\entations of our LMSR and )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(7 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj179 0 obj 5818endobj180 0 obj<</Length 179 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(Wavefront Diffusion algorithms. We evaluated the performance of the para\llel repartitioning algorithms )Tj
+0 -1.2 TD
+(on synthetically generated adaptive meshes. These meshes were derived fr\om two large size 3D finite )Tj
+T*
+(element meshes of four and eight million nodes. We first computed a )Tj
+/T1_1 1 Tf
+(p)Tj
+/T1_0 1 Tf
+(-way partitioning of the graph, )Tj
+T*
+(and then redistributed the graph according to this partitioning. This be\came the initial partitioning that )Tj
+T*
+(we used to adjust the weight of the vertices to emulate the effect of ad\aptation. Each processor generated )Tj
+T*
+(a random number, )Tj
+/T1_1 1 Tf
+(r)Tj
+/T1_0 1 Tf
+(, between zero and )Tj
+/T1_1 1 Tf
+(p)Tj
+/T1_0 1 Tf
+(-1. Then for the processors in which )Tj
+/T1_1 1 Tf
+(r)Tj
+/T1_0 1 Tf
+( was less than 0.05)Tj
+/T1_1 1 Tf
+(p)Tj
+/T1_0 1 Tf
+(, the )Tj
+T*
+(weight of all of the vertices in these processors was set to )Tj
+/T1_1 1 Tf
+(alpha)Tj
+/T1_0 1 Tf
+(. The weight of the remaining vertices )Tj
+T*
+(was set to one. The weight of edges between adapted vertices was also ch\anged to reflect the higher )Tj
+T*
+(degree of connectivity in the adapted graph. For every edge with inciden\t vertices )Tj
+/T1_1 1 Tf
+(v)Tj
+11.2 0 0 11.2 477.33401 612.40753 Tm
+(i)Tj
+/T1_0 1 Tf
+14 0 0 14 480.4476 619.57556 Tm
+( and )Tj
+/T1_1 1 Tf
+(v)Tj
+11.2 0 0 11.2 513.87958 612.40753 Tm
+(j)Tj
+/T1_0 1 Tf
+14 0 0 14 516.99316 619.57556 Tm
+(, its weight )Tj
+-36.21381 -1.66377 Td
+(was set to )Tj
+/T1_1 1 Tf
+(\(pow \(\(min )Tj
+/T1_0 1 Tf
+(\()Tj
+/T1_1 1 Tf
+(w)Tj
+11.2 0 0 11.2 148.03999 589.11469 Tm
+(i)Tj
+/T1_0 1 Tf
+14 0 0 14 151.15358 596.28265 Tm
+(, )Tj
+/T1_1 1 Tf
+(w)Tj
+11.2 0 0 11.2 167.49159 589.11469 Tm
+(j)Tj
+/T1_0 1 Tf
+14 0 0 14 170.60518 596.28265 Tm
+(\))Tj
+/T1_1 1 Tf
+(\), )Tj
+/T1_0 1 Tf
+(2/3)Tj
+/T1_1 1 Tf
+(\))Tj
+/T1_0 1 Tf
+( \(where )Tj
+/T1_1 1 Tf
+(w)Tj
+11.2 0 0 11.2 264.68518 589.11469 Tm
+(i)Tj
+/T1_0 1 Tf
+14 0 0 14 267.7988 596.28265 Tm
+( is the weight of vertex )Tj
+/T1_1 1 Tf
+(v)Tj
+11.2 0 0 11.2 406.2168 589.11469 Tm
+(i)Tj
+/T1_0 1 Tf
+14 0 0 14 409.33038 596.28265 Tm
+(\). Since only 5% of the domains )Tj
+-28.52361 -1.66377 Td
+(changed the weights of their vertices, the adapted graph is imbalanced i\n localized areas. Also, the value )Tj
+T*
+(of )Tj
+/T1_1 1 Tf
+(alpha)Tj
+/T1_0 1 Tf
+( determines the level of imbalance in these localized areas. )Tj
+0 -2.55714 TD
+(Each figure contains six sets of four results. Each set contains results\ in which )Tj
+/T1_1 1 Tf
+(alpha)Tj
+/T1_0 1 Tf
+( was set to 5, 10, 20, )Tj
+0 -1.2 TD
+(and 30 for a given graph and number of processors. The level of )Tj
+/T1_1 1 Tf
+(alpha)Tj
+/T1_0 1 Tf
+( increases from left to right. The )Tj
+T*
+(first set is for the four million node finite element graph on 32 proces\sors. The second set is for the eight )Tj
+T*
+(million node finite element graph on 32 processors. Together these are l\abeled )Tj
+/T1_1 1 Tf
+(32 Processors)Tj
+/T1_0 1 Tf
+(. For all of )Tj
+T*
+(the experiments, a partition in which no domain contains more than 105% \of the average domain weight )Tj
+T*
+(is considered to be well-balanced. All of the repartitioning schemes wer\e able to compute well-balanced )Tj
+T*
+(partitions for every experiment. )Tj
+0 -2.55714 TD
+(Figure 1 shows the edge-cut, vertex migration cost, and run time results\ of the state-of-the-art scratch-)Tj
+0 -1.2 TD
+(remap scheme described in [)Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+170.17401 364.87296 m
+177.17401 364.87296 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 170.17401 366.98978 Tm
+(9)Tj
+0 0 0 rg
+(] and implemented in ParMeTiS [)Tj
+ET
+365.76801 364.87296 m
+379.76801 364.87296 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 365.76801 366.98978 Tm
+(12)Tj
+0 0 0 rg
+(] as PARPAMETIS. In this figure, the )Tj
+-25.412 -1.34286 Td
+(results from our LMSR algorithm are normalized against those obtained fr\om PARPAMETIS. Hence, a )Tj
+T*
+(bar below the 1.0 index line indicates that our LMSR algorithm obtained \results lower than )Tj
+T*
+(PARPAMETIS. Here, we can see that the edge-cut results obtained from the\ two schemes are generally )Tj
+T*
+(similar. However, the LMSR algorithm resulted in run time results which \decrease in relation to )Tj
+T*
+(PARPAMETIS as the number of processors increases. This indicates that ou\r LMSR algorithm scales )Tj
+T*
+(better than PARPAMETIS. The reason is that PARPAMETIS does not utilize t\rue local matching. It )Tj
+T*
+(utilizes locally-preferred matching. That is, only local vertices are el\igible for matching during the first )Tj
+T*
+(iteration through the vertices. In the second iteration, all unmatched v\ertices are eligible. Since global )Tj
+T*
+(matching is possible, additional interprocessor communication is require\d here which is not needed for )Tj
+T*
+(purely local matching. This makes our LMSR algorithm more scalable than \PARPAMETIS. Finally, the )Tj
+T*
+(LMSR algorithm obtains vertex migration costs which are generally lower \than those obtained by )Tj
+T*
+(PARPAMETIS by up to 40%. )Tj
+ET
+1 0 0 RG
+1 w 
+298 123.61423 16 16 re
+S
+BT
+/T1_0 1 Tf
+14 0 0 14 314 123.61423 Tm
+( )Tj
+/T1_2 1 Tf
+-2.36293 -2.45714 Td
+(Figure 1)Tj
+/T1_0 1 Tf
+( )Tj
+-19.35136 -2.55714 Td
+(Figures 2 and 3 compare the vertex migration and edge-cut results obtain\ed by the multilevel diffusion )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(8 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj181 0 obj 4385endobj182 0 obj<</Length 181 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(algorithm, PARUAMETIS, implemented in ParMeTiS [)Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+324.608 751.8587 m
+331.608 751.8587 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 324.608 753.97552 Tm
+(8)Tj
+0 0 0 rg
+(], with our LMSR algorithm and our )Tj
+-22.472 -1.34286 Td
+(Wavefront Diffusion algorithm. In these figures, the edge-cut \(and vert\ex migration\) results from )Tj
+0 -1.2 TD
+(PARUAMETIS and Wavefront Diffusion are normalized against those obtained\ from our LMSR )Tj
+T*
+(algorithm. Hence, a bar above the 1.0 index line indicates that the LMSR\ algorithm obtained edge-cut )Tj
+T*
+(\(or vertex migration\) results lower than the indicated algorithm. )Tj
+0 -2.55714 TD
+(In Figure 2, the total amount of vertex migration required is compared. \Here PARUAMETIS obtained )Tj
+0 -1.2 TD
+(generally better results than our LMSR scheme. However, these results te\nded to converge for higher )Tj
+T*
+(levels of imbalance. Wavefront Diffusion, on the other hand, obtained co\nsistently better results )Tj
+T*
+(compared to the LMSR algorithm, and increasingly better results as the l\evel of imbalance increased )Tj
+T*
+(compared to PARUAMETIS. Such low migration requirements for our Wavefron\t Diffusion algorithm )Tj
+T*
+(could reduce the run times of a class of adaptive applications by a fact\or of two to three compared with )Tj
+T*
+(the same application repartitioned by the other schemes. )Tj
+ET
+1 0 0 RG
+1 w 
+298 508.39996 16 16 re
+S
+BT
+/T1_0 1 Tf
+14 0 0 14 314 508.39996 Tm
+( )Tj
+/T1_1 1 Tf
+-2.36293 -2.45714 Td
+(Figure 2)Tj
+/T1_0 1 Tf
+( )Tj
+-19.35136 -2.55714 Td
+(Figure 3 shows that our LMSR algorithm obtained edge-cut results which a\re better than both of the )Tj
+T*
+(other schemes across the board. In most cases, the difference is within \20%. Both of the diffusion-based )Tj
+T*
+(schemes obtained results which are generally within 10% of each other. T\his shows that our LMSR )Tj
+0 -1.20001 TD
+(algorithm is able to compute very high-quality repartitions regardless o\f the level of imbalance of the )Tj
+0 -1.2 TD
+(graph, and that our Wavefront Diffusion algorithm obtains repartitioning\s of comparable quality with )Tj
+T*
+(state-of-the-art multilevel diffusion repartitioning schemes. )Tj
+ET
+298 314.42444 16 16 re
+S
+BT
+/T1_0 1 Tf
+14 0 0 14 314 314.42444 Tm
+( )Tj
+/T1_1 1 Tf
+-2.36293 -2.45714 Td
+(Figure 3)Tj
+/T1_0 1 Tf
+( )Tj
+-19.35136 -2.55714 Td
+(Finally, it is important to note that the run times of all of the parall\el implementations compared are )Tj
+/T1_2 1 Tf
+T*
+(extremely)Tj
+/T1_0 1 Tf
+( fast. None of the run times for any of the schemes were over two second\s for the four million )Tj
+T*
+(node graph or over three seconds for the eight million node graph on 128\ processors. All of the schemes )Tj
+0 -1.20001 TD
+(obtained generally similar run times for a given experiment to within 30\%. )Tj
+/T1_3 1 Tf
+19.38461 0 0 19.38461 10 153.06378 Tm
+(8 Helicopter Blade Results)Tj
+/T1_0 1 Tf
+14 0 0 14 10 115.76291 Tm
+(Experimental results given in Section )Tj
+ET
+0 0 1 RG
+0.7056 w 
+223.48598 113.6461 m
+230.48598 113.6461 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 223.48598 115.76291 Tm
+(7)Tj
+0 0 0 rg
+( were for synthetically generated adaptive meshes. In this )Tj
+-15.24899 -1.34286 Td
+(section, we present results from our schemes on an application domain. T\hese experiments were )Tj
+0 -1.2 TD
+(performed with the serial versions of our algorithms. However, the paral\lel results for these graphs will )Tj
+T*
+(be included in the full-length version of this paper [)Tj
+ET
+298.90399 61.24611 m
+312.90399 61.24611 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 298.90399 63.3629 Tm
+(11)Tj
+0 0 0 rg
+(]. Figure 4 shows the repartitioning results from a )Tj
+-20.636 -1.34286 Td
+(series of application meshes with a high degree of adaptation at each st\age. These graphs are 3-)Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(9 of 13\)8/30/2003 5)Tj
+(:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj183 0 obj 5322endobj184 0 obj<</Length 183 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_0 1 Tf
+14 0 0 14 10 753.97552 Tm
+(dimensional mesh models of a rotating helicopter blade. As the blade spi\ns, the mesh must be adapted )Tj
+0 -1.2 TD
+(by refining it in the area where the rotor has entered and coarsening it\ in the area of the mesh where the )Tj
+T*
+(rotor has passed through. These meshes were provided by the authors of [\)Tj
+ET
+0 0 1 RG
+0.7056 w 10 M 0 j 0 J []0 d 
+422.52402 718.25873 m
+429.52402 718.25873 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 422.52402 720.37555 Tm
+(9)Tj
+0 0 0 rg
+(]. )Tj
+-29.466 -2.7 Td
+(Here, the first of a series of six graphs, )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 240.55202 678.99152 Tm
+(1)Tj
+14 0 0 14 246.15198 682.57556 Tm
+(, )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 263.25998 678.99152 Tm
+(1)Tj
+14 0 0 14 268.85999 682.57556 Tm
+(, ... )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 299.96802 678.99152 Tm
+(6)Tj
+14 0 0 14 305.56799 682.57556 Tm
+(, was originally partitioned into 16 domains with )Tj
+-21.112 -1.40778 Td
+(the multilevel graph partitioner implemented in )Tj
+/T1_1 1 Tf
+(M)Tj
+12 0 0 12 290.75601 662.86664 Tm
+(E)Tj
+14 0 0 14 298.08801 662.86664 Tm
+(T)Tj
+12 0 0 12 305.87198 662.86664 Tm
+(I)Tj
+14 0 0 14 309.86801 662.86664 Tm
+(S)Tj
+/T1_0 1 Tf
+( [)Tj
+ET
+325.03 660.74982 m
+332.03 660.74982 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 325.03 662.86664 Tm
+(5)Tj
+0 0 0 rg
+(,)Tj
+ET
+335.53 660.74982 m
+342.53 660.74982 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 335.53 662.86664 Tm
+(7)Tj
+0 0 0 rg
+(]. The partition of graph )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 491.05603 659.28265 Tm
+(1)Tj
+14 0 0 14 496.65601 662.86664 Tm
+( acted as the input )Tj
+-34.76114 -1.40778 Td
+(partition for graph )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 126.25601 639.57379 Tm
+(2)Tj
+14 0 0 14 131.856 643.15778 Tm
+(. Repartitioning the imbalanced graph, )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 360.88202 639.57379 Tm
+(2)Tj
+14 0 0 14 366.48199 643.15778 Tm
+(, resulted in the experiment named )Tj
+/T1_1 1 Tf
+(First)Tj
+/T1_0 1 Tf
+( )Tj
+-25.463 -1.40778 Td
+(and the input partition for graph )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 202.86401 619.86487 Tm
+(3)Tj
+14 0 0 14 208.464 623.44885 Tm
+(. Similarly, the repartition of graph )Tj
+/T1_1 1 Tf
+(G)Tj
+/T1_0 1 Tf
+11.2 0 0 11.2 417.66602 619.86487 Tm
+(3)Tj
+14 0 0 14 423.26599 623.44885 Tm
+( resulted in experiment )Tj
+/T1_1 1 Tf
+-29.519 -1.40778 Td
+(Second)Tj
+/T1_0 1 Tf
+(, and so on, through experiment )Tj
+/T1_1 1 Tf
+(Fifth)Tj
+/T1_0 1 Tf
+(. The last set of results is marked )Tj
+/T1_1 1 Tf
+(Sum)Tj
+/T1_0 1 Tf
+(. This is the sum of )Tj
+T*
+(the raw scores of all five experiments. )Tj
+0 -2.55714 TD
+(Figure 4 gives a comparison of the edge-cut \(and vertex migration\) res\ults of the five experiments, )Tj
+0 -1.2 TD
+(\(followed by the sum of these\) for Wavefront Diffusion, LMSR, and the \state-of-the-art scratch-remap )Tj
+T*
+(algorithm described in [)Tj
+ET
+144.14798 515.42316 m
+151.14798 515.42316 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 144.14798 517.53998 Tm
+(9)Tj
+0 0 0 rg
+(] and referred to here as SR. The edge-cut \(and vertex migration\) resu\lts )Tj
+-9.582 -1.34286 Td
+(obtained by Wavefront Diffusion, and LMSR are normalized by those obtain\ed by the SR algorithm. )Tj
+T*
+(Hence, a bar below the index line indicates that the corresponding algor\ithm obtained results lower than )Tj
+T*
+(those obtained by the SR algorithm. )Tj
+0 -2.55714 TD
+(Figure 4 shows that the two scratch-remap schemes obtained similar edge-\cuts. However, our LMSR )Tj
+0 -1.2 TD
+(scheme obtained significantly lower vertex migration results compared to\ SR. Figure 4 also shows that )Tj
+T*
+(Wavefront Diffusion results in significantly lower vertex migration requ\irements at the cost of )Tj
+T*
+(somewhat lower quality edge-cut results compared with the scratch-remap \schemes. Note that these )Tj
+T*
+(results concur with those given in Section )Tj
+ET
+247.59398 360.02319 m
+254.59398 360.02319 l
+S
+0 0 1 rg
+BT
+/T1_0 1 Tf
+14 0 0 14 247.59398 362.13998 Tm
+(7)Tj
+0 0 0 rg
+(. )Tj
+ET
+1 0 0 RG
+1 w 
+298 320.36444 16 16 re
+S
+BT
+/T1_0 1 Tf
+14 0 0 14 314 320.36444 Tm
+( )Tj
+/T1_2 1 Tf
+-2.36293 -2.45714 Td
+(Figure 4)Tj
+/T1_0 1 Tf
+( )Tj
+/T1_3 1 Tf
+19.38461 0 0 19.38461 10 245.20378 Tm
+(References)Tj
+/T1_2 1 Tf
+14 0 0 14 10 207.90291 Tm
+(1)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(R. Biswas and L. Oliker. )Tj
+T*
+(Experiments with repartitioning and load balancing adaptive meshes. )Tj
+T*
+(Technical Report NAS-97-021, NASA Ames Research Center, Moffett Field, C\A, October 1997. )Tj
+/T1_2 1 Tf
+-2.85715 -2.55714 Td
+(2)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(T. Bui and C. Jones. )Tj
+T*
+(A heuristic for reducing fill in sparse matrix factorization. )Tj
+T*
+(In )Tj
+/T1_1 1 Tf
+(6th SIAM Conf. Parallel Processing for Scientific Computing)Tj
+/T1_0 1 Tf
+(, pages 445-452, 1993. )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(10 of 13\)8/30/2003 )Tj
+(5:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj185 0 obj 3338endobj186 0 obj<</Length 185 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_1 1 Tf
+14 0 0 14 10 753.97552 Tm
+(3)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(R. Diekmann, A. Frommer, and B. Monien. )Tj
+0 -1.2 TD
+(Nearest neighbor load balancing on graphs. )Tj
+T*
+(Technical report, University of Paderborn, Department of Mathematics and\ Computer Science, )Tj
+T*
+(1998. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(4)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(Bruce Hendrickson and Robert Leland. )Tj
+T*
+(A multilevel algorithm for partitioning graphs. )Tj
+T*
+(Technical Report SAND93-1301, Sandia National Laboratories, 1993. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(5)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(G. Karypis and V. Kumar. )Tj
+T*
+(Multilevel )Tj
+/T1_2 1 Tf
+(k)Tj
+/T1_0 1 Tf
+(-way partitioning scheme for irregular graphs. )Tj
+T*
+(Technical Report TR 95-064, Department of Computer Science, University o\f Minnesota, 1995. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(6)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(G. Karypis and V. Kumar. )Tj
+T*
+(A coarse-grain parallel multilevel )Tj
+/T1_2 1 Tf
+(k)Tj
+/T1_0 1 Tf
+(-way partitioning algorithm. )Tj
+T*
+(In )Tj
+/T1_2 1 Tf
+(Proceedings of the 8th SIAM conference on Parallel Processing for Scient\ific Computing)Tj
+/T1_0 1 Tf
+(, )Tj
+T*
+(1997. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(7)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(G. Karypis and V. Kumar. )Tj
+/T1_2 1 Tf
+T*
+(M)Tj
+12 0 0 12 61.662 341.97556 Tm
+(E)Tj
+14 0 0 14 68.994 341.97556 Tm
+(T)Tj
+12 0 0 12 76.778 341.97556 Tm
+(I)Tj
+14 0 0 14 80.774 341.97556 Tm
+(S)Tj
+/T1_0 1 Tf
+( 3.0: Unstructured graph partitioning and sparse matrix ordering system.\ )Tj
+-2.19814 -1.2 Td
+(Technical Report 97-061, Department of Computer Science, University of M\innesota, 1997. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(8)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(G. Karypis, K. Schloegel, and V. Kumar. )Tj
+/T1_2 1 Tf
+T*
+(P)Tj
+12 0 0 12 58.554 255.77556 Tm
+(AR)Tj
+14 0 0 14 73.218 255.77556 Tm
+(M)Tj
+12 0 0 12 84.88 255.77556 Tm
+(E)Tj
+14 0 0 14 92.21201 255.77556 Tm
+(T)Tj
+12 0 0 12 99.996 255.77556 Tm
+(I)Tj
+14 0 0 14 103.992 255.77556 Tm
+(S)Tj
+/T1_0 1 Tf
+(: Parallel graph partitioning and sparse matrix ordering library. )Tj
+-3.85657 -1.2 Td
+(Technical report, University of Minnesota, Department of Computer Scienc\e and Engineering, )Tj
+T*
+(1997. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(9)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(L. Oliker and R. Biswas. )Tj
+T*
+(Plum: Parallel load balancing for adaptive unstructured meshes. )Tj
+T*
+(Technical Report NAS-97-020, NASA Ames Research Center, Moffett Field, C\A, 1997. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(10)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(K. Schloegel, G. Karypis, and V. Kumar. )Tj
+T*
+(Multilevel diffusion schemes for repartitioning of adaptive meshes. )Tj
+/T1_2 1 Tf
+T*
+(Journal of Parallel and Distributed Computing)Tj
+/T1_0 1 Tf
+(, 47\(2\):109-124, 1997. )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(11 of 13\)8/30/2003 )Tj
+(5:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj187 0 obj 3505endobj188 0 obj<</Length 187 0 R>>stream
+/Artifact <</Type /Pagination /BBox [18 778 582 787 ]/Attached [/Top ]>>BDC 
+0 0 0 rg
+0 i 
+BT
+/T1_0 1 Tf
+0 Tc 0 Tw 0  Ts 100  Tz 0 Tr 9 0 0 9 18 780.17 Tm
+(Dynamic Repartitioning of Adaptively Refined Meshes)Tj
+ET
+EMC 
+/Article <</MCID 0 >>BDC 
+q
+0 18 612 756 re
+W* n
+BT
+/T1_1 1 Tf
+14 0 0 14 10 743.97552 Tm
+(11)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(K. Schloegel, G. Karypis, and V. Kumar. )Tj
+0 -1.2 TD
+(Dynamic Repartitioning of Adaptively Refined Meshes. )Tj
+T*
+(University of Minnesota, Department of Computer Science and Engineering,\ 1998. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(12)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(K. Schloegel, G. Karypis, V. Kumar, R. Biswas, and L. Oliker. )Tj
+T*
+(A performance study of diffusive vs. remapped load-balancing schemes. )Tj
+/T1_2 1 Tf
+T*
+(ISCA 11th Int'l Conference on Parallel and Distributed Computing Systems\)Tj
+/T1_0 1 Tf
+(, September 1998. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(13)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(C. Walshaw, M. Cross, and M. G. Everett. )Tj
+T*
+(Dynamic load-balancing for parallel adaptive unstructured meshes. )Tj
+/T1_2 1 Tf
+T*
+(Parallel Processing for Scientific Computing)Tj
+/T1_0 1 Tf
+(, 1997. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(14)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(C. Walshaw, M. Cross, and M. G. Everett. )Tj
+T*
+(Parallel dynamic graph partitioning for adaptive unstructured meshes. )Tj
+/T1_2 1 Tf
+T*
+(Journal of Parallel and Distributed Computing)Tj
+/T1_0 1 Tf
+(, 47\(2\):102-108, 1997. )Tj
+/T1_1 1 Tf
+-2.85715 -2.55714 Td
+(15)Tj
+/T1_0 1 Tf
+( )Tj
+2.85715 -1.2 Td
+(C. Walshaw, M. Cross, S. Johnson, and M. G. Everett. )Tj
+T*
+(Jostle: Partitioning of unstructured meshes for massively parallel machi\nes. )Tj
+/T1_2 1 Tf
+T*
+(Proc. Parallel CFD'94, Kyoto)Tj
+/T1_0 1 Tf
+(, 1994. )Tj
+/T1_3 1 Tf
+19.38461 0 0 19.38461 10 294.01489 Tm
+(Author Biography )Tj
+/T1_1 1 Tf
+14 0 0 14 10 256.71402 Tm
+(Kirk Schloegel)Tj
+/T1_0 1 Tf
+( Kirk Schloegel is currently working on his Ph.D. in Computer Science at\ the University )Tj
+T*
+(of Minnesota. He received his M.Sc. at the University of Edinburgh, Edin\burgh, Scotland. His research )Tj
+T*
+(interests include parallel algorithm design and parallel computing. )Tj
+/T1_1 1 Tf
+0 -2.55714 TD
+(George Karypis)Tj
+/T1_0 1 Tf
+( George Karypis received his Ph.D. in Computer Science at the University\ of )Tj
+0 -1.2 TD
+(Minnesota, and he is currently an assistant professor at the department \of Computer Science & )Tj
+T*
+(Engineering at the University of Minnesota. His research interests spans\ the areas of parallel algorithm )Tj
+T*
+(design, applications of parallel processing in scientific computing and \optimization, sparse matrix )Tj
+T*
+(computations, parallel programming languages and libraries, and data min\ing. His recent work has been )Tj
+T*
+(in the areas of parallel sparse direct solvers, serial and parallel grap\h partitioning algorithms, parallel )Tj
+T*
+(matrix ordering algorithms, and scalable parallel preconditioners. His r\esearch has resulted in the )Tj
+T*
+(development of software libraries for unstructured mesh partitioning \(M\ETIS and ParMETIS\), and for )Tj
+T*
+(parallel Cholesky factorization \(PSPASES\). He has author of over 20 re\search articles, and a coauthor of )Tj
+ET
+EMC 
+/Artifact <</Type /Pagination /BBox [18 5 582 14 ]/Attached [/Bottom ]>>BDC 
+Q
+BT
+/T1_0 1 Tf
+9 0 0 9 18 7.17 Tm
+(file:///C|/Karypis/Work/001%20Performance%20Review/T...partitioning%20of\%20adaptively%20refine%20meshes.htm \(12 of 13\)8/30/2003 )Tj
+(5:56:40 AM)Tj
+ET
+EMC 
+
+endstreamendobj189 0 obj(Dynamic Repartitioning of Adaptively Refined Meshes)endobj190 0 obj<</C 194 0 R/V 1.25>>endobj191 0 obj<</S 192 0 R/URL(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm)>>endobj192 0 obj<</G 193 0 R>>endobj193 0 obj<</PS[792.0 612.0]/M[10.080002 10.080002 26.0 36.0]/S 0/AS 1/PO 0/AT 70/AH 0/AL 0/CB 0/SU 1>>endobj194 0 obj[191 0 R]endobj195 0 obj(file:///C|/Karypis/Work/001%20Performance%20Review/Tenure/Reprints/Confrences%20Highly%20Selective/c38_Dynamic%20repartitioning%20of%20adaptively%20refine%20meshes.htm)endobj196 0 obj(cH¿>ºs—7	ˇWñ®)endobj197 0 obj<</ID 196 0 R/O[11 0 R 25 0 R 27 0 R 50 0 R 52 0 R 66 0 R 74 0 R 84 0 R 91 0 R 99 0 R 110 0 R 127 0 R 139 0 R]/S/SPS/T 189 0 R/CT(text/html)/SI 198 0 R/TID 199 0 R/TS(D:20030830155640)>>endobj198 0 obj<</AU 195 0 R/TS(D:20030830155640)>>endobj199 0 obj(9C`ø&ÔõƒQÎaÅÿˇ3V)endobj200 0 obj<</Names[196 0 R 197 0 R]>>endobj201 0 obj<</Names[195 0 R 197 0 R]>>endobj202 0 obj<</Count 1/Parent 6 0 R/First 203 0 R/Last 203 0 R/Title(Local Disk)>>endobj203 0 obj<</Parent 202 0 R/Dest[11 0 R/XYZ 0 792 null]/Title(Dynamic Repartitioning of Adaptively Refined Meshes)/SE 10 0 R>>endobj204 0 obj<</Length 3273/Type/Metadata/Subtype/XML>>stream
+<?xpacket begin='Ôªø' id='W5M0MpCehiHzreSzNTczkc9d'?>
+<?adobe-xap-filters esc="CRLF"?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/' x:xmptk='XMP toolkit 2.9.1-13, framework 1.6'>
+<rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' xmlns:iX='http://ns.adobe.com/iX/1.0/'>
+<rdf:Description rdf:about='uuid:3c9eef84-37ca-4252-ae96-04c87a1df6cb' xmlns:pdf='http://ns.adobe.com/pdf/1.3/' pdf:Producer='Acrobat Web Capture 6.0'></rdf:Description>
+<rdf:Description rdf:about='uuid:3c9eef84-37ca-4252-ae96-04c87a1df6cb' xmlns:xap='http://ns.adobe.com/xap/1.0/' xap:ModifyDate='2003-08-30T10:56:40-05:00' xap:CreateDate='2003-08-30T10:56:35Z' xap:MetadataDate='2003-08-30T10:56:40-05:00'></rdf:Description>
+<rdf:Description rdf:about='uuid:3c9eef84-37ca-4252-ae96-04c87a1df6cb' xmlns:xapMM='http://ns.adobe.com/xap/1.0/mm/' xapMM:DocumentID='uuid:3ec5a041-9b29-4182-ba9e-10dae9a1517a'/>
+<rdf:Description rdf:about='uuid:3c9eef84-37ca-4252-ae96-04c87a1df6cb' xmlns:dc='http://purl.org/dc/elements/1.1/' dc:format='application/pdf'><dc:title><rdf:Alt><rdf:li xml:lang='x-default'>Dynamic Repartitioning of Adaptively Refined Meshes</rdf:li></rdf:Alt></dc:title></rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end='w'?>
+endstreamendobjxref
+0 205
+0000000004 65535 f
+0000000016 00000 n
+0000000145 00000 n
+0000000206 00000 n
+0000000061 00001 f
+0000000383 00000 n
+0000000403 00000 n
+0000000471 00000 n
+0000000572 00000 n
+0000000616 00000 n
+0000000663 00000 n
+0000001089 00000 n
+0000001316 00000 n
+0000001466 00000 n
+0000001490 00000 n
+0000001836 00000 n
+0000001923 00000 n
+0000002270 00000 n
+0000002423 00000 n
+0000002586 00000 n
+0000002934 00000 n
+0000003095 00000 n
+0000003256 00000 n
+0000003603 00000 n
+0000003762 00000 n
+0000003926 00000 n
+0000004139 00000 n
+0000004163 00000 n
+0000004364 00000 n
+0000004388 00000 n
+0000004648 00000 n
+0000004805 00000 n
+0000005071 00000 n
+0000005335 00000 n
+0000005705 00000 n
+0000006083 00000 n
+0000006477 00000 n
+0000006875 00000 n
+0000007297 00000 n
+0000007681 00000 n
+0000008073 00000 n
+0000008443 00000 n
+0000008821 00000 n
+0000009243 00000 n
+0000009637 00000 n
+0000010035 00000 n
+0000010419 00000 n
+0000010811 00000 n
+0000011180 00000 n
+0000011577 00000 n
+0000012000 00000 n
+0000012200 00000 n
+0000012224 00000 n
+0000012438 00000 n
+0000012462 00000 n
+0000012842 00000 n
+0000012908 00000 n
+0000013278 00000 n
+0000013678 00000 n
+0000014100 00000 n
+0000014158 00000 n
+0000000082 00001 f
+0000015128 00000 n
+0000015173 00000 n
+0000015569 00000 n
+0000015990 00000 n
+0000016374 00000 n
+0000016588 00000 n
+0000016612 00000 n
+0000017012 00000 n
+0000017064 00000 n
+0000017436 00000 n
+0000017826 00000 n
+0000018220 00000 n
+0000018612 00000 n
+0000018826 00000 n
+0000018850 00000 n
+0000019220 00000 n
+0000019272 00000 n
+0000019642 00000 n
+0000020038 00000 n
+0000020408 00000 n
+0000000083 00001 f
+0000000086 00001 f
+0000020804 00000 n
+0000021018 00000 n
+0000000095 00001 f
+0000021042 00000 n
+0000021088 00000 n
+0000021468 00000 n
+0000021499 00000 n
+0000021923 00000 n
+0000022150 00000 n
+0000022174 00000 n
+0000022582 00000 n
+0000000117 00001 f
+0000022620 00000 n
+0000022666 00000 n
+0000023050 00000 n
+0000023442 00000 n
+0000023670 00000 n
+0000023695 00000 n
+0000024066 00000 n
+0000024124 00000 n
+0000024515 00000 n
+0000024888 00000 n
+0000025269 00000 n
+0000025654 00000 n
+0000025701 00000 n
+0000025748 00000 n
+0000025794 00000 n
+0000025996 00000 n
+0000026114 00000 n
+0000026208 00000 n
+0000026302 00000 n
+0000026393 00000 n
+0000026483 00000 n
+0000000118 00001 f
+0000000129 00001 f
+0000026570 00000 n
+0000026595 00000 n
+0000026638 00000 n
+0000026686 00000 n
+0000026734 00000 n
+0000026782 00000 n
+0000026830 00000 n
+0000026878 00000 n
+0000026926 00000 n
+0000027141 00000 n
+0000000130 00001 f
+0000000140 00001 f
+0000027233 00000 n
+0000027276 00000 n
+0000027301 00000 n
+0000027349 00000 n
+0000027397 00000 n
+0000027445 00000 n
+0000027493 00000 n
+0000027541 00000 n
+0000027589 00000 n
+0000000141 00001 f
+0000000145 00001 f
+0000027778 00000 n
+0000027803 00000 n
+0000027851 00000 n
+0000000146 00001 f
+0000000147 00001 f
+0000000148 00001 f
+0000000149 00001 f
+0000000150 00001 f
+0000000151 00001 f
+0000000152 00001 f
+0000000153 00001 f
+0000000154 00001 f
+0000000155 00001 f
+0000000156 00001 f
+0000000157 00001 f
+0000000158 00001 f
+0000000159 00001 f
+0000000160 00001 f
+0000000161 00001 f
+0000000162 00001 f
+0000000000 00001 f
+0000027894 00000 n
+0000027916 00000 n
+0000031451 00000 n
+0000031473 00000 n
+0000036196 00000 n
+0000036218 00000 n
+0000043447 00000 n
+0000043469 00000 n
+0000046513 00000 n
+0000046535 00000 n
+0000051054 00000 n
+0000051076 00000 n
+0000056241 00000 n
+0000056263 00000 n
+0000062056 00000 n
+0000062078 00000 n
+0000068231 00000 n
+0000068253 00000 n
+0000074126 00000 n
+0000074148 00000 n
+0000078588 00000 n
+0000078610 00000 n
+0000083987 00000 n
+0000084009 00000 n
+0000087402 00000 n
+0000087424 00000 n
+0000090984 00000 n
+0000091054 00000 n
+0000091092 00000 n
+0000091296 00000 n
+0000091327 00000 n
+0000091437 00000 n
+0000091463 00000 n
+0000091649 00000 n
+0000091684 00000 n
+0000091887 00000 n
+0000091940 00000 n
+0000091975 00000 n
+0000092019 00000 n
+0000092063 00000 n
+0000092150 00000 n
+0000092283 00000 n
+trailer
+<</Size 205/Root 1 0 R/Info 3 0 R/ID[<ee8d6c81401c8a46a3b1eb2f01d60354><a45aaf898817824f8ed3f0d89cbb7e8f>]>>
+startxref
+95634
+%%EOF

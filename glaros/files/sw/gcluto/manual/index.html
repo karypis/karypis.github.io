@@ -1,0 +1,698 @@
+<html>
+<head>
+   <title>gCLUTO Documentation</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<center>
+<img src="images/gcluto-splash.jpg" width="512" height="256">
+<h1>gCLUTO Documentation</h1>
+<h3>Version 1.0</h3>
+Matt Rasmussen, Mark Newman, George Karypis<br>
+University of Minnesota. Copyright 2003<br>
+Last Modified:
+Wed Nov 19 15:16:53 CST 2003
+<br>
+<a href="http://www.cs.umn.edu/~mrasmus/gcluto/">http://www.cs.umn.edu/~cluto/gcluto</a></center>
+
+<hr border=0 color="#000000">
+
+
+<h2>Table of Contents</h2>
+<span class="index">
+<ul>
+   <li><a href="#1">1 Introduction</a>   
+   <ul>
+      <li><a href="#1.1">1.1 What is gCLUTO</a>
+      <li><a href="#1.2">1.2 Features</a>
+      <li><a href="#1.3">1.3 Version Information</a>
+   </ul>
+   
+   <li><a href="#2">2 Installing gCLUTO</a>
+   <ul>
+   </ul>
+   
+   <li><a href="#3">3 Using gCLUTO</a>
+   <ul>
+      <li><a href="#3.1">3.1 Overview</a>
+      <li><a href="#3.2">3.2 Creating a New Project</a>
+      <li><a href="#3.3">3.3 Importing Data</a>
+      <li><a href="#3.4">3.4 Clustering Data</a>
+      <ul>
+         <li><a href="#3.4.1">3.4.1 Comparing Solutions</a>
+      </ul>
+      <li><a href="#3.5">3.5 Visualizing Solutions</a>
+      <ul>
+         <li><a href="#3.5.1">3.5.1 Matrix Visualization</a>
+         <li><a href="#3.5.2">3.5.2 Mountain Visualization</a>
+      </ul>
+      <li><a href="#3.6">3.6 Printing</a>
+      <li><a href="#3.7">3.7 Exporting</a>
+   </ul>
+</ul>
+</span>
+
+<br>
+
+<hr border=0 color="#000000">
+<a name="1"><h2>1 Introduction</h2></a>
+
+<a name="1.1"><h2>1.1 What is gCLUTO</h2></a>
+
+<p>
+gCLUTO (Graphical CLUstering TOolkit) is a graphical front-end for the 
+<a href="http:/www.cs.umn.edu/~karypis/cluto">CLUTO</a>
+data clustering library.  Its purpose is to make CLUTO's clustering abilities 
+available in a user-friendly graphical way.  In addition, gCLUTO provides
+several ways to interactively visualize clustered results.  A copy of gCLUTO
+can be found at 
+<a href="http://www.cs.umn.edu/~mrasmus/gcluto/">http://www.cs.umn.edu/~cluto/gcluto</a>.  For more information about CLUTO visit 
+<a href="http://www.cs.umn.edu/~karypis/cluto/">http://www.cs.umn.edu/~karypis/cluto</a>.
+</p>
+
+
+<a name="1.2"><h2>1.2 Features</h2></a>
+
+gCLUTO has the following features:
+<ul>
+   <li>A project tree view that manages data files, clustering solutions, 
+       and visualizations.
+   <li>Detailed dialogs for choosing clustering options
+   <li>spreed sheet interface for viewing data
+   <li>HTML interface for viewing solutions.
+   <li>Matrix Visualization - A colored interactive matrix
+   <li>Mountain Visualization - a 3D visualization generated using 
+       Multidimensional Scaling.
+   <li>Printing and Exporting data and visualizations
+</ul>
+
+<a name="1.3"><h2>1.3 Version Information</h2></a>
+
+<h3>gCLUTO 1.0 - Nov 11, 2003</h3>
+<p>
+gCLUTO has been extended and reorganized to make it a more productive tool. 
+The following features have been added to gCLUTO 1.0:
+</p>
+<ul>
+   <li>Reorganized Project Directories
+   <li>Files are deleted when corresponding items are deleted from project
+   <li>Long operations done in a background thread
+   <li>Importing tab, space, etc. delimited files into projects
+   <li>Exporting data/solution matrix to tab delimited files
+   <li>Exporting Solution Report to HTML file
+   <li>Solution columns in Data View
+   <li>Sorting in Data View
+   <li>External Clustering Quality Statistics in Solution Reports
+   <li>Right click information in Matrix Visualization
+   <li>Matrix Visualization labels stretch with available space
+   <li>"View All Objects" and "View Only Clusters" added to Matrix Visualization
+   <li>Mini-Solution Report in Mountain Visualization
+   <li>Printing Matrix and Mountain Visualizations to printers and files
+</ul>
+<br>
+
+<h3>gCLUTO 0.5 - January 20, 2003</h3>
+<p>
+gCLUTO is currently in an alpha phase.  The purpose of this release is to 
+explore what features and user interface designs would work best
+for a clustering application.
+</p>
+
+<br><br><br><br>
+<hr border=0 color="#000000">
+<a name="2"><h2>2 Installing gCLUTO</h2></a>
+
+<p>
+Currently, gCLUTO is available for both Linux and Microsoft Windows platforms.
+To install gCLUTO:
+</p>
+
+<ul>
+   <li>Find the latest version of gCLUTO at 
+<a href="http://www.cs.umn.edu/~mrasmus/gcluto/">http://www.cs.umn.edu/~cluto/gcluto</a>.  
+
+   <li>Download and unzip the archive to any location on your computer.
+   <li>Read the <i>README.txt</i> file to locate the correct version of gCLUTO
+       for your Operating System.
+   <li>Windows users can make a desktop shortcut to <i>gcluto.exe</i> by
+       locating gcluto.exe in the file manager, right-clicking the icon,
+       dragging it to the desktop, and choosing "Create Shortcut Here" from the
+       pop-up menu.
+   <li>Linux users can create a symbolic link to the gcluto binary 
+       ("ln -s gcluto wherever/you/want/the/link").  Place the
+       symbolic link wherever is most convenient (ex: ~/bin).
+</ul>
+
+<i>Note: the actual executables (gcluto, gcluto.exe) must stay within their
+folders in order to work propperly.  Do not relocate them.</i>
+
+<br><br><br><br>
+<hr border=0 color="#000000">
+<a name="3"><h2>3 Using gCLUTO</h2></a>
+
+<a name="3.1"><h2>3.1 Overview</h2></a>
+
+<div width="320" style="float: right; padding: 5px" align="center">
+<a href="images/screenshot1.jpg"><img alt="screen shot" src="images/screenshot1.jpg" 
+   width="320"><br>Figure 3.1 - screen shot of gCLUTO</a>
+<br><br>
+</div>
+
+<p>
+When clustering data, many pieces of information are involved, such as data 
+files, clustering solution files, and visualizations.  Like many other
+applications, gCLUTO uses the concept of a <b>project</b> to organize the 
+user's data and work flow.  When a project has been loaded, its contents will be
+displayed in the tree view located at (a) in Figure 3.1.
+</p>
+
+<p>
+Each item in the project is presented as an icon in the tree.
+<ul>
+   <li><img src="images/icon-project.png" width="15" height="15"> <b>Project</b> - This represents the 
+   project itself.  It is the root of the project tree.
+   <br><br>
+   
+   <li><img src="images/icon-data.png" width="15" height="15"> <b>Data</b> - After importing data into
+   a project, one of these icons will appear in the project tree.  
+   A project can contain many different data items.
+   <br><br>
+   
+   <li><img src="images/icon-solution.png" width="15" height="15"> <b>Solution</b> - After clustering
+   one of the data items, a solution item will be created and placed underneath
+   the data item from which it was clustered.  
+   <br><br>
+   
+   <li><img src="images/icon-matrix.png" width="15" height="15"> <b>Matrix Visualization</b> - This is 
+   a visualization that can be generated after clustering.  All
+   visualizations appear under the solutions they were generated from.
+   <br><br>
+   
+   <li><img src="images/icon-mountain.png" width="15" height="15"> <b>Mountain Visualization</b> - This
+   is another visualization that attempts to describe the inter-relationships 
+   of clusters in a 3D way.
+   <br><br>
+</ul>
+
+<b>Right clicking</b> on any item will
+bring up a pop-up menu listing the available operations that can be preformed 
+on the item.  <b>Double clicking</b> on any item will open its contents in a 
+new window called a <b>view</b>, similar to the windows (b), (c), and (d)
+in Figure 3.1.  While working in one of these views, extra menu options 
+specific to the view's content will apear in the menu bar.
+</p>
+
+
+
+<a name="3.2"><h2>3.2 Creating a New Project</h2></a>
+
+<p>
+When gCLUTO first opens it starts with an empty project tree.  To begin work, a 
+new project must be created.  To create a new project, go to the menu bar
+and choose "File" and then "New Project".  A file dialog window will appear. 
+Specify a name for your project and a location on your computer to save it.
+</p>
+
+<p>
+gCLUTO will create a directory, called the <b>project directory</b>.
+The Project Directory will be named 
+after the project and stored at the specified location.  Within the project 
+directory, gCLUTO will save all the information related to the project.
+</p>
+
+<p>
+To open an existing project, choose the "File" menu and then 
+"Open Project".  A file dialog will appear.  Navigate to the location of the
+project directory and open it.  Within the project directory there will be a
+file named "<i>project_name</i>.prj", where <i>project_name</i> will be the name
+of the project.  Choose this file and click "Open".
+</p>
+
+<p>
+After these steps, a project will be loaded and displayed in the project tree.
+</p>
+
+<p>
+<i>
+Note: gCLUTO 1.0 uses a different project directory structure than
+gCLUTO 0.5.  Projects created using gCLUTO 0.5 can not be opened in
+gCLUTO 1.0 and vice versa.
+</i>
+</p>
+
+<a name="3.3"><h2>3.3 Importing Data</h2></a>
+
+<p>
+As of gCLUTO 1.0, gCLUTO accepts three file formats: CLUTO matrix files
+(*.mat), CLUTO graph files (*.graph), and dense matrix delimited files.
+For details on the exact formats of CLUTO matrix and graph files see
+CLUTO's documentation.
+</p>
+
+<p>
+The following file types are used when importing data in CLUTO file
+formats:
+</p>
+
+<ul>
+   <li><b>matrix file (*.mat)</b> - contains a dense matrix, sparse matrix, or
+      similarity graph representing the data to be clustered.
+   <li><b>row lables (*.rlabel)</b> - contains labels for the rows of the data 
+      matrix.
+   <li><b>column labels (*.clabel)</b> - contains labels for the columns of the
+      data matrix.
+   <li><b>class labels (*.rclass)</b> - contains class labels for the rows of the
+     data matrix.
+</ul>
+
+<p>
+Delimited files can be created by hand or exported by most spread sheet
+programs.  gCLUTO can accept tab, space, semicolon, and comma delimited
+files.  Other characters can also be specified as delimiters.
+</p>
+
+<p>
+To import a new data item go to the menu bar and choose "Project" and then 
+"Import Data".  The <b>Import Data</b> dialog will appear allowing the user to 
+specify the location of a file for each of the file types listed above.  
+Clicking on a "Browse" button will bring up a file dialog to allow the user to 
+locate the needed files.  Only the *.mat file is required.  The user must also 
+specify whether the *.mat file contains matrix data or graph data by selecting 
+the appropriate option.
+</p>
+
+<p>
+If the *.mat file is chosen first, gCLUTO will try to guess the location of
+the optional files (*.rlabel, *.clabel, *.rclass) by appending the extension
+onto the *.mat filename.  For example, for a file named <i>genes.mat</i>,
+gCLUTO will guess <i>genes.mat.rlabel</i> for a row label file.  If such a file exists,
+gCLUTO will make it the default file to open in the "Browse" file dialog.
+</p>
+
+<p>
+If the user chooses to import a delimited file, the delimited file
+options will become enabled.  gCLUTO can optionally interpret the first
+row in the delimited file as column labels.  In addition, gCLUTO can
+optionally interpret the first column as row labels.  User may also
+specify which characters should be used as delimiters.  If multiple
+characters are specified, then the occurrence of any one of them will
+cause a field delimitation.  Blank fields are allowed in delimited
+files.  If a blank occurs where a number is expected, then it will be
+interpreted as a zero.  If a blank occurs where a label is expected,
+then a default label of "no-label" will be used.
+</p>
+
+<p>
+After specifying these files, the user may give a label for the data item.  
+If no label is given, the data item will be labeled after its *.mat
+file with the extension removed.  After clicking "OK" in the Import Data
+dialog, gCLUTO will attempt to read in the chosen files.  If no errors are
+encountered, gCLUTO will add the new data item to the project tree and open a 
+<b>Data View</b>.  The Data View allows the user to view the data and verify
+that it has been loaded correctly.
+</p>
+
+
+<a name="3.4"><h2>3.4 Clustering Data</h2></a>
+
+<p>
+If data has been imported using the steps given in <a href="#3.3">3.3</a> then
+it is ready to be clustered.  Clustering can be initiated two
+different ways.  The first is choosing "Cluster" from the pop-up menu that 
+appears when you right-click on a data item in the project tree.  Secondly, the 
+very same menu can be found in the menu bar under "Data" if a Data View is open.
+</p>
+
+<p>
+After choosing "Cluster" in either menu a <b>Clustering Options</b> dialog will
+appear with all the options available for clustering.  These options work 
+exactly the same as in CLUTO.  For an explanation of their meanings see CLUTO's 
+documentation.  Only particular options make sense together.  To help make
+sensible choices, gCLUTO will autmatically update the dialog as the user makes 
+choices to ensure that only reasonable choices are available.
+</p>
+
+<p>
+Once the clustering options are chosen, click "Cluster" in the Clustering
+Options dialog.  After gCLUTO finishes the clustering calculations it will 
+respond by creating a solution item under the clustered data item in the 
+project tree.
+</p>
+
+<p>
+gCLUTO will also automatically open a <b>Solution View</b> similar to (b) 
+in Figure 3.1.  This view contains the options used for clustering and several
+statistics about the clusters.  The report is designed after the report given by
+CLUTO.  For further explanation of its meaning see CLUTO's documentation.  In
+addition, the report contains links, similar to a web page.  Clicking on these
+links allows for quick navigation between related information in large reports.
+</p>
+
+<p>
+gCLUTO has been designed to facilitate clustering of the same data multiple
+times.  If a previously clustered data item is chosen for clustering again, the 
+Clustering Options dialog will appear with the options that were used the
+previous time.  To reload the options used for creating a particular solution, 
+right-click the desired solution item in the project tree and choose "Recluster" 
+from the pop-up menu.  This will bring up the Clustering Options dialog with 
+the solution's options loaded.  This feature eases the process of repeated 
+adjustments to clustering options.
+</p>
+
+
+<a name="3.4.1"><h2>3.4.1 Comparing Solutions</h2></a>
+
+
+<div width="320" style="float: right; padding: 5px" align="center">
+<a href="images/screenshot-data.gif"><img alt="screen shot"
+   src="images/screenshot-data.gif" width="320"><br>
+   Figure 3.2 - screen shot of the Data View</a>
+<br><br>
+</div>
+
+<p>
+The Data View can be used to compare multiple solutions for a single
+data item.  When solutions exist, a second spread sheet, called the
+<b>Solution Grid</b>, will appear on the right hand side of the view.
+Each column of the Solution Grid belongs to a different solution and is
+labeled after the solution's label shown in the project tree.  The
+integers appearing in the Solution Grid signify to which cluster each
+row of the data matrix was partitioned.
+</p>
+
+<p>
+The Solution Grid and the <b>Data Grid</b> to its left are designed to
+work together. Thus, scrolling vertically in either grid will cause the
+other to also scroll.  Row resizing is also synced between the two
+grids.  Horizontal scrolling is done independently in order to allow
+comparisons to be made between any column in the Data Grid and any
+column in the Solution Grid.
+</p>
+
+<p>
+Clicking on any column label in the Data View will sort the rows of the
+Data Grid and Solution Grid based on the values of the column.  Clicking
+on the same column twice will reverse the direction of the sort.
+Therefore, if a column label in the Solution Grid is clicked, rows of the same
+cluster will be displayed together.  This allows quick comparisons of
+the partitioning of different solutions.  Sorting can be reset by
+choosing the "Reset Sorting" option in the "Data" menu.  Columns in the
+Data Grid cannot be sorted when the grid is in <b>sparse matrix</b>
+view.
+</p>
+
+
+<a name="3.5"><h2>3.5 Visualizing Solutions</h2></a>
+
+<p>
+Currently, gCLUTO contains two visualizations: the <b>Matrix Visualization</b> 
+and the <b>Mountain Visualization</b>.  Visualizations can be generated from
+solutions by choosing the desired visualization from the solution menu.  This
+menu can be found by right-clicking on a solution item in the project tree or in
+the menu bar under "Solution" if the user is currently working in a Solution
+View.
+</p>
+
+<a name="3.5.1"><h2>3.5.1 Matrix Visualization</h2></a>
+
+<p>
+The Matrix Visualization is similar to the matrix visualization produced by 
+CLUTO. The former extends the latter by making the matrix interactive.  A 
+detailed explanation of the visualization is given in CLUTO's documentation.  
+</p>
+
+<p>
+In the Matrix Visualization, the orginal data matrix is displayed such that
+colors are used to graphically represent the values present in the matrix. 
+gCLUTO uses white to represent values near zero, increaingly darker shades of 
+red to represent large values, and increasingly darker shades of green to
+represent negitive values.  The rows of the matrix are reorder, such that rows
+of the same cluster are together.  Black horizontal dividers separate the
+clusters.
+</p>
+
+<div width="320" style="float: right; padding: 5px" align="center">
+<a href="images/screenshot-matrix.jpg"><img alt="screen shot"
+   src="images/screenshot-matrix.jpg" width="320"><br>
+   Figure 3.3 - screen shot of the Matrix Visualization</a>
+<br><br>
+</div>
+
+<p>
+If tree building is enabled, the Matrix Visualization will contain trees located
+above and to the left of the matrix.  If an agglomerative clustering algorithm 
+was used, the tree generated during clustering is displayed as the <b>Row Tree</b>.  
+Otherwise, a tree is generated to fit the clustering solution.  
+The <b>Column Tree</b> is generated by performing
+agglomerative clustering on the inverse of the matrix.
+</p>
+
+<p>
+If row and column labels were chosen when the data was imported, then they will
+appear below and to the right of the matrix. Labels will only show if space is 
+available to display them.
+</p>
+
+<p>
+To help explore the information contained within the Matrix Visualization, 
+several features have been implemented.  First, the size of the matrix can be 
+scaled in multiple ways.  Second, the trees can be used to collapse and expand 
+areas of interest within the matrix.  Lastly, the user can access information
+about any cell by clicking the right mouse button on cells.  A popup dialog
+box will appear giving the row and column labels and ids as well as the value
+and cluster id associated with the cell.
+</p>
+
+<h3>3.5.1 Matrix Visualization - Scaling</h3>
+
+<p>
+The easiest way to scale the matrix is with the scaling controls located
+directly above the matrix.  Scaling can be changed by entering a new size in the
+text box, or by clicking on either of the up or down arrows.  The control
+labeled with "W" controls the width of the matrix and the control labeled "H"
+affects the height.  These scaling controls change the dimensions of the entire
+matrix and are convenient for zooming in and out of areas of interest in the
+matrix.
+</p>
+
+<p>
+Often times the user needs to enlarge one area of the matrix, yet shrink
+areas that are not as important.  This type of scaling can also be done.  To
+resize only a portion of the matrix, start by selecting the area to be resized. 
+Selection is done by clicking on any cell and draging the mouse to another cell.
+These two cells will become the corners of the selected region.  Cells that are
+selected are shaded blue.  To resize the selected region, place the mouse over
+any edge of the region.  The cursor will change to a resizing cursor.  Click and
+drag the edge to the desired location.  The selected cells will then resize 
+to fit within the new region.
+</p>
+
+<p>
+The following options are available under the "Matrix" menu:
+<ul>
+   <li><b>Reset Sizing</b> - Restores all scaling to the default values
+   <li><b>Fit to Screen</b> - Resizes the matrix to fit within the visualization
+                              window
+</ul>
+The following options are available under the "Matrix" menu only when the row 
+tree has been generated:
+<ul>
+   <li><b>View All Objects</b> - Expand all nodes in the row tree so that every
+                                 object is visible
+   <li><b>View Only Clusters</b> - Collapse nodes in the row tree so that only 
+                                   cluster averages are displayed
+</ul>
+</p>
+
+<h3>3.5.1 Matrix Visualization - Using the Trees</h3>
+
+<p>
+The Row and Column Trees allow for collapsing and expanding of the matrix.  
+Blue squares in the tree represent nodes that are fully expanded.  Clicking on
+any expanded node will collapse it.  Collapsed nodes are represented as pink
+squares.  When a node is collapsed, all of its descendents are hidden.  If a 
+node in the Row Tree is collapsed, all of the rows of the collapsed region are 
+hidden and replaced with a single row that contains their average.  Simply click
+a collapsed node to expand it again.  The Column Tree works in a similar manner.
+</p>
+
+<p>
+The labels will change to describe the collapsed regions.  If a region contains 
+rows which all belong to the same cluster, then it will be labeled with the
+cluster id.  If multiple clusters are present in a collapsed region then it will
+be labeled "multi-cluster".
+</p>
+
+
+
+
+<a name="3.5.2"><h2>3.5.2 Mountain Visualization</h2></a>
+
+<div width="320" style="float: right; padding: 5px" align="center">
+<a href="images/screenshot-mtn.jpg"><img alt="screen shot"
+   src="images/screenshot-mtn.jpg" width="320"><br>
+   Figure 3.4 - screen shot of the Mountain Visualization</a>
+<br><br>
+</div>
+
+<p>
+The <b>Mountain Visualization</b> is used to visualize the relative similarity
+of clusters as well as their size, internal similarity, and internal deviation.
+In the mountain visualization, each cluster is represented as a peak in the 3D 
+terrain.  A peak's location, volume, height, and color are all used to protray
+information about the associated cluster.
+</p>
+
+<p>
+The user can navigate through and around the 3D visualization by clicking and
+dragging the mouse over the 3D display.  Different mouse buttons perform
+different actions.
+</p>
+<ul>
+   <li><b>Left Click</b> - Rotates the terrain.
+   <li><b>Right Click</b> - Moves the terrain up, down, left, and right.
+   <li><b>Middle Click</b> - Zooms in and out.
+</ul>
+
+<p>
+The location of the peaks in the plane is determined using <b>Multidimensional 
+Scaling</b> (MDS) on each of the cluster mid-points.  MDS
+attempts to preserve the distances between vertices as they are mapped from a
+high dimensional space down to a lower dimensional space.  In this application,
+cluster mid-points are used as vertices in MDS and are mapped to a two
+dimensional plane.
+</p>
+
+<p>
+MDS allows users to make inferences about their data using the 
+Mountain Visualization.  For example, in Figure 3.4 a data matrix was clustered
+into ten clusters.  The Moutain Visualization represents these ten clusters as
+ten peaks labeled by their cluster id.  Although ten clusters were
+requested, MDS has placed the peaks in two distinct groups.  We can infer that 
+clusters within each group are strongly similar, while widely different from
+clusters in the other group.  Thus, the visualization suggests the data would 
+better lend itself to a two-way clustering.
+</p>
+
+<div width="320" style="float: right; padding: 5px" align="center">
+<a href="images/figure-mtn.gif">
+<img alt="screen shot"
+   src="images/figure-mtn.gif" width="320" height="200"><br>
+   Figure 3.5 - How peak heights add</a>
+<br><br>
+</div>
+
+<p>
+The shape of each peak is a Gaussian curve.  This shape is used as a rough
+estimate of the distribution of the data within each cluster.  The height of 
+each peak is portional to the cluster's internal similarity.  The volume of a
+peak is portional to the number of elements contained within the cluster.  The
+resulting Gaussian curves are added togther to form the terrain of the Mountain
+Visualization.
+</p>
+
+<p>
+<i>Note: When comparing peak heights keep in mind that the Mountain Visualization
+has added the peak curves together.  As seen in Figure 3.5, the resultant height
+is taller than the true height.</i>
+</p>
+
+<p>
+The color of a peak is proportional to the cluster's internal deviation.  Red
+indicates low deviation where as blue indicates high deviation.  Only the color
+at the tip of a peak is significant.  At all other areas, the color is
+determined by blending to create a smooth transition.
+</p>
+
+<p>
+Clicking on any label will load statistics about the associated cluster into the
+text window located below the visualization.  This information is identical to 
+the information found in the Solution Report.  If column labels have been chosen 
+for this data, then the Mountain Visualization can display the most common 
+features above each peak.  This option is called "Show Features" and is found 
+in the "Mountain" menu.
+</p>
+
+
+
+
+
+<a name="3.6"><h2>3.6 Printing</h2></a>
+
+<p>
+Printing is performed in gCLUTO by first opening a View to print.  Once a View
+is opened, printing and previewing can be initiated under the "File" menu. 
+Printing is only available for the following Views:
+</p>
+
+<ul>
+   <li>Matrix Visualization View
+   <li>Mountain Visualization View
+</ul>
+
+<p>
+Additional printing options such as page margins, page dimensions, and printer
+settings can be found by choosing the "Page Setup" and "Print Setup" options
+under the "File" menu.  Views can also be printed to Post Script files by
+selecting the "Print to File" option in the Print Dialog.
+</p>
+
+<a name="3.6.1"><h2>3.6.1 Printing Details</h2></a>
+
+<p>
+The various dimensions of the visualizations printed are calculated by the
+dimensions of the <b>Printable Area</b>.  The Printable Area is the area of the
+page that is within the margins.  Choosing a smaller printable area will
+generate smaller graphics.
+</p>
+
+<p>
+When printing the Matrix Visualization, the matrix is scaled to fit the entire
+page.  Relative scaling of rows and columns is left intact.  If labels or
+trees are present, they are each allocated roughly one sixth of the width of 
+the Printable Area.
+</p>
+
+<p>
+Mountain Visualizations are printed using the perspective and dimensions of the
+current Mountain Visualization View.  The visualization is scaled to fill as
+much of the Printable Area as possible without exceeding the margins.
+</p>
+
+
+
+
+<a name="3.7"><h2>3.7 Exporting</h2></a>
+
+<p>
+Exporting is performed in gCLUTO by first opening a View to export.  Once a
+View is opened, exporting can be initiated by choosing the "Export" option
+under the "Project" menu.  The following Views can be exported:
+</p>
+
+<ul>
+   <li>Data View
+   <li>Solution View (Solution Report)
+</ul>
+
+<p>
+Data Views are exported as tab delimited files containing the data matrix as
+well any solution columns that are present.  Row and column labels are also
+included in the first column and row, respectively.  If labels are not given,
+then default labels "rowX" and "colX" are used, where "X" is replaced by the
+row or column number.  Tab delimited files can be opened by most spread sheet
+programs.
+</p>
+
+<p>
+Solution Views are exported as HTML files.  The HTML files will contain the
+same information that is present in the Solution Report.  This makes it easier
+to use and share the information given in Solution Reports.  Web
+browsers and most word processors can open HTML files.
+</p>
+
+<br><br><br><br>
+<hr border=0 color="#000000">
+</body>
+</html>
