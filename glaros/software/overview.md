@@ -1,4 +1,4 @@
-# Software Tools Developed by Lab Members
+# Software tools developed by the lab
 
 Over the years, the research in the lab has resulted in the development of a number
 of software tools and libraries for key problems in the areas of parallel processing,
@@ -7,14 +7,14 @@ data mining, bioinformatics, and collaborative filtering.
 It is our general policy to make these tools available to the research community for
 use in their own research and/or non-commercial applications.
 
-Here is a list of software tools that can be downloaded.
-
 
 ## METIS: A Family of Multilevel Partitioning Algorithms
 
 This is a collection of serial and parallel programs & libraries that can be used to
 partitioning unstructured graphs, finite element meshes, and hypergraphs, both on
-serial as well as on parallel computers.
+serial as well as on parallel computers. 
+
+Additional information can be found [here](./metis/overview.md).
 
 
 ## CLUTO: Software for Clustering High-Dimensional DataSets
@@ -22,6 +22,8 @@ serial as well as on parallel computers.
 This is a collection of computationally efficient and high-quality data clustering
 and cluster analysis programs & libraries, that are well suited for high-dimensional
 data sets.
+
+Additional information can be found [here](./cluto/overview.md).
 
 
 ## BDMPI: Big Data Message Passing Interface
@@ -31,11 +33,16 @@ out-of-core distributed computing applications for problems whose aggregate memo
 requirements exceed the amount of memory that is available on the underlying
 computing cluster.
 
+Additional information can be found [here](./bdmpi/overview.md).
+
 
 ## SLIM - Sparse Linear Methods for Top-N Recommender Systems
 
 This is a library that implements a set of top-N recommendation methods that learn an
 item-item similarity matrix using sparse linear models.
+
+SLIM is available on [Github](https://github.com/KarypisLab/SLIM).
+
 
 
 ## NERSTRAND - Multi-threaded modularity-based graph clustering
@@ -44,12 +51,16 @@ This is a program that implements various serial and parallel modularity-based g
 clustering algorithms based on the multilevel paradigm. These algorithms can produce
 high-quality clustering solutions and can scale to very large graphs.
 
+NERSTRAND is available on [Github](https://github.com/dlasalle/nerstrand).
+
 
 ## SPLATT - Parallel Sparse Tensor Decomposition
 
 This is a program that implements various serial and parallel modularity-based graph
 clustering algorithms based on the multilevel paradigm. These algorithms can produce
 high-quality clustering solutions and can scale to very large graphs.
+
+SPLATT is available on [Github](https://github.com/ShadenSmith/splatt).
 
 
 ## L2AP - Fast Cosine Similarity Search With Prefix L-2 Norm Bounds
@@ -58,6 +69,8 @@ This is a program that implements various fast algorithms for for finding the se
 all pairs of similar vectors (e.g., documents) whose similarity is greater than a
 user-specified threshold.
 
+L2AP is available [here](https://davidanastasiu.net/software/l2ap/).
+
 
 ## L2Knng - Fast K-Nearest Neighbor Graph Construction with L2-Norm Pruning
 
@@ -65,11 +78,15 @@ This is a program that provides high-performance implementations of several meth
 for constructing the K-nearest neighbor graph of a set of vectors based on cosine
 similarity.
 
+L2Knng is available [here](https://davidanastasiu.net/software/l2knng/).
+
 
 ## PAFI: Software for Finding Patterns in Diverse Datasets
 
 This is a collection of computationally efficient programs for finding frequent
 patterns in transactional, sequential, and graph datasets.
+
+Additional information can be found [here](./pafi/overview.md).
 
 
 ## AFGen: Fragment-based Descriptors for Chemical Compounds
@@ -130,6 +147,28 @@ SUGGEST is currently distributed in a binary format and consists a stand-alone
 executable program and a library, which can be used to call SUGGEST's routines
 directly from another application.
 
+**Getting the files**
+
+The first step in using SUGGEST is to download the distribution file for your architecture.
+
+- [suggest-1.0-linux.tar.gz](/glaros/files/sw/suggest/suggest-1.0-linux.tar.gz).
+- [suggest-1.0-win32.zip](/glaros/files/sw/suggest/suggest-1.0-win32.zip).
+
+**Installing**
+
+After downloading SUGGEST you need to uncompress and untar it. This is achieved by executing the following command:
+
+    gunzip suggest-1.0-xxxxx.tar.gz
+    tar -xvf suggest-1.0-xxxxx.tar
+
+At this point you should have a directory named suggest-1.5-xxxxx. This directory
+contains SUGGEST's stand-alone programs and its user-callable library.
+
+**Documentation**
+
+Instructions describing how SUGGEST is used can be found at suggest-1.0-xxxxx/manual.pdf.
+You can get a local copy of this manual in PDF format from
+[here](/glaros/files/sw/suggest/manual.pdf)..
 
 
 
