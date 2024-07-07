@@ -1,7 +1,7 @@
 ## Welcome
 
-I'm George Karypis, a Professor at the Department of Computer Science & Engineering
-at the University of Minnesota in the Twin Cities of Minneapolis and Saint Paul.
+I'm a Professor at the Department of Computer Science & Engineering at the University
+of Minnesota in the Twin Cities of Minneapolis and Saint Paul.
 
 ## Research
 
@@ -32,6 +32,14 @@ structure prediction, recommender systems, data clustering, document classificat
 and clustering, frequent pattern discovery in diverse datasets (transactions,
 sequences, graphs), parallel Cholesky factorization, and parallel preconditioners.
 
+The following links provide more information about specific projects:
+
+* [Data mining](glaros/projects/dm.md)
+* [Graph partitioning](glaros/projects/gp.md)
+* [Chemical informatics](glaros/projects/cheminfo.md)
+* [Bioinformatics](glaros/projects/bio.md)
+
+
 ### Software
 
 The research of my group research has resulted in the development of software
@@ -43,11 +51,17 @@ dimensional datasets (CLUTO), and finding frequent patterns in diverse datasets
 expression data (gCLUTO) and for predicting the secondary structure of proteins
 (YASSPP).
 
+Additional information about the software and download instructions can be found
+[here](glaros/software/overview.md).
+
+
 ### Publications
 
-I have coauthored over one hundred journal and conference papers on these topics and
-a book titled "Introduction to Parallel Computing" (Publ. Addison Wesley, 2003, 2nd
-edition).
+I have coauthored over one hundred journal and conference papers on these topics.
+More information can be be found at my 
+[Google Scholar](https://scholar.google.com/citations?user=ElqwScwAAAAJ),
+[DBLP](https://dblp.org/pid/k/GeorgeKarypis.html), and
+[arXiv](https://arxiv.org/search/cs?searchtype=author&query=Karypis,+G) pages.
 
 
 ## Education, Mentoring, and Advising
