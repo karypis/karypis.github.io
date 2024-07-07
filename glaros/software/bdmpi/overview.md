@@ -32,21 +32,21 @@ implemented in such a way so that to be a drop-in replacement of existing MPI
 implementations and allow existing codes that utilize the subset of MPI functions
 implemented by BDMPI to compile unchanged.
 
-The distribution of BDMPI contains a number of source files written entirely in ANSI C, and is currently designed for Linux systems.
-Getting the files
-
-Latest stable release:
- - [bdmpi-0.2.0.tar.gz](/glaros/files/sw/bdmpi/bdmpi-0.2.0.tar.gz).
-
-After downloading BDMPI you need to uncompress it and untar it. This is achieved by
-executing the following command:
-
-    tar -xzf bdmpi-x.y.z.tar.gz
-
-At this point you should have a directory named bdmpi-x.y.z, This directory contains
-BDMPI's source code. To build BDMPI, follow the instructions in bdmpi-x.y.z/README.
-
-Instructions describing how to use BDMPI can be found at
-[bdmpi-x.y.z/doc/refmap.pdf](/glaros/files/sw/bdmpi/doc/refmap.pdf)
-or [bdmpi-x.y.z/doc/html/index.html](/glaros/files/sw/bdmpi/doc/html/index.html)..
+> The distribution of BDMPI contains a number of source files written entirely in ANSI C, and is currently designed for Linux systems.
+> Getting the files
+> 
+> Latest stable release:
+>  - [bdmpi-0.2.0.tar.gz](/glaros/files/sw/bdmpi/bdmpi-0.2.0.tar.gz).
+> 
+> After downloading BDMPI you need to uncompress it and untar it. This is achieved by
+> executing the following command:
+> 
+>     tar -xzf bdmpi-x.y.z.tar.gz
+> 
+> At this point you should have a directory named bdmpi-x.y.z, This directory contains
+> BDMPI's source code. To build BDMPI, follow the instructions in bdmpi-x.y.z/README.
+> 
+> Instructions describing how to use BDMPI can be found at
+> [bdmpi-x.y.z/doc/refmap.pdf](/glaros/files/sw/bdmpi/doc/refmap.pdf)
+> or [bdmpi-x.y.z/doc/html/index.html](/glaros/files/sw/bdmpi/doc/html/index.html)..
 

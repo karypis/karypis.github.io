@@ -106,21 +106,20 @@ outperform previously developed schemes based on the widely used fingerprint- an
 Maccs keys-based descriptors, as well as recently introduced descriptors obtained by
 mining and analyzing the structure of the molecular graphs.
 
-Getting the latest release:
- - [afgen-2.0.0.tar.gz Linux (i686/x86_64)](files/afgen/afgen-2.0.0.tar.gz)
-
-On Unix systems, after downloading AFGen you need to uncompress and untar it. This is
-achieved by executing the following command:
-
-    gunzip afgen-2.0.0.tar.gz
-    tar -xvf afgen-2.0.0.tar
-
-At this point you should have a directory named afgen-2.0.0. This directory contains
-AFGen's stand-alone programs, its documentation, and a sample dataset.
-
-Instructions describing how to use AFGen can be found at
-[afgen-2.0/doc/index.html](/glaros/files/sw/afgen/doc/index.html).
-
+> Getting the latest release:
+>  - [afgen-2.0.0.tar.gz Linux (i686/x86_64)](files/afgen/afgen-2.0.0.tar.gz)
+> 
+> On Unix systems, after downloading AFGen you need to uncompress and untar it. This is
+> achieved by executing the following command:
+> 
+>     gunzip afgen-2.0.0.tar.gz
+>     tar -xvf afgen-2.0.0.tar
+> 
+> At this point you should have a directory named afgen-2.0.0. This directory contains
+> AFGen's stand-alone programs, its documentation, and a sample dataset.
+> 
+> Instructions describing how to use AFGen can be found at
+> [afgen-2.0/doc/index.html](/glaros/files/sw/afgen/doc/index.html).
 
 
 ## SUGGEST: A top-N Recommender Engine

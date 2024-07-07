@@ -36,26 +36,27 @@ which sequences or graph transactions support a particular frequent pattern. Thi
 all three programs can generate parent-children lists (PC-lists) that can be used to
 construct the frequent pattern lattice.
 
-The PAFI pattern discovery package is currently distributed as a single file that contains binary distributions for Linux and Sun platforms.
-
-Available files for download:
--[pafi-1.0.1.tar.gz](/glaros/files/sw/pafi/pafi-1.0.1.tar.gz).
--[pafi-1.0.1.zip](/glaros/files/sw/pafi/pafi-1.0.1.zip). 
-
-Older versions of PAFI can be found [here](/glaros/files/sw/pafi/OLD).
-
-On Unix systems, after downloading PAFI you need to uncompress and untar it. This is achieved by executing the following command:
-
-    gunzip pafi-1.0.1.tar.gz
-    tar -xvf pafi-1.0.1.tar
-
-On Windows systems, you need to have a zip/unzip program (e.g., winzip) in order to
-unzip the files. In general, you just need to double click on "pafi-1.0.1.zip" and
-the file will be unzipped automatically.
-
-At this point you should have a directory named pafi-1.0.1. This directory contains
-PAFI's programs and some test datasets.
-
-Instructions describing how to use PAFI can be found at pafi-1.0.1/manual.pdf. You
-can get a local copy of this documentation from
-[here](/glaros/files/sw/pafi/manual.pdf).
+> The PAFI pattern discovery package is currently distributed as a single file that
+> contains binary distributions for Linux and Sun platforms.
+> 
+> Available files for download:
+> -[pafi-1.0.1.tar.gz](/glaros/files/sw/pafi/pafi-1.0.1.tar.gz).
+> -[pafi-1.0.1.zip](/glaros/files/sw/pafi/pafi-1.0.1.zip). 
+> 
+> Older versions of PAFI can be found [here](/glaros/files/sw/pafi/OLD).
+> 
+> On Unix systems, after downloading PAFI you need to uncompress and untar it. This is achieved by executing the following command:
+> 
+>     gunzip pafi-1.0.1.tar.gz
+>     tar -xvf pafi-1.0.1.tar
+> 
+> On Windows systems, you need to have a zip/unzip program (e.g., winzip) in order to
+> unzip the files. In general, you just need to double click on "pafi-1.0.1.zip" and
+> the file will be unzipped automatically.
+> 
+> At this point you should have a directory named pafi-1.0.1. This directory contains
+> PAFI's programs and some test datasets.
+> 
+> Instructions describing how to use PAFI can be found at pafi-1.0.1/manual.pdf. You
+> can get a local copy of this documentation from
+> [here](/glaros/files/sw/pafi/manual.pdf).
