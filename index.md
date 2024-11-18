@@ -34,7 +34,8 @@ dimensional datasets (CLUTO), and finding frequent patterns in diverse datasets
 expression data (gCLUTO) and for predicting the secondary structure of proteins
 (YASSPP).
 
-Additional information about the software and download instructions can be found
+A lot of this software is available in the [Karypis
+Lab](https://github.com/KarypisLab) github page. Additional information about the software and download instructions can be found
 [here](glaros/software/overview.md).
 
 
