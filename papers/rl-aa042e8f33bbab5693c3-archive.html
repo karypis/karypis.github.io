@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
     <title>Reading List — Archive</title>
-    <style>
-:root {
+    <style>:root {
     --bg: #f8f9fa; --card-bg: #ffffff; --accent: #2563eb;
     --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
     --green: #059669; --green-light: #d1fae5;
@@ -140,7 +139,13 @@ async function flushQueue() {
 
 flushQueue();
 
-function actBtn(action, paperId) {
+function actBtn(action, btn) {
+    // Resolve paper_id from the enclosing card's data-pid attribute
+    // rather than from an inlined string in onclick. Keeps the value
+    // strictly in HTML-attribute context, never as a JS string literal.
+    const card = btn && btn.closest("[data-pid]");
+    const paperId = card && card.getAttribute("data-pid");
+    if (!paperId) { toast("Missing paper_id"); return; }
     const endpoint = action === "unsave" ? "/unsave"
                   : action === "mark_read" ? "/mark_read"
                   : action === "archive" ? "/archive"
