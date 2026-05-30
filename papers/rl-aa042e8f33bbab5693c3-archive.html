@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Reading List — Archive</title>
+    <style>
+:root {
+    --bg: #f8f9fa; --card-bg: #ffffff; --accent: #2563eb;
+    --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
+    --green: #059669; --green-light: #d1fae5;
+    --amber: #d97706; --amber-light: #fef3c7;
+    --gray: #64748b; --gray-light: #f1f5f9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+       background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 2rem; padding: 2rem;
+         background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; border-radius: 12px; }
+header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+header p { opacity: 0.85; font-size: 1rem; }
+header .seed { color: inherit; text-decoration: none; cursor: inherit; }
+header .seed:hover { color: inherit; text-decoration: none; }
+.sister-link { display: inline-block; margin-top: 1rem; padding: 0.4rem 0.9rem;
+               background: rgba(255,255,255,0.15); color: white;
+               border-radius: 8px; text-decoration: none; font-size: 0.9rem; }
+.section { margin-top: 2rem; }
+.section-title { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem;
+                 padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); color: var(--accent); }
+.search-box { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border);
+              border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; }
+.paper-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+              padding: 1.25rem 1.5rem; margin-bottom: 1rem; transition: box-shadow 0.2s; }
+.paper-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.paper-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+.paper-card h3 a { color: var(--accent); text-decoration: none; }
+.meta { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.meta a { color: var(--accent); text-decoration: none; }
+.tldr { font-size: 0.94rem; color: #334155; margin: 0.6rem 0; white-space: pre-line; }
+.summary-text { font-size: 0.93rem; color: #334155; margin: 0.5rem 0; white-space: pre-line; }
+.annotation-summary { font-size: 0.92rem; color: var(--green); background: var(--green-light);
+                      border-left: 3px solid var(--green); padding: 0.6rem 1rem;
+                      margin: 0.5rem 0; border-radius: 0 6px 6px 0; }
+.annotation-list { font-size: 0.85rem; color: var(--text-muted); margin: 0.5rem 0;
+                   padding-left: 1.2rem; }
+.annotation-list li { margin-bottom: 0.3rem; }
+.annotation-badge { display: inline-block; padding: 0.12rem 0.5rem; border-radius: 10px;
+                    background: var(--amber-light); color: var(--amber);
+                    font-size: 0.78rem; font-weight: 600; margin-left: 0.4rem; }
+.rank-badge { display: inline-block; padding: 0.18rem 0.55rem; border-radius: 12px;
+              font-size: 0.78rem; font-weight: 600;
+              background: #dbeafe; color: #2563eb; margin-right: 0.4rem; }
+.profile-tag { display: inline-block; padding: 0.1rem 0.45rem; border-radius: 8px;
+               background: #1e293b; color: white; font-size: 0.7rem;
+               text-transform: uppercase; letter-spacing: 0.05em; }
+.controls { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.7rem; }
+.ctl-btn { padding: 0.35rem 0.7rem; border: 1px solid var(--border); border-radius: 6px;
+           background: white; cursor: pointer; font-size: 0.85rem; }
+.ctl-btn:hover { background: #f1f5f9; }
+.ctl-btn.danger { color: #b91c1c; }
+.collapsed-summary { color: var(--text-muted); font-style: italic; margin: 0.4rem 0; }
+.toast { position: fixed; bottom: 2rem; right: 2rem; padding: 0.8rem 1.2rem;
+         background: var(--accent); color: white; border-radius: 8px;
+         box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; z-index: 100; }
+@media (max-width: 700px) { body { padding: 1rem; } header { padding: 1.25rem; }
+                             header h1 { font-size: 1.3rem; } }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Reading List — Archive</h1>
+        <p><a class="seed" href="https://feedback.karypis.org/health" target="_blank" rel="noopener">0</a> papers</p>
+        <a class="sister-link" href="rl-aa042e8f33bbab5693c3.html">→ Active list</a>
+    </header>
+
+    <input type="text" class="search-box" id="searchBox" placeholder="Search by title, content, or year...">
+    <h2 class="section-title" id="sec-old">📚 Older Saved / Read (0)</h2>
+    <p style="color:var(--text-muted);">— none —</p>
+    <h2 class="section-title" id="sec-archived">🗃️ Archived (0)</h2>
+    <p style="color:var(--text-muted);">— none —</p>
+
+    <div class="toast" id="toast"></div>
+</div>
+<script>
+const FEEDBACK_URL = "https://feedback.karypis.org";
+const FEEDBACK_SECRET = "72ec992486adf8a7d95eb161959cb22826a513faa58e96f79d729a06e52c7686";
+const QUEUE_KEY = "paper_feedback_queue";
+
+function loadQueue() { try { return JSON.parse(localStorage.getItem(QUEUE_KEY) || "[]"); } catch(e) { return []; } }
+function saveQueue(q) { localStorage.setItem(QUEUE_KEY, JSON.stringify(q)); }
+function toast(msg) {
+    const t = document.getElementById("toast");
+    t.textContent = msg; t.style.display = "block";
+    setTimeout(() => t.style.display = "none", 3000);
+}
+
+async function postAction(endpoint, body) {
+    try {
+        const resp = await fetch(FEEDBACK_URL + endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json",
+                        "X-Feedback-Secret": FEEDBACK_SECRET },
+            body: JSON.stringify(body),
+            credentials: "include",
+        });
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        toast("✓ Saved");
+        setTimeout(() => location.reload(), 600);
+    } catch (err) {
+        // Queue for retry on next page load
+        const q = loadQueue();
+        q.push({ endpoint, body, ts: new Date().toISOString() });
+        saveQueue(q);
+        toast("✗ Couldn't reach server — queued for retry");
+    }
+}
+
+async function flushQueue() {
+    const q = loadQueue();
+    if (!q.length) return;
+    const remaining = [];
+    for (const item of q) {
+        try {
+            const resp = await fetch(FEEDBACK_URL + item.endpoint, {
+                method: "POST",
+                headers: { "Content-Type": "application/json",
+                            "X-Feedback-Secret": FEEDBACK_SECRET },
+                body: JSON.stringify(item.body),
+                credentials: "include",
+            });
+            if (!resp.ok) remaining.push(item);
+        } catch (e) { remaining.push(item); }
+    }
+    saveQueue(remaining);
+    if (remaining.length === 0 && q.length > 0) toast("✓ Queued events synced");
+}
+
+flushQueue();
+
+function actBtn(action, paperId) {
+    const endpoint = action === "unsave" ? "/unsave"
+                  : action === "mark_read" ? "/mark_read"
+                  : action === "archive" ? "/archive"
+                  : "/undo";
+    postAction(endpoint, { paper_id: paperId, source: "mac", action });
+}
+
+document.getElementById("searchBox").addEventListener("input", function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll(".paper-card").forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? "" : "none";
+    });
+});
+</script>
+</body>
+</html>
