@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Research Papers — Innovation Rankings — Jun 27 – Jul 04, 2026</title>
+    <style>:root {
+    --bg: #f8f9fa; --card-bg: #ffffff; --accent: #2563eb; --accent-light: #dbeafe;
+    --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
+    --tag-rec: #818cf8; --tag-cite: #f59e0b; --tag-author: #10b981;
+    --tag-results: #ef4444; --tag-profile: #8b5cf6;
+    --green: #059669; --green-light: #d1fae5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+       background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 2rem; padding: 2rem;
+         background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; border-radius: 12px; }
+header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+header p { opacity: 0.85; font-size: 1rem; }
+header .seed { color: inherit; text-decoration: none; cursor: inherit; }
+header .seed:hover { color: inherit; text-decoration: none; }
+.stats { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+.stat { background: rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; }
+.stat strong { font-size: 1.3rem; display: block; }
+.ranking-criteria { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+                    padding: 1.5rem; margin-bottom: 2rem; }
+.ranking-criteria h2 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent); }
+.ranking-criteria p { font-size: 0.93rem; color: #475569; margin-bottom: 0.5rem; }
+.legend { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.legend-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+nav.toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+          padding: 1.5rem; margin-bottom: 2rem; }
+nav.toc h2 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent); }
+nav.toc ul { list-style: none; columns: 2; column-gap: 2rem; }
+nav.toc li { margin-bottom: 0.4rem; }
+nav.toc a { color: var(--text); text-decoration: none; font-size: 0.9rem; }
+nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+.search-box { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border);
+              border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; }
+.search-box:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+.filters { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+.filters label { font-weight: 600; margin-right: 0.5rem; }
+.filter-btn { padding: 0.4rem 0.8rem; border: 1px solid var(--border); border-radius: 20px;
+              background: white; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.section-title { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem;
+                 padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); color: var(--accent); }
+.paper-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+              padding: 1.25rem 1.5rem; margin-bottom: 1rem; transition: box-shadow 0.2s; position: relative; }
+.paper-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.paper-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+.paper-card h3 a { color: var(--accent); text-decoration: none; }
+.paper-card h3 a:hover { text-decoration: underline; }
+.meta { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.meta .authors { font-style: italic; }
+.rank-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 16px;
+              font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+.rank-justification { font-size: 0.88rem; color: #475569; background: #f8fafc;
+                      border-left: 3px solid var(--accent); padding: 0.6rem 1rem;
+                      margin: 0.5rem 0; border-radius: 0 6px 6px 0; }
+.tldr-block { font-size: 0.92rem; color: #334155;
+              background: #f0fdf4; border-left: 3px solid var(--green);
+              padding: 0.7rem 1rem; margin: 0.5rem 0;
+              border-radius: 0 6px 6px 0; white-space: pre-line; line-height: 1.6; }
+.tldr-block strong { color: #1e293b; }
+.dim-scores { display: flex; gap: 0.3rem; flex-wrap: wrap; align-items: center;
+              margin: 0.4rem 0; font-size: 0.72rem; }
+.dim-score { display: inline-block; padding: 0.12rem 0.45rem; border-radius: 10px;
+             color: #334155; font-weight: 500; font-family: monospace; }
+.dim-profile { display: inline-block; padding: 0.12rem 0.45rem; border-radius: 10px;
+               background: #1e293b; color: white; font-weight: 600; font-size: 0.7rem;
+               text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.3rem; }
+.feedback-row { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;
+                margin: 0.5rem 0; }
+.fb-btn { padding: 0.35rem 0.7rem; border: 1px solid var(--border); border-radius: 6px;
+          background: white; cursor: pointer; font-size: 0.85rem;
+          transition: background 0.2s; font-family: inherit; }
+.fb-btn:hover { background: #f1f5f9; }
+.fb-btn.fb-active { background: var(--accent-light); border-color: var(--accent);
+                    color: var(--accent); font-weight: 600; }
+.fb-btn.fb-skip.fb-active { background: #fee2e2; border-color: #b91c1c; color: #b91c1c; }
+.summary-text { font-size: 0.93rem; color: #334155; margin: 0.75rem 0; white-space: pre-line; }
+.tags { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-top: 0.5rem; }
+.tag { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 12px;
+       font-size: 0.75rem; font-weight: 500; color: white; }
+.tag-recommended { background: var(--tag-rec); }
+.tag-citations { background: var(--tag-cite); }
+.tag-author { background: var(--tag-author); }
+.tag-results { background: var(--tag-results); }
+.tag-profile { background: var(--tag-profile); }
+.tag-arxiv { background: #b91c1c; font-family: monospace; }
+.pdf-link { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.7rem;
+            background: #dc2626; color: white; border-radius: 6px; text-decoration: none;
+            font-size: 0.8rem; font-weight: 600; transition: background 0.2s; }
+.pdf-link:hover { background: #b91c1c; }
+.comparison-card { background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                   border: 1px solid #86efac; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.comparison-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--green); margin-bottom: 0.5rem; }
+.comparison-card .papers-list { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 0.75rem 1.2rem; padding: 0; }
+.comparison-card .papers-list li { margin-bottom: 0.2rem; }
+.comparison-card .comparison-text { font-size: 0.93rem; color: #334155; line-height: 1.7; }
+.back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--accent); color: white;
+               border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+               font-size: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; z-index: 100; }
+.back-to-top:hover { background: #1d4ed8; }
+@media (max-width: 700px) { body { padding: 1rem; } header { padding: 1.25rem; }
+                             header h1 { font-size: 1.3rem; } nav.toc ul { columns: 1; } }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Weekly Research Papers — Innovation Rankings</h1>
+        <p>Papers from Google Scholar alerts <a class="seed" href="https://feedback.karypis.org/health" target="_blank" rel="noopener">&amp;</a> email <a class="seed" href="rl-aa042e8f33bbab5693c3.html" target="_blank" rel="noopener">—</a> Jun 27 – Jul 04, 2026</p>
+        <div class="stats">
+            <div class="stat"><strong>0</strong> Papers Ranked</div>
+            <div class="stat"><strong>0</strong> Thematic Groups</div>
+        </div>
+    </header>
+
+    <div class="ranking-criteria">
+        <h2>Innovation Ranking Criteria</h2>
+        <p>Papers are ranked from most to least innovative based on five criteria:
+           (1) novelty of problem formulation or paradigm shift,
+           (2) creativity of methodology,
+           (3) surprisingness of results or insights,
+           (4) potential impact on the field, and
+           (5) degree of departure from existing approaches.
+           Each paper includes a justification explaining its placement.</p>
+        <div class="legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#059669;"></span> ≥90 Groundbreaking</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#2563eb;"></span> ≥75 Highly Innovative</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#7c3aed;"></span> ≥60 Innovative</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#d97706;"></span> ≥40 Moderately Innovative</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#64748b;"></span> ≥20 Incremental</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#94a3b8;"></span> &lt;20 Routine</div>
+        </div>
+    </div>
+
+    <nav class="toc" id="tocNav">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#ranked">Innovation Rankings (1-0)</a></li>
+            <li><a href="#no-pdf">Could Not Fetch PDF (168)</a></li>
+        </ul>
+    </nav>
+
+    <input type="text" class="search-box" id="searchBox" placeholder="Search papers by title, author, keyword, or rank number...">
+    <div class="filters">
+        <label>Filter:</label>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="top5">Top 5</button>
+        <button class="filter-btn" data-filter="top15">Top 15</button>
+        <button class="filter-btn" data-filter="recommended">Recommended</button>
+        <button class="filter-btn" data-filter="citations">Citations</button>
+        <button class="filter-btn" data-filter="author-follow">Author Follows</button>
+        <button class="filter-btn" data-filter="profile">Your Profile</button>
+    </div>
+
+    <h2 class="section-title" id="ranked">Innovation Rankings</h2>
+    <div id="papersContainer">
+    </div>
+
+    <h2 class="section-title" id="comparisons">Thematic Comparisons</h2>
+    <h2 class="section-title" id="no-pdf">Could Not Fetch PDF</h2>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">The pipeline could not download a PDF for the following 168 paper(s) (paywall, Cloudflare challenge, expired link, or no `citation_pdf_url` meta tag on the publisher page). Click through to try fetching the PDF manually.</p>
+    <ul style="font-size:0.9rem;color:#475569;">
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0020025526007772" target="_blank" rel="noopener">A multi-teacher knowledge distillation framework with hypergraph neural networks and language models for mitigating sparsity in recommender systems</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=re9NtTb1Dy" target="_blank" rel="noopener">Bits That Count: Quantifying and Predicting Capabilities of Language Models</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=fDZZXgdx2F" target="_blank" rel="noopener">Beyond Sunk Costs: Boosting LLM Pre-training Efficiency via Orthogonal Growth of Mixture-of-Experts</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=SxsyLjIfWB" target="_blank" rel="noopener">TabICLv2: A Better, Faster, Scalable, and Open Tabular Foundation Model</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=9yNGBueKgZ" target="_blank" rel="noopener">FlowState: Sampling-Rate‑Equivariant Time‑Series Forecasting</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0957417426023754" target="_blank" rel="noopener">Retrofitting Temporal GNN Training with Decoder-Only Transformers on Large-Scale Graphs</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=XZaRHkbc2u" target="_blank" rel="noopener">Position: Digital Agents Require Unified Agent-Native Environments</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://hal.science/hal-05670849/document" target="_blank" rel="noopener">ProfileFormer: A Profile-Based Transformer for Context-Aware Tabular Data Generation</a> <span style="color:var(--text-muted);">[hal.science]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=onuLk72nRw" target="_blank" rel="noopener">Beyond Independent Genes: Learning Module-Inductive Representations for Single-Cell Gene Perturbation Prediction</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://link.springer.com/article/10.1007/s00163-026-00490-4" target="_blank" rel="noopener">AfGNN: adaptive graph neural networks for causal failure reasoning in DFMEA</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=JHYmxqS9Jv" target="_blank" rel="noopener">Benchmarking Agent Memory in Interdependent Multi-Session Agentic Tasks</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Julian McAuley - new articles</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0921889026002769" target="_blank" rel="noopener">Quantum-Inspired SLAM-Based Localization and Neural - Symbolic Path Planning for High-Precision Navigation of Tea-Picking Robots in Vertical Gardens</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://raw.githubusercontent.com/mlresearch/v319/main/assets/yusuf26a/yusuf26a.pdf" target="_blank" rel="noopener">From Black-Box to Glass-Box: A Review of Explainable Neuro- Symbolic AI for Climate-Induced Food Insecurity Prediction</a> <span style="color:var(--text-muted);">[raw.githubusercontent.com]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://www.mdpi.com/1999-5903/18/7/342" target="_blank" rel="noopener">Advances in Smart Environments and Digital Twin : Current Trends and Future Directions</a> <span style="color:var(--text-muted);">[mdpi.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://jcstm.info/index.php/jcstm/article/view/21" target="_blank" rel="noopener">AI-Driven Digital Twin Ecosystems: Applications in Healthcare, Environmental Engineering, and Smart Enterprise Management</a> <span style="color:var(--text-muted);">[jcstm.info]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://econpapers.repec.org/article/achjournl/y_3a2026_3aid_3a1548.htm" target="_blank" rel="noopener">Methodological basis for the development of a digital twin of an employee of the company</a> <span style="color:var(--text-muted);">[econpapers.repec.org]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/record.jsf?pid=diva2:2065796" target="_blank" rel="noopener">Transforming Waste Identification in Value Stream Mapping: The Role of Industry 4.0 Digital Operational Data in Manufacturing</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Seyyedabdolhojjat-Moghadasnian/publication/408175680_Auditable_AI_Decision_Intelligence_for_Aviation_MRO_A_KPI_Governance_Architecture/links/6a415583d551e312d7221abf/Auditable-AI-Decision-Intelligence-for-Aviation-MRO-A-KPI-Governance-Architecture.pdf" target="_blank" rel="noopener">Auditable AI Decision Intelligence for Aviation MRO: A KPI Governance Architecture</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/pdf/10.1145/3816762" target="_blank" rel="noopener">XARP: A Human-First and Agent -Ready Extended Reality Toolkit in Python</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://hammer.purdue.edu/articles/thesis/SENSOR_ATTACKS_AND_DEFENSES_IN_INTERCONNECTED_CYBER-PHYSICAL_SYSTEMS/32786241" target="_blank" rel="noopener">SENSOR ATTACKS AND DEFENSES IN INTERCONNECTED CYBER-PHYSICAL SYSTEMS</a> <span style="color:var(--text-muted);">[hammer.purdue.edu]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2068189/FULLTEXT01.pdf" target="_blank" rel="noopener">Domain ambiguity in AI-assistedsoftware development: A controlled study of how an AI agent handlesinconsistent business-domain context</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://openurl.ebsco.com/contentitem/gcd:194824144?sid=ebsco:plink:crawler-gcd&amp;id=ebsco:gcd:194824144&amp;crl=c&amp;jrnl=18657923" target="_blank" rel="noopener">Federated and Privacy-Preserving Adaptive Learning Framework for AI-Driven Mobile Education Platforms.</a> <span style="color:var(--text-muted);">[openurl.ebsco.com]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Hussein-Ghanim/publication/407307171_Development_of_an_adaptive_student_behavior_model_for_e_tutoring_systems/links/6a3c1e5c3a0dbb76335d5748/Development-of-an-adaptive-student-behavior-model-for-e-tutoring-systems.pdf" target="_blank" rel="noopener">Development of an adaptive student behavior model for e-tutoring systems</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Aladdin-Masri/publication/408199305_Forward_a_hybrid_AI_fashion_recommender_system_blending_trends_and_personal_style_based_on_fuzzy_systems/links/6a427d612267bf198a6a18b4/Forward-a-hybrid-AI-fashion-recommender-system-blending-trends-and-personal-style-based-on-fuzzy-systems.pdf" target="_blank" rel="noopener">Forward a hybrid AI fashion recommender system blending trends and personal style based on fuzzy systems</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2081662/FULLTEXT01.pdf" target="_blank" rel="noopener">Choosing the Right Game for ERP Education: Establishing a Selection Criteria Framework for Evaluating COTS Games</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://ejournal.undiksha.ac.id/index.php/insert/article/download/113448/37558" target="_blank" rel="noopener">Design and Implementation of An ETL-Based Data Management Pipeline Using a Semi-Kimball Approach for Business Intelligence in Boarding House and Laundry …</a> <span style="color:var(--text-muted);">[ejournal.undiksha.ac.id]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://bi.ue-varna.bg/ojs/index.php/bmc/article/download/175/48" target="_blank" rel="noopener">Crowdsourcing and sharing economy models in urban logistics</a> <span style="color:var(--text-muted);">[bi.ue-varna.bg]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2070985/FULLTEXT01.pdf" target="_blank" rel="noopener">Unmasking the Magic: Synthetic Data as a Strategic Tool for AI Innovation</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2080832/FULLTEXT01.pdf" target="_blank" rel="noopener">Scenario Planning in Risk Management within Sales and Operations Planning: A Multiple Case Study of Large Manufacturing Companies</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://gupea.ub.gu.se/bitstreams/698b8c53-3255-4f7e-8e72-c6071ca844da/download" target="_blank" rel="noopener">Speeding Up LLM Token Generation Using Approximate Neighbors-An investigation into reducing inference cost by replacing full-vocabulary scoring with …</a> <span style="color:var(--text-muted);">[gupea.ub.gu.se]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/pdf/10.1145/3827621" target="_blank" rel="noopener">Parallax: Performance Prediction for Training– Inference Co-Execution</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://academic.oup.com/imaman/advance-article/doi/10.1093/imaman/dpag019/8721674" target="_blank" rel="noopener">From the &#x27;Inter-AI Period&#x27;to the &#x27;Agentic Era:&#x27;The Role of Management Mathematics</a> <span style="color:var(--text-muted);">[academic.oup.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2071251/FULLTEXT01.pdf" target="_blank" rel="noopener">Virtuous or Vicious Cycle?: Generative AI and the Reconfiguration of Dynamic Capabilities in Large-Scale Software Enterprises</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://gupea.ub.gu.se/bitstreams/bfa6d4f6-46f0-43a2-907f-f63ecb32c108/download" target="_blank" rel="noopener">Human-AI Runtime Requirements Validation: A Feedback Driven Framework-An investigation into the design, implementation and evaluation of a Human-AI …</a> <span style="color:var(--text-muted);">[gupea.ub.gu.se]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://ejournal.uinsaid.ac.id/jmif/article/download/15173/4200" target="_blank" rel="noopener">The Impact of Corporate Social Responsibility Disclosure on Financial Performance with Financial Statement Comparability as A Mediating</a> <span style="color:var(--text-muted);">[ejournal.uinsaid.ac.id]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11560603/" target="_blank" rel="noopener">GoPrune: Efficient Structured Pruning with $\ell_ {2, p} $-Norm Optimization</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>8 new citations to your articles</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/4620076/4620077/11579760.pdf" target="_blank" rel="noopener">MTGKT: Multi-scale Temporal Graph Knowledge Tracing</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>8 new citations to your articles</em></li>
+        <li><a href="https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&amp;identifierValue=10.1201/9781003743767-128&amp;type=chapterpdf" target="_blank" rel="noopener">A Machine Learning-Based Book Recommendation System</a> <span style="color:var(--text-muted);">[api.taylorfrancis.com]</span> — <em>8 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=8bUDbWMo5v" target="_blank" rel="noopener">Controlling the Risk of Corrupted Contexts for Language Models via Early-Exiting</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://link.springer.com/content/pdf/10.1007/979-8-8688-2388-6.pdf" target="_blank" rel="noopener">Owning Intelligence</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>trust and safety genAI - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/6287639/6514899/11580353.pdf" target="_blank" rel="noopener">LLM-based Intelligent Agents for Cybersecurity: A Tutorial and Survey of Automated Vulnerability Discovery</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11560617/" target="_blank" rel="noopener">Reforming Graduate Education in Control Engineering for the Emerging Low-Altitude Economy</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2077093/FULLTEXT01.pdf" target="_blank" rel="noopener">From Requirement Text to Diagrams: Using Generative AI for UML Modeling in Industrial Software Engineering</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=4f7uEQAAQBAJ&amp;oi=fnd&amp;pg=PT7&amp;dq=generating+environments+for+agent+testing+in+enterprises&amp;ots=rXy9UEgMQR&amp;sig=o3g76-v4iMAw-Cp9G4WPABj_ubc" target="_blank" rel="noopener">Missional Cohesion of African Diaspora in the West: An Afrocentric Model for Black American and Nigerian Immigrant Church Collaboration</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=NzzvEQAAQBAJ&amp;oi=fnd&amp;pg=PA1982&amp;dq=generating+environments+for+agent+testing+in+enterprises&amp;ots=uaXZcsSadJ&amp;sig=_lLRX83WAkaKR8TB7yPTYHtyppE" target="_blank" rel="noopener">Artificial Intelligence in the International Film and Audiovisual Media Industries</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=fP_uEQAAQBAJ&amp;oi=fnd&amp;pg=PT13&amp;dq=generating+environments+for+agent+testing+in+enterprises&amp;ots=sY37efu4k1&amp;sig=re2VIKf1TI5iog-hnWzj8vj0lxY" target="_blank" rel="noopener">Countering the AI Revolution: Preserving the arc of humanity to seed a better future</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://dspace.mit.edu/server/api/core/bitstreams/6299b595-1bf6-4993-b073-5676e2864964/content" target="_blank" rel="noopener">OF TECHNOLOGY UCI 13 2017 LIBRARIES ARCHIVES Submitted to the Program in Science, Technology, and Society</a> <span style="color:var(--text-muted);">[dspace.mit.edu]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0378779626008242" target="_blank" rel="noopener">Towards intelligent simulation platforms for scalable validation of digital energy systems</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&amp;identifierValue=10.1201/9781003672074-3&amp;type=chapterpdf" target="_blank" rel="noopener">AI and Robotics Revolutionize Industrialized Construction</a> <span style="color:var(--text-muted);">[api.taylorfrancis.com]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=lDXvEQAAQBAJ&amp;oi=fnd&amp;pg=PA9&amp;dq=automated+generated+environments+for+agent+testing&amp;ots=2JGxFPi_1l&amp;sig=geNQ3hJshKIyDfgc7v9dJYRTYsM" target="_blank" rel="noopener">AI FOR ENGINEERING STUDENTS</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://dspace.mit.edu/server/api/core/bitstreams/80543f25-ff08-410c-86a3-5ac302672957/content" target="_blank" rel="noopener">MASTER OF SCIENCE IN TECHNOLOGY AND POLICY at the MASSACHUSETTS INSTITUTE OF TECHNOLOGY May 2025© 2025 Benjamin Wettstein. All rights …</a> <span style="color:var(--text-muted);">[dspace.mit.edu]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://apothesis.eap.gr/archive/download/fea0d152-4240-4831-a8a3-71b63be7b197.pdf" target="_blank" rel="noopener">Master in Business Administration (MBA)</a> <span style="color:var(--text-muted);">[apothesis.eap.gr]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2079703/FULLTEXT01.pdf" target="_blank" rel="noopener">Managers in the Middle of the AI Shift: A Qualitative Study of Managerial Roles in the Early-Stages of AI Agent Technology Implementation</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://dspace.mit.edu/server/api/core/bitstreams/8e762d18-2e68-41fe-a353-67161f0beedc/content" target="_blank" rel="noopener">Electronic copy available at: http://ssrn. com/abstract= 1373889 MIT Sloan School of Management MIT Sloan School Working Paper 4730-09 4/1/2009 Bibliometric …</a> <span style="color:var(--text-muted);">[dspace.mit.edu]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://scholar.archive.org/work/t4stfmqaezbhdimg2m7vu6trsi/access/wayback/https://ijetcsit.org/index.php/ijetcsit/article/download/221/198" target="_blank" rel="noopener">Designing High-Throughput Data Pipelines: A Performance-Centric Architectural Framework for Low-Latency Analytics in Distributed Cloud Environments</a> <span style="color:var(--text-muted);">[scholar.archive.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://openreview.net/forum?id=kR4iOTaAOJ" target="_blank" rel="noopener">ThunderAgent: A Fast , Simple, and Program-Aware Agentic Inference System</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11579461/" target="_blank" rel="noopener">A Provably Cost-Efficient Approach to Deploying MoE Inference Models at the Network Edge</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=9rQrHGpdJm" target="_blank" rel="noopener">Knowing When to Stop: Bayesian Optimal Stopping for LLM Evaluations</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/5962380/9085929/11584922.pdf" target="_blank" rel="noopener">Lightweight and Secure Real-Time Sensor-Text Grounding for Consumer AIoT Devices via Small Language Models</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=ZBHDZDaG0h" target="_blank" rel="noopener">Foundation Inference Models for Ordinary Differential Equations</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/forum?id=vMwlcLyI4b" target="_blank" rel="noopener">CriticalKV: Optimizing KV Cache Eviction from an Output Perturbation Perspective</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=G7DQoPNOMZ" target="_blank" rel="noopener">FLARE-AI: Flaw Reporting for AI</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Percy Liang - new articles</em></li>
+        <li><a href="https://search.proquest.com/openview/570e9ec668f7814e2e180c6b4eff16ba/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener">Implicit Regularization and Inductive Biases in Neural Network Training</a> <span style="color:var(--text-muted);">[search.proquest.com]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=TwTvDVj6cH" target="_blank" rel="noopener">PDAgent: An LLM-Driven Autonomous Agent Framework Towards* In Silico* Protein Design via Directed Mutation</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0141933126000633" target="_blank" rel="noopener">Exploiting spatial and temporal consistency for fault detection in semantic segmentation NN for indoor and outdoor exploration</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/11563987/11565818/11565820.pdf" target="_blank" rel="noopener">TabHTLiDA: A Parameter-Efficient Unlearning Framework for Hypergraph-Structured Tabular Data</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://search.proquest.com/openview/92d2eba1e7759c6f0481c7302331cb6d/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener">Data-Aware Algorithms for Secure and Efficient Machine Learning Systems</a> <span style="color:var(--text-muted);">[search.proquest.com]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://trepo.tuni.fi/bitstream/handle/10024/237852/HuXinyi.pdf?sequence=2" target="_blank" rel="noopener">IMPROVING RELIABILITY OF LLM GENERATED FRONTEND APPLICATIONS THROUGH WORKFLOW-DRIVEN INPUT DESIGN</a> <span style="color:var(--text-muted);">[trepo.tuni.fi]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=5IA4cx8Gzz" target="_blank" rel="noopener">Thinking in Latent Space: Progressive Multimodal Simplification for Visual Reasoning</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=wG7woGoc1b" target="_blank" rel="noopener">Uncovering Hidden Triggers: Backdoor Attribution in Language Models</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=p7HVrmZwWB" target="_blank" rel="noopener">Learning syntax without semantics: Disentangled tiny language models</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://openreview.net/pdf?id=fwWvqAOXMT" target="_blank" rel="noopener">InstEmb: Instruction-Following Embeddings through Glimpses of the Future</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/6287639/6514899/11578959.pdf" target="_blank" rel="noopener">A Comprehensive Empirical Evaluation of Token-Oriented Object Notation (TOON) for Large Language Model Applications</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://scholarwolf.unr.edu/bitstreams/8705fc79-3958-4e78-8bd8-cf962fa461d9/download" target="_blank" rel="noopener">NurseAssist: A Deterministic and Privacy-Preserving Pipeline for Automated Clinical Assessment</a> <span style="color:var(--text-muted);">[scholarwolf.unr.edu]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=141wqgPKwc" target="_blank" rel="noopener">EnergyLens: LLM Inference Energy Framework for Energy-Driven Model Implementation</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=TWxFLz7xen" target="_blank" rel="noopener">AlphaRouter: Token-level Routing Between SLM and LLM with Reinforcement Learning and Tree Search</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=sV3aV4YqJW" target="_blank" rel="noopener">Attestation-Aware Disaggregated Inference : Securing the KV Cache Supply Chain in LLM Serving</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=SoP0rm8KVA" target="_blank" rel="noopener">Store or Recompute? Characterizing the Carbon Tradeoff of KV Cache Retention in LLM Inference</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=BsGZ8p3VPp" target="_blank" rel="noopener">An Analog Compute-in-Memory Co-Processor for Low-Latency Edge LLM Inference</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=gSphYexssc" target="_blank" rel="noopener">LLM Inference in a Flash!</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/11574916/11574936/11574988.pdf" target="_blank" rel="noopener">Demo Abstract: DiPe: Real-Time Diffusion LLM Inference on Edge Devices for Planning Tasks</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Sanaa-Abril/publication/408083441_Credibility_Assessment_for_Arabic_News_on_the_Gaza_War_A_Hybrid_Neural-Symbolic_Pipeline/links/6a3d46be3a0dbb76335d805b/Credibility-Assessment-for-Arabic-News-on-the-Gaza-War-A-Hybrid-Neural-Symbolic-Pipeline.pdf" target="_blank" rel="noopener">Credibility Assessment for Arabic News on the Gaza War: A Hybrid Neural - Symbolic Pipeline</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11565827/" target="_blank" rel="noopener">Semantic Rule Triggering for Overcoming Logic Hallucinations in Quantized Edge Large Language Models Threat Assessment</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://www.inderscienceonline.com/doi/pdf/10.1504/IJICT.2026.154397" target="_blank" rel="noopener">Large language model-driven student career knowledge graph and interpretable adaptive reasoning</a> <span style="color:var(--text-muted);">[inderscienceonline.com]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://search.proquest.com/openview/014447b0dc76a7ef75134fd3905766a7/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener">Post-Training Language Models as Long-Horizon Agents</a> <span style="color:var(--text-muted);">[search.proquest.com]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://journal.diginus.id/DECODING/article/view/1370" target="_blank" rel="noopener">Design and Implementation of an AI Agent -Based Workflow Automation System for Scheduling and Information Dissemination in Oil Palm Plantations</a> <span style="color:var(--text-muted);">[journal.diginus.id]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11566055/" target="_blank" rel="noopener">Review of Intelligent Inspection Application Technology: Focusing on New Energy Power Generation Scenarios</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=ZSGB91kMOG" target="_blank" rel="noopener">EvoC2F: Compiling Tool Orchestration for Efficient and Evolvable LLM Agents</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://www.emerald.com/jeim/article/doi/10.1108/JEIM-03-2026-0497/1383981" target="_blank" rel="noopener">Identifying root causes and propagation paths of systemic cybersecurity risks in digital twins : a mixed-method approach</a> <span style="color:var(--text-muted);">[emerald.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=g_rtEQAAQBAJ&amp;oi=fnd&amp;pg=PT6&amp;dq=digital+twins+for+enterprises&amp;ots=COih8cUOAJ&amp;sig=aSXyeoI8-csfU3Ateje5UHBitPU" target="_blank" rel="noopener">The Competitive Enterprise in the Intelligent Age: Mastering Strategy, Speed, and Survival</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11560650/" target="_blank" rel="noopener">Construction Concepts and Practical Exploration of Industrial Intelligence Laboratories Under the Emerging Engineering Education 2.0 Framework</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://www.igi-global.com/chapter/a-sustainable-mathematical-foundations-for-problems-in-smart-logistics-with-an-integration-of-ai-ml/415274" target="_blank" rel="noopener">A Sustainable Mathematical Foundations for Problems in Smart Logistics With an Integration of AI-ML</a> <span style="color:var(--text-muted);">[igi-global.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=cX7uEQAAQBAJ&amp;oi=fnd&amp;pg=PA469&amp;dq=digital+twins+for+enterprises&amp;ots=oGZXpIssxa&amp;sig=dUtdWzM_ORKpXmA1lErG0lddPu4" target="_blank" rel="noopener">Innovative Approaches to Smart Management in SMEs: Pathways to Sustainable Competitive</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://scholar.archive.org/work/gmqfjhzpoja4fdrzninmqck3ja/access/wayback/https://digikogu.taltech.ee/et/Download/0da1141e-fcbe-4f3c-8cd9-ef5c8b014ae3/ReconfigurableManufacturingBasedonAutonomously.pdf" target="_blank" rel="noopener">Reconfigurable Manufacturing Based on Autonomously Moving Collaborative Robot Solutions</a> <span style="color:var(--text-muted);">[scholar.archive.org]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Memphis-Felix-2/publication/407576436_Real-Time_Data_Streaming_Architectures_Between_SAP_S4HANA_and_Microsoft_Azure_Using_Event_Mesh_and_Kafka/links/6a3b26708ab2ac2a7098816b/Real-Time-Data-Streaming-Architectures-Between-SAP-S-4HANA-and-Microsoft-Azure-Using-Event-Mesh-and-Kafka.pdf" target="_blank" rel="noopener">Real-Time Data Streaming Architectures Between SAP S/4HANA and Microsoft Azure Using Event Mesh and Kafka</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=LyfuEQAAQBAJ&amp;oi=fnd&amp;pg=PR11&amp;dq=simulation+environments+for+business+processes&amp;ots=2fy3S0zYdg&amp;sig=VkrnUhBdc1hjAro44E_PYkbJRdA" target="_blank" rel="noopener">Cybersecurity and Traceability in Factory 4.0: Blockchain Assets</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2079058/FULLTEXT01.pdf" target="_blank" rel="noopener">Towards Predictive Maintenance in District Heating: A Case Study of Inspection Practices in District Heating Chambers</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://openurl.ebsco.com/contentitem/gcd:194703039?sid=ebsco:plink:crawler-gcd&amp;id=ebsco:gcd:194703039&amp;crl=c&amp;jrnl=2327008X" target="_blank" rel="noopener">Development Possibilities of Underground Culture in the Current Digital Sphere: Social Media Algorithms.</a> <span style="color:var(--text-muted);">[openurl.ebsco.com]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://search.proquest.com/openview/d09e993b2912d57772f08993db18c2b2/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener">The Impact of Academic Advising Models on Undergraduate Student Performance: A Multiple Regression Analysis</a> <span style="color:var(--text-muted);">[search.proquest.com]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0957417426023328" target="_blank" rel="noopener">A More Secure and Efficient Privacy-preserving Collaborative Filtering System</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://link.springer.com/chapter/10.1007/978-3-032-29760-0_8" target="_blank" rel="noopener">Circuit Complexity of Hierarchical Knowledge Tracing</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11567893/" target="_blank" rel="noopener">CogKT: Cognitively Guided Transformer with Adaptive Forgetting for Knowledge Tracing</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11559649/" target="_blank" rel="noopener">A Neighborhood Attention-Based Adapter for Parameter-Efficient Vision-Language Model Tuning</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11567788/" target="_blank" rel="noopener">Adaptive Residual Q-Matrix Refinement for Neural Cognitive Diagnosis</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11560774/" target="_blank" rel="noopener">DH-GOOD: Graph Out-of-Distribution Detection via Feature Disentanglement and Hierarchical Contrastive Learning</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11559698/" target="_blank" rel="noopener">Audio-Visual Interest Network for Video Recommendation</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/iel8/11559587/11559634/11560285.pdf" target="_blank" rel="noopener">UIKG: New Uncertain-Dynamic Incremental Knowledge Graphs</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11567901/" target="_blank" rel="noopener">Graph Self-Attention Networks with Contrastive Learning for Session-based Recommendation</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/pdf/10.1145/3801487.3801817" target="_blank" rel="noopener">Row-wise Inter-Phase Pipelining for Hardware-Efficient GCN Acceleration</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=eiAhEarzHf" target="_blank" rel="noopener">Multi-scale Explainer for Graph Neural Networks</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=cPuBsl2L6Z" target="_blank" rel="noopener">Reducing Per-Sample Harm in Stochastic Optimization</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=7KaO3EahTO" target="_blank" rel="noopener">POLIA: Policy Optimization with Visual-Object-Level Intrinsic Advantage for Multimodal Reasoning</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/pdf/10.1145/3801487.3801824" target="_blank" rel="noopener">Efficient and Accurate Graph Classification with Hyperdimensional Computing on FPGA</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://www.igi-global.com/chapter/quantum-enhanced-generative-ai/414877" target="_blank" rel="noopener">Quantum-Enhanced Generative AI : Transforming Intelligent Systems and Future Industrial Applications</a> <span style="color:var(--text-muted);">[igi-global.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://search.proquest.com/openview/ff13fb5969903cde4c1a8dd67eda7227/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener">Heuristic-Driven Optimization for Multi- Agent AI Systems</a> <span style="color:var(--text-muted);">[search.proquest.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://search.proquest.com/openview/3aad760607818854afb714f327b5635b/1?pq-origsite=gscholar&amp;cbl=18750&amp;diss=y" target="_blank" rel="noopener">A Quantitative Analysis of AI -Driven Cybersecurity Models for Real-Time Threat Detection in the Healthcare Sector</a> <span style="color:var(--text-muted);">[search.proquest.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://scholar.google.com/scholar?cluster=3333437901243386167&amp;hl=en&amp;oi=scholaralrt&amp;hist=ElqwScwAAAAJ:6953426893357652332:ANDmEU5xZF7W2J7KsRb3YnKHF07B&amp;html=&amp;pos=3&amp;folt=kw-top" target="_blank" rel="noopener">A Leaders Guide to Data &amp; AI Culture Activate Sustainable Business Value</a> <span style="color:var(--text-muted);">[scholar.google.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://ieeexplore.ieee.org/abstract/document/11576599/" target="_blank" rel="noopener">Online Multi-Task Business Process Prediction Using Dynamic Representation</a> <span style="color:var(--text-muted);">[ieeexplore.ieee.org]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=T37uEQAAQBAJ&amp;oi=fnd&amp;pg=PA3&amp;dq=business+process+mining+or+process+mining&amp;ots=VMbS5z8jiG&amp;sig=AH7fZV6I3_tsxD6H3wU_9axxfUE" target="_blank" rel="noopener">Information Systems Engineering: A Journey Through Half a Century of History</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Vinay-Chamola/publication/408052557_From_Language_Models_to_Agentic_AI_A_Survey_of_Autonomous_Action-Enabled_and_Collaborative_LLM_Agents/links/6a3cc5d7d551e312d7219764/From-Language-Models-to-Agentic-AI-A-Survey-of-Autonomous-Action-Enabled-and-Collaborative-LLM-Agents.pdf" target="_blank" rel="noopener">From Language Models to Agentic AI: A Survey of Autonomous, Action-Enabled, and Collaborative LLM Agents</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://link.springer.com/chapter/10.1007/978-981-95-5285-6_10" target="_blank" rel="noopener">Next- Generation Cyber War Rooms: Autonomous Adversarial Benchmarking of Multi-Tier Defense Systems</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://link.springer.com/article/10.1007/s10490-026-10158-1" target="_blank" rel="noopener">Local governments as key agents : How national hygienic city campaign shapes corporate environmental performance</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.inderscienceonline.com/doi/pdf/10.1504/IJRIS.2026.154390" target="_blank" rel="noopener">Stable matching-driven collaborative optimisation with blockchain verification for heterogeneous supply chain networks</a> <span style="color:var(--text-muted);">[inderscienceonline.com]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://openreview.net/pdf?id=iI5UOnuBGw" target="_blank" rel="noopener">optimize anything: A Unified Framework for LLM-Based Mathematical and Scientific Optimization</a> <span style="color:var(--text-muted);">[openreview.net]</span> — <em>Ion Stoica - new articles</em></li>
+        <li><a href="https://www.researchgate.net/profile/Ilesanmi-Michael-2/publication/407437273_Applied_Theatre_and_Techno_Scenery_as_Tools_for_Peacebuilding_and_Trauma_Awareness_among_Communities_Affected_by_Boko_Haram_Insurgency/links/6a38193326f6ce706a80eca3/Applied-Theatre-and-Techno-Scenery-as-Tools-for-Peacebuilding-and-Trauma-Awareness-among-Communities-Affected-by-Boko-Haram-Insurgency.pdf" target="_blank" rel="noopener">Applied Theatre and Techno Scenery as Tools for Peacebuilding and Trauma Awareness among Communities Affected by Boko Haram Insurgency</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>Percy Liang - new articles</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0926580526003572" target="_blank" rel="noopener">Agentic multimodal framework for autonomous pavement crack detection and visual severity characterization</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>10 new citations to your articles</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2076094/FULLTEXT01.pdf" target="_blank" rel="noopener">AMADRS: An Autonomous Multi-AgentDisaster Recovery System: Design and Evaluation of AI-Driven Recovery for Hybrid Cloud Environments</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Nitin-Bodade/publication/407492423_GOVERNANCE_AND_TRACEABILITY_IN_AI-_ASSISTED_SOFTWARE_ENGINEERING_THROUGH_INSTRUCTION_LAYERS/links/6a39c2af3a0dbb76335d02e2/GOVERNANCE-AND-TRACEABILITY-IN-AI-ASSISTED-SOFTWARE-ENGINEERING-THROUGH-INSTRUCTION-LAYERS.pdf" target="_blank" rel="noopener">GOVERNANCE AND TRACEABILITY IN AI-ASSISTED SOFTWARE ENGINEERING THROUGH INSTRUCTION LAYERS</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://aisel.aisnet.org/itd/vol32/iss3/14/" target="_blank" rel="noopener">E-Government as Drivers of Carbon Emission Reduction: Linking Digital Governance to Climate Action</a> <span style="color:var(--text-muted);">[aisel.aisnet.org]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Abhradeep-Chatterjee-2/publication/407373872_Operational_Intelligence_at_Enterprise_Scale_Experimental_Autonomy_Policy_Sandbox_Governance_and_Outcome-Calibrated_Institutional_Learning_in_Self-Designing_Enterprise_Networks/links/6a368bce26f6ce706a80d3ee/Operational-Intelligence-at-Enterprise-Scale-Experimental-Autonomy-Policy-Sandbox-Governance-and-Outcome-Calibrated-Institutional-Learning-in-Self-Designing-Enterprise-Networks.pdf" target="_blank" rel="noopener">Intelligence at Enterprise Scale: Experimental Autonomy, Policy Sandbox Governance, and Outcome-Calibrated Institutional Learning in Self-Designing Enterprise …</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://aisel.aisnet.org/treos_amcis2026/112/" target="_blank" rel="noopener">Generative AI for Dynamic ERP Learning Environments</a> <span style="color:var(--text-muted);">[aisel.aisnet.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://www.emerald.com/bpmj/article/32/8/76/1383226" target="_blank" rel="noopener">A decision support framework to improve the business performance of e-commerce retailers and logistics providers through reverse logistics strategies selection</a> <span style="color:var(--text-muted);">[emerald.com]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://pure.roehampton.ac.uk/portal/files/34172711/Dissertation-PhD-HamedMehrabi-04-03-2026.pdf" target="_blank" rel="noopener">Exploring Factors Influencing the Adoption of Digital Twin Technology in the UK retail Supply Chain</a> <span style="color:var(--text-muted);">[pure.roehampton.ac.uk]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2074191/FULLTEXT01.pdf" target="_blank" rel="noopener">From Dark Patterns to Transparent UX: Designing and Evaluating Cancellation Flows for Streaming Service Free Trials</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>simulation environments for business processes - new results</em></li>
+        <li><a href="https://www.mdpi.com/2571-5577/9/7/134" target="_blank" rel="noopener">Intelligent Time-Series Warning Method Based on LSTM–Transformer Hybrid Network for Digital Twin Applications in Refining Enterprises</a> <span style="color:var(--text-muted);">[mdpi.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://www.sciencedirect.com/science/article/pii/S0266352X26004829" target="_blank" rel="noopener">Evidence-optimized physics-informed digital twin for probabilistic prediction and risk assessment of wall deflection in braced excavations</a> <span style="color:var(--text-muted);">[sciencedirect.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://hal.science/hal-05664651v1/file/TraceabilityFederationInMBDTE_IST-Journal_AuthorsVersion.pdf" target="_blank" rel="noopener">Barriers and Enablers for Traceability and Federation in Model-Based Digital Twin Engineering</a> <span style="color:var(--text-muted);">[hal.science]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/abs/10.1016/j.future.2026.108429" target="_blank" rel="noopener">Collaborative digital twin ecosystems</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://industry-science.com/en/articles/digital-twin-technology-and-architecture/" target="_blank" rel="noopener">Digital Twin Technology and Architecture</a> <span style="color:var(--text-muted);">[industry-science.com]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://hal.science/hal-05665756/document" target="_blank" rel="noopener">Leveraging Manufacturing Resilience by Autonomy: Digital Twins for Trustworthy Authorization of Agents</a> <span style="color:var(--text-muted);">[hal.science]</span> — <em>digital twins for enterprises - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2078663/FULLTEXT01.pdf" target="_blank" rel="noopener">Comparing Software Quality of GenAI -enabled vs Traditional Software Systems in Cardiovascular Healthcare</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>trust and safety genAI - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2079125/FULLTEXT01.pdf" target="_blank" rel="noopener">Multi-Agent AI for Root-Cause and Bottleneck Analysis in Object-Centric Process Mining : A Comparative Study Against a Single-Agent LLM Assistant</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Ivan-Abril-Palma-2/publication/407307834_The_Minimal_Information_a_Transformation_Needs/links/6a35680f8ab2ac2a70980701/The-Minimal-Information-a-Transformation-Needs.pdf" target="_blank" rel="noopener">The Minimal Information a Transformation Needs</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2077268/FULLTEXT01.pdf" target="_blank" rel="noopener">Machine learning for bottleneck analysis and increased flow efficiency: Optimized process flow and performance at GDM</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://www.emerald.com/bpmj/article/doi/10.1108/BPMJ-12-2025-1967/1383482" target="_blank" rel="noopener">Creating business value through intelligent automation: a task-technology fit analysis</a> <span style="color:var(--text-muted);">[emerald.com]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://ui.adsabs.harvard.edu/abs/2026usgs.data..654O/abstract" target="_blank" rel="noopener">all known mining activity and landscape changes within the Appalachian region of the Eastern United States (active, inactive, abandoned, and legacy surface mines )</a> <span style="color:var(--text-muted);">[ui.adsabs.harvard.edu]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=u2jtEQAAQBAJ&amp;oi=fnd&amp;pg=PA297&amp;dq=business+process+mining+or+process+mining&amp;ots=yaj6_6X4WJ&amp;sig=3g1nbA8HJogZOkykZ3JugAl-KzU" target="_blank" rel="noopener">Sustainable and Green Autonomous BPM: Designing Process Intelligence</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>business process mining or process mining - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/abs/10.1145/3774398.3811568" target="_blank" rel="noopener">HawkesIRT: Interpretable and Efficient Knowledge Tracing via Temporal Item Effects and Item Response Theory</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://dspace.mit.edu/server/api/core/bitstreams/83b4c81e-3504-4d10-a5d1-032e897f6415/content" target="_blank" rel="noopener">GABRIEL GRAND, Massachusetts Institute of Technology, USA JOSHUA B. TENENBAUM, Massachusetts Institute of Technology, USA KEVIN ELLIS, Cornell …</a> <span style="color:var(--text-muted);">[dspace.mit.edu]</span> — <em>karypis - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/pdf/10.1145/3809481.3816482" target="_blank" rel="noopener">InferenceProfiler: Enhancing the Observability of Performance , Cost, and Energy of LLM Inferencing in the Cloud</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>inference optimize llm faster inference throughput - new results</em></li>
+        <li><a href="https://link.springer.com/article/10.1007/s11219-026-09767-2" target="_blank" rel="noopener">Reliable execution of natural language test cases for GUI applications using LLM agents</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://www.mdpi.com/2073-431X/15/7/401" target="_blank" rel="noopener">Artificial Intelligence-Based Pedagogical Agent in an E-Learning Environment</a> <span style="color:var(--text-muted);">[mdpi.com]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://www.ssoar.info/ssoar/bitstream/handle/document/110723/ssoar-2026-berndt_et_al-Prompted_to_Evolve_How_AI.pdf?sequence=1" target="_blank" rel="noopener">Prompted to Evolve: How AI shapes Operations, Strategy, and Business Models in Communication Agencies</a> <span style="color:var(--text-muted);">[ssoar.info]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2074203/FULLTEXT01.pdf" target="_blank" rel="noopener">AI-DRIVEN ROOT CAUSE ANALYSIS OF MULTI-SOURCE TEST DATA</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>automated generated environments for agent testing - new results</em></li>
+        <li><a href="https://vbn.elsevierpure.com/files/806376499/978-3-032-08324-1_14.pdf" target="_blank" rel="noopener">Interpretable Link Prediction via Neural - Symbolic Reasoning</a> <span style="color:var(--text-muted);">[vbn.elsevierpure.com]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://openurl.ebsco.com/contentitem/gcd:194646740?sid=ebsco:plink:crawler-gcd&amp;id=ebsco:gcd:194646740&amp;crl=c&amp;jrnl=15462218" target="_blank" rel="noopener">Research on Prompt Engineering to Enhance LLM-Driven CPG Vulnerability Reachability.</a> <span style="color:var(--text-muted);">[openurl.ebsco.com]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://science.cert.kz/journal/index.php/ojs/article/download/42/13" target="_blank" rel="noopener">A SYSTEMATIC LITERATURE REVIEW ON MACHINE LEARNING MODELS FOR ACTIVE DIRECTORY ATTACK DETECTION USING WINDOWS SECURITY EVENT …</a> <span style="color:var(--text-muted);">[science.cert.kz]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://pubs.aip.org/aip/acp/article-abstract/3414/1/090019/3396612" target="_blank" rel="noopener">AI-augmented mathematical creativity: Exploring novel approaches to problem-solving</a> <span style="color:var(--text-muted);">[pubs.aip.org]</span> — <em>neural symbolic - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Isreal-Will/publication/407506575_Autonomous_Governance_and_Threat_Response_System_Using_Explainable_LLM_Agents_for_Security_Operations_in_US_Regulated_Industries/links/6a3a175fab275459110af98b/Autonomous-Governance-and-Threat-Response-System-Using-Explainable-LLM-Agents-for-Security-Operations-in-US-Regulated-Industries.pdf" target="_blank" rel="noopener">Autonomous Governance and Threat Response System Using Explainable LLM Agents for Security Operations in US Regulated Industries</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://www.emerald.com/ijmpb/article/doi/10.1108/IJMPB-09-2025-0356/1383537" target="_blank" rel="noopener">The roles of artificial intelligence and generative applications in project management: driving digital transformation and organizational effectiveness</a> <span style="color:var(--text-muted);">[emerald.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://www.diva-portal.org/smash/get/diva2:2068282/FULLTEXT01.pdf" target="_blank" rel="noopener">Application of Agentic AI and Large Language Models in Industrial Requirements Engineering: AI AND LLMs IN INDUSTRIAL REQUIREMENTS ENGINEERING</a> <span style="color:var(--text-muted);">[diva-portal.org]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=9XTtEQAAQBAJ&amp;oi=fnd&amp;pg=PA347&amp;dq=ai+agents+regulated+industries&amp;ots=-KujIrDH6Q&amp;sig=39xkYOgLrsuzAuApfrXj-0fD9z0" target="_blank" rel="noopener">BRIGHT KESWANI¹, SUMIT KUMAR KAPOOR2, SHIKHA KHULLAR³, ASHWINI KUMAR4</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://books.google.com/books?hl=en&amp;lr=lang_en&amp;id=IcvtEQAAQBAJ&amp;oi=fnd&amp;pg=PR3&amp;dq=ai+agents+regulated+industries&amp;ots=y9hMJl0K5y&amp;sig=0AZ_4xcI722fHJsHRa4USiU4oZ8" target="_blank" rel="noopener">Owning Intelligence: How AI is Reshaping Intellectual Property, Risk, and Governance</a> <span style="color:var(--text-muted);">[books.google.com]</span> — <em>ai agents regulated industries - new results</em></li>
+        <li><a href="https://dl.acm.org/doi/abs/10.1145/3765611.3815507" target="_blank" rel="noopener">Covariates Are the Key to Accurate Probabilistic Building Energy Forecasting with Time Series Foundation Models</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>3 new citations to your articles</em></li>
+        <li><a href="https://dl.acm.org/doi/abs/10.1145/3765611.3815482" target="_blank" rel="noopener">Heterogeneous Mixture-of-Experts Adaptation for Finetuning Pretrained Time-series Foundation Models</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>3 new citations to your articles</em></li>
+        <li><a href="https://link.springer.com/article/10.1007/s10115-026-02823-0" target="_blank" rel="noopener">ResGNN: a residual GNN approach for leveraging general user preferences in session-based recommender systems: MA Djenane et al.</a> <span style="color:var(--text-muted);">[link.springer.com]</span> — <em>3 new citations to your articles</em></li>
+        <li><a href="https://dl.acm.org/doi/abs/10.1145/3787109.3815216" target="_blank" rel="noopener">Control-Flow Collapse: Exploiting Gating Logic in MoE Accelerators via Instruction-Level Fault Injection</a> <span style="color:var(--text-muted);">[dl.acm.org]</span> — <em>Recommended articles</em></li>
+        <li><a href="https://huggingface.co/papers/submit" target="_blank" rel="noopener">huggingface.co/papers/submit</a> <span style="color:var(--text-muted);">[huggingface.co]</span> — <em>Daily papers of 3 Jul 2026</em></li>
+    </ul>
+
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+</div>
+<script>document.getElementById('searchBox').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.paper-card').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.paper-card').forEach(card => {
+            if (filter === 'all') { card.style.display = ''; return; }
+            if (filter === 'top5') { card.style.display = card.dataset.tier === 'top5' ? '' : 'none'; return; }
+            if (filter === 'top15') { card.style.display = (card.dataset.tier === 'top5' || card.dataset.tier === 'top15') ? '' : 'none'; return; }
+            card.style.display = card.dataset.category === filter ? '' : 'none';
+        });
+    });
+});
+window.addEventListener('scroll', () => {
+    document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'block' : 'none';
+});
+</script>
+
+<script>
+(function() {
+    const FEEDBACK_URL = "https://feedback.karypis.org";
+    const FEEDBACK_SECRET = "72ec992486adf8a7d95eb161959cb22826a513faa58e96f79d729a06e52c7686";
+    const QUEUE_KEY = "paper_feedback_queue";
+
+    const ENDPOINT = {
+        like: "/vote", unlike: "/vote", skip: "/vote", unskip: "/vote",
+        save: "/save", unsave: "/unsave",
+        mark_read: "/mark_read", archive: "/archive",
+        undo_read: "/undo", undo_archive: "/undo",
+    };
+
+    function loadQueue() {
+        try { return JSON.parse(localStorage.getItem(QUEUE_KEY) || "[]"); }
+        catch (e) { return []; }
+    }
+    function saveQueue(q) { localStorage.setItem(QUEUE_KEY, JSON.stringify(q)); }
+
+    function toast(msg) {
+        let t = document.getElementById("__fb_toast");
+        if (!t) {
+            t = document.createElement("div");
+            t.id = "__fb_toast";
+            t.style.cssText = "position:fixed;bottom:2rem;right:2rem;padding:0.8rem 1.2rem;" +
+                "background:#2563eb;color:white;border-radius:8px;" +
+                "box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:1000;font-size:0.9rem;";
+            document.body.appendChild(t);
+        }
+        t.textContent = msg;
+        t.style.display = "block";
+        setTimeout(() => { t.style.display = "none"; }, 2500);
+    }
+
+    async function postEvent(endpoint, body) {
+        const resp = await fetch(FEEDBACK_URL + endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json",
+                        "X-Feedback-Secret": FEEDBACK_SECRET },
+            body: JSON.stringify(body),
+            // Send the CF_Authorization cookie cross-origin so Cloudflare
+            // Access lets the request through. Cookie is set on first
+            // interactive login at feedback.karypis.org.
+            credentials: "include",
+        });
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        return resp.json();
+    }
+
+    async function flushQueue() {
+        const q = loadQueue();
+        if (!q.length) return;
+        const remaining = [];
+        for (const item of q) {
+            try { await postEvent(item.endpoint, item.body); }
+            catch (e) { remaining.push(item); }
+        }
+        saveQueue(remaining);
+        if (remaining.length === 0 && q.length > 0) toast("✓ Queued events synced");
+    }
+
+    window.actBtn = async function(action, btn) {
+        // Resolve paper_id from the enclosing row's data-pid attribute
+        // rather than from an inlined string in onclick. Keeps the value
+        // strictly in HTML-attribute context, never as a JS string literal.
+        const row = btn && btn.closest("[data-pid]");
+        const paperId = row && row.getAttribute("data-pid");
+        if (!paperId) { toast("Missing paper_id"); return; }
+
+        // Toggle: if button is already active and the action is a primary
+        // toggle, send the corresponding undo. Otherwise just send the action.
+        const isActive = btn && btn.classList.contains("fb-active");
+        const TOGGLES = { like: "unlike", skip: "unskip" };
+        if (isActive && TOGGLES[action]) {
+            action = TOGGLES[action];
+        }
+
+        const endpoint = ENDPOINT[action];
+        if (!endpoint) { toast("Unknown action: " + action); return; }
+
+        const body = { paper_id: paperId, source: "mac" };
+        if (endpoint === "/vote") body.action = action;
+
+        try {
+            await postEvent(endpoint, body);
+            toast("✓ " + action);
+            // Optimistic UI: flip active state on the clicked button
+            if (btn) btn.classList.toggle("fb-active");
+            // Authoritative refresh — pull /state for this paper so the
+            // lifecycle buttons get morphed to match (e.g. "🔖 Save" →
+            // "✅ Saved · mark read"). Non-blocking; failure is fine.
+            refreshPaperState(paperId);
+        } catch (e) {
+            const q = loadQueue();
+            q.push({ endpoint, body, ts: new Date().toISOString() });
+            saveQueue(q);
+            toast("✗ Couldn't reach server — queued for retry");
+        }
+    };
+
+    // ----- state rehydration -------------------------------------------
+    // The digest HTML is a frozen snapshot from the weekly Phase 7
+    // publish. The Worker's state mirror (state:<paper_id> in KV) holds
+    // the current per-paper state. On page load, fetch /state for every
+    // paper on the page and rebuild button rows where the live state
+    // differs from what's baked into the HTML.
+
+    function lifecycleButtonsForState(state) {
+        // Mirrors pipeline/generate_html.py:_feedback_row_html lifecycle
+        // logic so the JS-rebuilt row matches what a fresh server render
+        // would produce for the same state.
+        if (state === "saved") {
+            return '<button class="fb-btn fb-active" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'mark_read\', this)">✅ Saved · mark read</button>'
+                 + '<button class="fb-btn" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'archive\', this)">🗃️ Archive</button>';
+        }
+        if (state === "read") {
+            return '<button class="fb-btn fb-active" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'archive\', this)">✅ Read · archive</button>';
+        }
+        if (state === "archived") {
+            return '<button class="fb-btn fb-active" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'undo_archive\', this)">🗃️ Archived · restore</button>';
+        }
+        // default ("none")
+        return '<button class="fb-btn" data-fb-role="lifecycle" '
+             + 'onclick="actBtn(\'save\', this)">🔖 Save</button>';
+    }
+
+    function applyStateToRow(row, s) {
+        if (!row) return;
+        // like / skip — toggle fb-active to match. Use the data-fb-role
+        // marker since the buttons share .fb-btn with the lifecycle ones.
+        const like = row.querySelector('button[data-fb-role="like"]');
+        const skip = row.querySelector('button[data-fb-role="skip"]');
+        if (like) like.classList.toggle("fb-active", !!s.liked);
+        if (skip) {
+            skip.classList.toggle("fb-active", !!s.skipped);
+            skip.classList.toggle("fb-skip", !!s.skipped);
+        }
+        // lifecycle — wipe and re-render. New buttons go right after the
+        // like button so the row order stays [like, lifecycle..., skip].
+        const existing = row.querySelectorAll('button[data-fb-role="lifecycle"]');
+        existing.forEach(b => b.remove());
+        if (like) {
+            like.insertAdjacentHTML("afterend",
+                lifecycleButtonsForState(s.state || "none"));
+        }
+    }
+
+    async function rehydrateAllStates() {
+        const rows = Array.from(document.querySelectorAll(".feedback-row[data-pid]"));
+        if (!rows.length) return;
+        const pids = rows.map(r => r.getAttribute("data-pid")).filter(Boolean);
+
+        // /state caps at 500 ids per request; batch defensively at 400.
+        const BATCH = 400;
+        const merged = {};
+        for (let i = 0; i < pids.length; i += BATCH) {
+            const chunk = pids.slice(i, i + BATCH);
+            try {
+                const resp = await fetch(
+                    FEEDBACK_URL + "/state?ids=" + encodeURIComponent(chunk.join(",")),
+                    { method: "GET",
+                       headers: { "X-Feedback-Secret": FEEDBACK_SECRET },
+                       credentials: "include" });
+                if (!resp.ok) continue;
+                const body = await resp.json();
+                Object.assign(merged, body.states || {});
+            } catch (e) { /* fall back to frozen HTML on this chunk */ }
+        }
+        rows.forEach(row => {
+            const pid = row.getAttribute("data-pid");
+            const s = merged[pid];
+            // Default (none, !liked, !skipped) → row may still be rendered as
+            // saved/etc. in the frozen HTML; reset it explicitly.
+            applyStateToRow(row, s || { state: "none", liked: false, skipped: false });
+        });
+    }
+
+    async function refreshPaperState(paperId) {
+        try {
+            const resp = await fetch(
+                FEEDBACK_URL + "/state?ids=" + encodeURIComponent(paperId),
+                { method: "GET",
+                   headers: { "X-Feedback-Secret": FEEDBACK_SECRET },
+                   credentials: "include" });
+            if (!resp.ok) return;
+            const body = await resp.json();
+            const s = (body.states || {})[paperId]
+                   || { state: "none", liked: false, skipped: false };
+            document.querySelectorAll(
+                '.feedback-row[data-pid="' + CSS.escape(paperId) + '"]'
+            ).forEach(row => applyStateToRow(row, s));
+        } catch (e) { /* non-fatal */ }
+    }
+
+    // Flush any queued events from a previous session, then rehydrate.
+    function onReady() { flushQueue().then(rehydrateAllStates); }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", onReady);
+    } else { onReady(); }
+})();
+</script>
+
+</body>
+</html>
