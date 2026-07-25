@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Research Papers — Innovation Rankings — Jul 18 – Jul 25, 2026</title>
+    <style>:root {
+    --bg: #f8f9fa; --card-bg: #ffffff; --accent: #2563eb; --accent-light: #dbeafe;
+    --text: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
+    --tag-rec: #818cf8; --tag-cite: #f59e0b; --tag-author: #10b981;
+    --tag-results: #ef4444; --tag-profile: #8b5cf6;
+    --green: #059669; --green-light: #d1fae5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+       background: var(--bg); color: var(--text); line-height: 1.7; padding: 2rem; }
+.container { max-width: 1100px; margin: 0 auto; }
+header { text-align: center; margin-bottom: 2rem; padding: 2rem;
+         background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; border-radius: 12px; }
+header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+header p { opacity: 0.85; font-size: 1rem; }
+header .seed { color: inherit; text-decoration: none; cursor: inherit; }
+header .seed:hover { color: inherit; text-decoration: none; }
+.stats { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; flex-wrap: wrap; }
+.stat { background: rgba(255,255,255,0.15); padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; }
+.stat strong { font-size: 1.3rem; display: block; }
+.ranking-criteria { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+                    padding: 1.5rem; margin-bottom: 2rem; }
+.ranking-criteria h2 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent); }
+.ranking-criteria p { font-size: 0.93rem; color: #475569; margin-bottom: 0.5rem; }
+.legend { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem; }
+.legend-item { display: flex; align-items: center; gap: 0.3rem; font-size: 0.82rem; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; }
+nav.toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+          padding: 1.5rem; margin-bottom: 2rem; }
+nav.toc h2 { font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--accent); }
+nav.toc ul { list-style: none; columns: 2; column-gap: 2rem; }
+nav.toc li { margin-bottom: 0.4rem; }
+nav.toc a { color: var(--text); text-decoration: none; font-size: 0.9rem; }
+nav.toc a:hover { color: var(--accent); text-decoration: underline; }
+.search-box { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border);
+              border-radius: 8px; font-size: 1rem; margin-bottom: 1rem; }
+.search-box:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
+.filters { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+.filters label { font-weight: 600; margin-right: 0.5rem; }
+.filter-btn { padding: 0.4rem 0.8rem; border: 1px solid var(--border); border-radius: 20px;
+              background: white; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+.filter-btn:hover, .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+.section-title { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem;
+                 padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent); color: var(--accent); }
+.paper-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px;
+              padding: 1.25rem 1.5rem; margin-bottom: 1rem; transition: box-shadow 0.2s; position: relative; }
+.paper-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.paper-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+.paper-card h3 a { color: var(--accent); text-decoration: none; }
+.paper-card h3 a:hover { text-decoration: underline; }
+.meta { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+.meta .authors { font-style: italic; }
+.rank-badge { display: inline-block; padding: 0.2rem 0.7rem; border-radius: 16px;
+              font-size: 0.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+.rank-justification { font-size: 0.88rem; color: #475569; background: #f8fafc;
+                      border-left: 3px solid var(--accent); padding: 0.6rem 1rem;
+                      margin: 0.5rem 0; border-radius: 0 6px 6px 0; }
+.tldr-block { font-size: 0.92rem; color: #334155;
+              background: #f0fdf4; border-left: 3px solid var(--green);
+              padding: 0.7rem 1rem; margin: 0.5rem 0;
+              border-radius: 0 6px 6px 0; white-space: pre-line; line-height: 1.6; }
+.tldr-block strong { color: #1e293b; }
+.dim-scores { display: flex; gap: 0.3rem; flex-wrap: wrap; align-items: center;
+              margin: 0.4rem 0; font-size: 0.72rem; }
+.dim-score { display: inline-block; padding: 0.12rem 0.45rem; border-radius: 10px;
+             color: #334155; font-weight: 500; font-family: monospace; }
+.dim-profile { display: inline-block; padding: 0.12rem 0.45rem; border-radius: 10px;
+               background: #1e293b; color: white; font-weight: 600; font-size: 0.7rem;
+               text-transform: uppercase; letter-spacing: 0.05em; margin-right: 0.3rem; }
+.feedback-row { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;
+                margin: 0.5rem 0; }
+.fb-btn { padding: 0.35rem 0.7rem; border: 1px solid var(--border); border-radius: 6px;
+          background: white; cursor: pointer; font-size: 0.85rem;
+          transition: background 0.2s; font-family: inherit; }
+.fb-btn:hover { background: #f1f5f9; }
+.fb-btn.fb-active { background: var(--accent-light); border-color: var(--accent);
+                    color: var(--accent); font-weight: 600; }
+.fb-btn.fb-skip.fb-active { background: #fee2e2; border-color: #b91c1c; color: #b91c1c; }
+.summary-text { font-size: 0.93rem; color: #334155; margin: 0.75rem 0; white-space: pre-line; }
+.tags { display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center; margin-top: 0.5rem; }
+.tag { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 12px;
+       font-size: 0.75rem; font-weight: 500; color: white; }
+.tag-recommended { background: var(--tag-rec); }
+.tag-citations { background: var(--tag-cite); }
+.tag-author { background: var(--tag-author); }
+.tag-results { background: var(--tag-results); }
+.tag-profile { background: var(--tag-profile); }
+.tag-arxiv { background: #b91c1c; font-family: monospace; }
+.pdf-link { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.3rem 0.7rem;
+            background: #dc2626; color: white; border-radius: 6px; text-decoration: none;
+            font-size: 0.8rem; font-weight: 600; transition: background 0.2s; }
+.pdf-link:hover { background: #b91c1c; }
+.comparison-card { background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+                   border: 1px solid #86efac; border-radius: 10px; padding: 1.5rem; margin-bottom: 1.5rem; }
+.comparison-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--green); margin-bottom: 0.5rem; }
+.comparison-card .papers-list { font-size: 0.85rem; color: var(--text-muted); margin: 0 0 0.75rem 1.2rem; padding: 0; }
+.comparison-card .papers-list li { margin-bottom: 0.2rem; }
+.comparison-card .comparison-text { font-size: 0.93rem; color: #334155; line-height: 1.7; }
+.back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--accent); color: white;
+               border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+               font-size: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; z-index: 100; }
+.back-to-top:hover { background: #1d4ed8; }
+@media (max-width: 700px) { body { padding: 1rem; } header { padding: 1.25rem; }
+                             header h1 { font-size: 1.3rem; } nav.toc ul { columns: 1; } }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Weekly Research Papers — Innovation Rankings</h1>
+        <p>Papers from Google Scholar alerts <a class="seed" href="https://feedback.karypis.org/health" target="_blank" rel="noopener">&amp;</a> email <a class="seed" href="rl-aa042e8f33bbab5693c3.html" target="_blank" rel="noopener">—</a> Jul 18 – Jul 25, 2026</p>
+        <div class="stats">
+            <div class="stat"><strong>0</strong> Papers Ranked</div>
+            <div class="stat"><strong>0</strong> Thematic Groups</div>
+        </div>
+    </header>
+
+    <div class="ranking-criteria">
+        <h2>Innovation Ranking Criteria</h2>
+        <p>Papers are ranked from most to least innovative based on five criteria:
+           (1) novelty of problem formulation or paradigm shift,
+           (2) creativity of methodology,
+           (3) surprisingness of results or insights,
+           (4) potential impact on the field, and
+           (5) degree of departure from existing approaches.
+           Each paper includes a justification explaining its placement.</p>
+        <div class="legend">
+            <div class="legend-item"><span class="legend-dot" style="background:#059669;"></span> ≥90 Groundbreaking</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#2563eb;"></span> ≥75 Highly Innovative</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#7c3aed;"></span> ≥60 Innovative</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#d97706;"></span> ≥40 Moderately Innovative</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#64748b;"></span> ≥20 Incremental</div>
+            <div class="legend-item"><span class="legend-dot" style="background:#94a3b8;"></span> &lt;20 Routine</div>
+        </div>
+    </div>
+
+    <nav class="toc" id="tocNav">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#ranked">Innovation Rankings (1-0)</a></li>
+            <li><a href="#no-pdf">Could Not Fetch PDF (3)</a></li>
+        </ul>
+    </nav>
+
+    <input type="text" class="search-box" id="searchBox" placeholder="Search papers by title, author, keyword, or rank number...">
+    <div class="filters">
+        <label>Filter:</label>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="top5">Top 5</button>
+        <button class="filter-btn" data-filter="top15">Top 15</button>
+        <button class="filter-btn" data-filter="recommended">Recommended</button>
+        <button class="filter-btn" data-filter="citations">Citations</button>
+        <button class="filter-btn" data-filter="author-follow">Author Follows</button>
+        <button class="filter-btn" data-filter="profile">Your Profile</button>
+    </div>
+
+    <h2 class="section-title" id="ranked">Innovation Rankings</h2>
+    <div id="papersContainer">
+    </div>
+
+    <h2 class="section-title" id="comparisons">Thematic Comparisons</h2>
+    <h2 class="section-title" id="no-pdf">Could Not Fetch PDF</h2>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1rem;">The pipeline could not download a PDF for the following 3 paper(s) (paywall, Cloudflare challenge, expired link, or no `citation_pdf_url` meta tag on the publisher page). Click through to try fetching the PDF manually.</p>
+    <ul style="font-size:0.9rem;color:#475569;">
+        <li><a href="https://www.researchgate.net/profile/Kwan-Hong-Tan/publication/410499295_Reversibility-Aware_Staged_Delegation_for_Enterprise_Agentic_AI_A_Real-Options_and_Resilience_Framework_for_Irreversible_Actions/links/6a5b42a5d4da0457569f56ef/Reversibility-Aware-Staged-Delegation-for-Enterprise-Agentic-AI-A-Real-Options-and-Resilience-Framework-for-Irreversible-Actions.pdf" target="_blank" rel="noopener">Reversibility-Aware Staged Delegation for Enterprise Agentic AI: A Real-Options and Resilience Framework for Irreversible Actions</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/Micheal-Wilson-2/publication/410530672_Deep_Reinforcement_Learning_for_Real-Time_Precision_Metal_Cutting_Control/links/6a5c34e01681584dea2fcb1a/Deep-Reinforcement-Learning-for-Real-Time-Precision-Metal-Cutting-Control.pdf" target="_blank" rel="noopener">Deep Reinforcement Learning for Real-Time Precision Metal Cutting Control</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+        <li><a href="https://www.researchgate.net/profile/A-R-Karawia/publication/410474388_Design_and_Implementation_of_a_Software-Defined_Enterprise_Network_with_Zero_Trust_Security_and_SOC_Monitoring/links/6a5aed6bf6cec25ad2d9e791/Design-and-Implementation-of-a-Software-Defined-Enterprise-Network-with-Zero-Trust-Security-and-SOC-Monitoring.pdf" target="_blank" rel="noopener">Design and Implementation of a Software-Defined Enterprise Network with Zero Trust Security and SOC Monitoring</a> <span style="color:var(--text-muted);">[researchgate.net]</span> — <em>generating environments for agent testing in enterprises - new results</em></li>
+    </ul>
+
+
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&uarr;</button>
+</div>
+<script>document.getElementById('searchBox').addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll('.paper-card').forEach(card => {
+        card.style.display = card.textContent.toLowerCase().includes(q) ? '' : 'none';
+    });
+});
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.dataset.filter;
+        document.querySelectorAll('.paper-card').forEach(card => {
+            if (filter === 'all') { card.style.display = ''; return; }
+            if (filter === 'top5') { card.style.display = card.dataset.tier === 'top5' ? '' : 'none'; return; }
+            if (filter === 'top15') { card.style.display = (card.dataset.tier === 'top5' || card.dataset.tier === 'top15') ? '' : 'none'; return; }
+            card.style.display = card.dataset.category === filter ? '' : 'none';
+        });
+    });
+});
+window.addEventListener('scroll', () => {
+    document.getElementById('backToTop').style.display = window.scrollY > 500 ? 'block' : 'none';
+});
+</script>
+
+<script>
+(function() {
+    const FEEDBACK_URL = "https://feedback.karypis.org";
+    const FEEDBACK_SECRET = "72ec992486adf8a7d95eb161959cb22826a513faa58e96f79d729a06e52c7686";
+    const QUEUE_KEY = "paper_feedback_queue";
+
+    const ENDPOINT = {
+        like: "/vote", unlike: "/vote", skip: "/vote", unskip: "/vote",
+        save: "/save", unsave: "/unsave",
+        mark_read: "/mark_read", archive: "/archive",
+        undo_read: "/undo", undo_archive: "/undo",
+    };
+
+    function loadQueue() {
+        try { return JSON.parse(localStorage.getItem(QUEUE_KEY) || "[]"); }
+        catch (e) { return []; }
+    }
+    function saveQueue(q) { localStorage.setItem(QUEUE_KEY, JSON.stringify(q)); }
+
+    function toast(msg) {
+        let t = document.getElementById("__fb_toast");
+        if (!t) {
+            t = document.createElement("div");
+            t.id = "__fb_toast";
+            t.style.cssText = "position:fixed;bottom:2rem;right:2rem;padding:0.8rem 1.2rem;" +
+                "background:#2563eb;color:white;border-radius:8px;" +
+                "box-shadow:0 2px 8px rgba(0,0,0,0.2);z-index:1000;font-size:0.9rem;";
+            document.body.appendChild(t);
+        }
+        t.textContent = msg;
+        t.style.display = "block";
+        setTimeout(() => { t.style.display = "none"; }, 2500);
+    }
+
+    async function postEvent(endpoint, body) {
+        const resp = await fetch(FEEDBACK_URL + endpoint, {
+            method: "POST",
+            headers: { "Content-Type": "application/json",
+                        "X-Feedback-Secret": FEEDBACK_SECRET },
+            body: JSON.stringify(body),
+            // Send the CF_Authorization cookie cross-origin so Cloudflare
+            // Access lets the request through. Cookie is set on first
+            // interactive login at feedback.karypis.org.
+            credentials: "include",
+        });
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        return resp.json();
+    }
+
+    async function flushQueue() {
+        const q = loadQueue();
+        if (!q.length) return;
+        const remaining = [];
+        for (const item of q) {
+            try { await postEvent(item.endpoint, item.body); }
+            catch (e) { remaining.push(item); }
+        }
+        saveQueue(remaining);
+        if (remaining.length === 0 && q.length > 0) toast("✓ Queued events synced");
+    }
+
+    window.actBtn = async function(action, btn) {
+        // Resolve paper_id from the enclosing row's data-pid attribute
+        // rather than from an inlined string in onclick. Keeps the value
+        // strictly in HTML-attribute context, never as a JS string literal.
+        const row = btn && btn.closest("[data-pid]");
+        const paperId = row && row.getAttribute("data-pid");
+        if (!paperId) { toast("Missing paper_id"); return; }
+
+        // Toggle: if button is already active and the action is a primary
+        // toggle, send the corresponding undo. Otherwise just send the action.
+        const isActive = btn && btn.classList.contains("fb-active");
+        const TOGGLES = { like: "unlike", skip: "unskip" };
+        if (isActive && TOGGLES[action]) {
+            action = TOGGLES[action];
+        }
+
+        const endpoint = ENDPOINT[action];
+        if (!endpoint) { toast("Unknown action: " + action); return; }
+
+        const body = { paper_id: paperId, source: "mac" };
+        if (endpoint === "/vote") body.action = action;
+
+        try {
+            await postEvent(endpoint, body);
+            toast("✓ " + action);
+            // Optimistic UI: flip active state on the clicked button
+            if (btn) btn.classList.toggle("fb-active");
+            // Authoritative refresh — pull /state for this paper so the
+            // lifecycle buttons get morphed to match (e.g. "🔖 Save" →
+            // "✅ Saved · mark read"). Non-blocking; failure is fine.
+            refreshPaperState(paperId);
+        } catch (e) {
+            const q = loadQueue();
+            q.push({ endpoint, body, ts: new Date().toISOString() });
+            saveQueue(q);
+            toast("✗ Couldn't reach server — queued for retry");
+        }
+    };
+
+    // ----- state rehydration -------------------------------------------
+    // The digest HTML is a frozen snapshot from the weekly Phase 7
+    // publish. The Worker's state mirror (state:<paper_id> in KV) holds
+    // the current per-paper state. On page load, fetch /state for every
+    // paper on the page and rebuild button rows where the live state
+    // differs from what's baked into the HTML.
+
+    function lifecycleButtonsForState(state) {
+        // Mirrors pipeline/generate_html.py:_feedback_row_html lifecycle
+        // logic so the JS-rebuilt row matches what a fresh server render
+        // would produce for the same state.
+        if (state === "saved") {
+            return '<button class="fb-btn fb-active" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'mark_read\', this)">✅ Saved · mark read</button>'
+                 + '<button class="fb-btn" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'archive\', this)">🗃️ Archive</button>';
+        }
+        if (state === "read") {
+            return '<button class="fb-btn fb-active" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'archive\', this)">✅ Read · archive</button>';
+        }
+        if (state === "archived") {
+            return '<button class="fb-btn fb-active" data-fb-role="lifecycle" '
+                 + 'onclick="actBtn(\'undo_archive\', this)">🗃️ Archived · restore</button>';
+        }
+        // default ("none")
+        return '<button class="fb-btn" data-fb-role="lifecycle" '
+             + 'onclick="actBtn(\'save\', this)">🔖 Save</button>';
+    }
+
+    function applyStateToRow(row, s) {
+        if (!row) return;
+        // like / skip — toggle fb-active to match. Use the data-fb-role
+        // marker since the buttons share .fb-btn with the lifecycle ones.
+        const like = row.querySelector('button[data-fb-role="like"]');
+        const skip = row.querySelector('button[data-fb-role="skip"]');
+        if (like) like.classList.toggle("fb-active", !!s.liked);
+        if (skip) {
+            skip.classList.toggle("fb-active", !!s.skipped);
+            skip.classList.toggle("fb-skip", !!s.skipped);
+        }
+        // lifecycle — wipe and re-render. New buttons go right after the
+        // like button so the row order stays [like, lifecycle..., skip].
+        const existing = row.querySelectorAll('button[data-fb-role="lifecycle"]');
+        existing.forEach(b => b.remove());
+        if (like) {
+            like.insertAdjacentHTML("afterend",
+                lifecycleButtonsForState(s.state || "none"));
+        }
+    }
+
+    async function rehydrateAllStates() {
+        const rows = Array.from(document.querySelectorAll(".feedback-row[data-pid]"));
+        if (!rows.length) return;
+        const pids = rows.map(r => r.getAttribute("data-pid")).filter(Boolean);
+
+        // /state caps at 500 ids per request; batch defensively at 400.
+        const BATCH = 400;
+        const merged = {};
+        for (let i = 0; i < pids.length; i += BATCH) {
+            const chunk = pids.slice(i, i + BATCH);
+            try {
+                const resp = await fetch(
+                    FEEDBACK_URL + "/state?ids=" + encodeURIComponent(chunk.join(",")),
+                    { method: "GET",
+                       headers: { "X-Feedback-Secret": FEEDBACK_SECRET },
+                       credentials: "include" });
+                if (!resp.ok) continue;
+                const body = await resp.json();
+                Object.assign(merged, body.states || {});
+            } catch (e) { /* fall back to frozen HTML on this chunk */ }
+        }
+        rows.forEach(row => {
+            const pid = row.getAttribute("data-pid");
+            const s = merged[pid];
+            // Default (none, !liked, !skipped) → row may still be rendered as
+            // saved/etc. in the frozen HTML; reset it explicitly.
+            applyStateToRow(row, s || { state: "none", liked: false, skipped: false });
+        });
+    }
+
+    async function refreshPaperState(paperId) {
+        try {
+            const resp = await fetch(
+                FEEDBACK_URL + "/state?ids=" + encodeURIComponent(paperId),
+                { method: "GET",
+                   headers: { "X-Feedback-Secret": FEEDBACK_SECRET },
+                   credentials: "include" });
+            if (!resp.ok) return;
+            const body = await resp.json();
+            const s = (body.states || {})[paperId]
+                   || { state: "none", liked: false, skipped: false };
+            document.querySelectorAll(
+                '.feedback-row[data-pid="' + CSS.escape(paperId) + '"]'
+            ).forEach(row => applyStateToRow(row, s));
+        } catch (e) { /* non-fatal */ }
+    }
+
+    // Flush any queued events from a previous session, then rehydrate.
+    function onReady() { flushQueue().then(rehydrateAllStates); }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", onReady);
+    } else { onReady(); }
+})();
+</script>
+
+</body>
+</html>
