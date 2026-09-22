@@ -71,14 +71,76 @@ header .seed:hover { color: inherit; text-decoration: none; }
 <div class="container">
     <header>
         <h1>Reading List</h1>
-        <p><a class="seed" href="https://feedback.karypis.org/health" target="_blank" rel="noopener">178</a> papers</p>
+        <p><a class="seed" href="https://feedback.karypis.org/health" target="_blank" rel="noopener">179</a> papers</p>
         <a class="sister-link" href="rl-aa042e8f33bbab5693c3-archive.html">→ Archive (0)</a>
     </header>
 
     <input type="text" class="search-box" id="searchBox" placeholder="Search by title, content, or year...">
-    <h2 class="section-title" id="sec-saved">📚 Saved (177)</h2>
+    <h2 class="section-title" id="sec-saved">📚 Saved (178)</h2>
+    <div class="paper-card" data-pid="2608.30135">
+        <h3><a href="https://arxiv.org/abs/2608.30135" target="_blank" rel="noopener">Verification-Aware Training for Speculative Decoding</a> </h3>
+        <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Verification-Aware Training for Speculative Decoding.pdf">📄 Open PDF</a></div>
+        <div class="tldr"><strong>TL;DR</strong>
+- <strong>What it does:</strong> This paper introduces Verification-Aware Training (VAT), a plug-in training objective for speculative-decoding draft models that simulates the target model&#x27;s sequential verification at every training step and converts the resulting accept/reject patterns into two supervision signals: a verification head and sample-adaptive per-position loss weighting.
+- <strong>Why it&#x27;s important:</strong> Speculative decoding is the dominant lossless inference-acceleration technique for LLMs, but draft models are trained by token-level imitation that ignores the verification process that actually determines speedup, leaving measurable speed on the table for every deployment that uses a drafter.
+- <strong>How it does it:</strong> At each training step, VAT compares draft and target predictions to locate each sample&#x27;s first rejection point k<em>, then (i) trains a lightweight binary head on whether each position survives sequential verification (gradients flow back into the draft) and (ii) keeps full per-position loss weight up to k</em> and re-anchors the base decay schedule there instead of at position 1.
+- <strong>The good:</strong> The gains are consistent and reproducible across two drafting paradigms (autoregressive EAGLE-3, block-diffusion DFlash), three target models (Qwen3-4B/8B, LLaMA-3.1-8B), and 8 benchmarks, with component-level ablations (Table 2) and an unusually thorough weighting-scheme ablation (Table A) showing the specific design choice — anchoring decay at the observed k* — beats six alternatives including GRIFFIN-style masking and D-PACE-style confidence weights.
+- <strong>The missing:</strong> All results are on target models of at most 8B parameters; there is no evidence the relative gains persist at 30B–70B+ scale where draft-target agreement distributions may differ substantially, and no error bars or significance tests are reported.
+- <strong>Read it or not:</strong> Read it if you train or deploy speculative-decoding drafters — it is a small, well-ablated change to a training loss with up to 8.7% free speedup and no inference cost; skip it if you only consume served models, since the contribution lives entirely in draft-training recipes.</div>
+        <details><summary style="cursor:pointer;color:var(--accent);font-size:0.9rem;">Full summary</summary>
+            <div class="summary-text"><strong>TL;DR</strong>
+- <strong>What it does:</strong> This paper introduces Verification-Aware Training (VAT), a plug-in training objective for speculative-decoding draft models that simulates the target model&#x27;s sequential verification at every training step and converts the resulting accept/reject patterns into two supervision signals: a verification head and sample-adaptive per-position loss weighting.
+- <strong>Why it&#x27;s important:</strong> Speculative decoding is the dominant lossless inference-acceleration technique for LLMs, but draft models are trained by token-level imitation that ignores the verification process that actually determines speedup, leaving measurable speed on the table for every deployment that uses a drafter.
+- <strong>How it does it:</strong> At each training step, VAT compares draft and target predictions to locate each sample&#x27;s first rejection point k<em>, then (i) trains a lightweight binary head on whether each position survives sequential verification (gradients flow back into the draft) and (ii) keeps full per-position loss weight up to k</em> and re-anchors the base decay schedule there instead of at position 1.
+- <strong>The good:</strong> The gains are consistent and reproducible across two drafting paradigms (autoregressive EAGLE-3, block-diffusion DFlash), three target models (Qwen3-4B/8B, LLaMA-3.1-8B), and 8 benchmarks, with component-level ablations (Table 2) and an unusually thorough weighting-scheme ablation (Table A) showing the specific design choice — anchoring decay at the observed k* — beats six alternatives including GRIFFIN-style masking and D-PACE-style confidence weights.
+- <strong>The missing:</strong> All results are on target models of at most 8B parameters; there is no evidence the relative gains persist at 30B–70B+ scale where draft-target agreement distributions may differ substantially, and no error bars or significance tests are reported.
+- <strong>Read it or not:</strong> Read it if you train or deploy speculative-decoding drafters — it is a small, well-ablated change to a training loss with up to 8.7% free speedup and no inference cost; skip it if you only consume served models, since the contribution lives entirely in draft-training recipes.
+
+<strong>Problem &amp; Motivation:</strong>
+Speculative decoding drafts K candidate tokens with a cheap draft model and verifies them against the target in one forward pass; speedup is governed by the average acceptance length τ — how many draft tokens survive sequential verification before the first rejection, after which every subsequent token is discarded. The training objective for draft models (in both EAGLE-3 and DFlash) is per-position cross-entropy against the target with a fixed, sample-agnostic positional decay (e.g., w_k = 0.8^(k−1)), which reflects neither that acceptance is determined by verification outcomes nor that a position&#x27;s contribution is conditional on all preceding positions being accepted. Practitioners running EAGLE-3- or DFlash-style drafters inherit this train/inference misalignment. Related concurrent work (PARD-2, D-PACE, GRIFFIN) also touches this objective but with confidence-based proxies rather than the observed rejection point.
+
+<strong>Key Idea:</strong>
+Simulate the target&#x27;s sequential verification inside the training loop: compute per-position acceptance indicators m_k via the speculative-sampling rule min(1, p_k(x)/p̂_k(x)) using the frozen target&#x27;s distributions, derive the cumulative acceptance label v_k = 1[k &lt; k<em>] where k</em> is the first rejection, and use v_k both as (i) an auxiliary binary-classification target for a head on the draft&#x27;s hidden states (so acceptance outcomes become explicit gradient signal) and (ii) an anchor for the per-position loss decay, which starts at the sample&#x27;s own k<em> rather than at position 1. This one observation — that k</em> is observable at training time and is the natural origin for the decay curve — reconstructs the whole method.
+
+<strong>Methodology:</strong>
+Pipeline: (1) generate a training corpus by sampling target-model responses (greedy, Perfectblend prompts) for 3 epochs of training; (2) at each step, run draft and frozen target to get p̂_k and p_k at all K draft positions, compute m_k, k<em>, and v_k; (3) train with L = Σ_k ŵ_k(ℓ_soft_k + ℓ_hard_k) + β·L_VH, where ŵ_k = 1 for k &lt; k</em> and ŵ_k = w_{k−k<em>+1} (the base schedule re-anchored) for k ≥ k</em>, and L_VH is binary cross-entropy of a single dense-layer head predicting v_k from the draft&#x27;s last hidden states. β = 1.0 throughout. The head is training-time only; the inference procedure is untouched, preserving losslessness. Critical design decisions: (a) full weight at k<em> itself (it is the &quot;nearest correctable failure&quot;) — justified by the hard-cutoff ablation showing zero-weighting from k</em> collapses performance (τ 3.11 vs 6.03); (b) decayed rather than zeroed weight past k* — the unshifted-decay ablation shows re-anchoring accounts for a comparable margin (4.46×/5.75 vs 4.61×/6.03); (c) greedy-decoding simulation — Appendix B shows the greedy vs. stochastic verification rules correlate &gt;0.92 and differ by ≤0.02 in downstream speedup/τ, so this simplification is well-validated. Training overhead measured: +1.2% step time for EAGLE-3, +6.1% (plus 7.7 GB memory) for DFlash, because DFlash must add an extra target LM-head pass.
+
+<strong>Key Results:</strong>
+On 8 benchmarks (GSM8K, MATH-500, AIME25, HumanEval, MBPP, LiveCodeBench, MT-Bench, Alpaca) with temperature 0 on A100 80GB via HuggingFace Transformers: EAGLE-3+VAT on Qwen3-4B improves τ from 6.28 to 6.78 (+8.0%) and speedup from 4.07× to 4.39× (+7.9%); DFlash+VAT on Qwen3-4B improves τ 5.73→6.08 (+6.1%) and speedup 4.54×→4.81× (+5.9%). Largest single-gain: DFlash+VAT on Qwen3-8B, +11.4% τ (5.51→6.14) and +8.7% speedup. Gains hold at temperature 1 and for both model families. The full-factor ablation (τ 5.73→6.08) shows each component helps alone (head: 5.87; adaptive weighting: 5.91; soft+hard labels: 5.82) and compounds. A bonus inference use: the head predicts the first-rejection position with mean absolute error 1.18 (EAGLE-3) / 1.76 (DFlash) tokens, enabling early-exit drafting that recovers most of an oracle upper bound (e.g., DFlash Code 4.83×→4.97× vs oracle 5.20×). Baselines (EAGLE-3, DFlash) are current SOTA drafters, retrained by the authors on the same corpus for fairness. Notable counter-intuitive finding: the verification head keeps post-rejection token predictions stable through training while the baseline&#x27;s degrade, even though its post-rejection region starts at deeper positions. No error bars, seeds, or significance tests are reported. This is a preprint (arXiv 2608.30135), not peer-reviewed.
+
+<strong>Novelty Classification:</strong>
+NEW METHOD (verification-simulating training objective with observed-first-rejection-anchored weighting) plus a modest NEW EMPIRICAL FINDING (that conditioning loss weights on the simulated rejection point beats confidence-based surrogates). The components are individually simple — a binary auxiliary head is standard, and positional loss weighting existed — but the specific mechanism of deriving sample-adaptive weights from simulated speculative-sampling acceptance, applied across both autoregressive and diffusion drafters, is genuinely new; it distinguishes itself from concurrent PARD-2/D-PACE by conditioning on the observed rejection position rather than a confidence proxy. Combining soft and hard labels is standard knowledge distillation.
+
+<strong>Rigor &amp; Reproducibility:</strong>
+Ablations are strong and go beyond the usual one-off: a factor analysis separating head/weighting/label-type, a six-alternative weighting-scheme comparison (including reimplementations of GRIFFIN masking and D-PACE weights inside the authors&#x27; framework), sensitivity analysis of the verification rule and corpus temperature (≤0.02 difference across all four combinations), measured training-time overhead, and training-dynamics plots. Missing: multiple seeds, variance estimates, and significance testing for any headline number. Code is promised at https://github.com/naver-ai/VAT but is only &quot;will be available&quot; in this preprint. Concerns: all ablations are on one configuration (DFlash + Qwen3-4B); evaluation uses the same Perfectblend-derived training corpus family as the EAGLE-3/DFlash baselines (fair, but single-corpus); speedup measured with the HuggingFace Transformers library rather than a production serving stack (vLLM/SGLang), so absolute speedup numbers may not transfer directly to deployed systems. The temperature-1 LLaMA results show DFlash performing poorly there (e.g., 1.23× on AIME25) and VAT&#x27;s gains are comparatively smallest on LLaMA-3.1-8B (+2.5–3.8% τ), a heterogeneity the paper does not analyze.
+
+<strong>Deployability:</strong>
+Profile: EMPIRICAL (training method with wall-clock experiments). <em>Practical:</em> Yes — trains and evaluates on commodity A100 80GB GPUs, modifies only the loss, requires no architectural or serving-stack changes. <em>Efficient:</em> Training overhead is small and measured (+1.2% step time on EAGLE-3, +6.1% and +7.7 GB peak memory on DFlash due to an extra target LM-head pass); inference cost is unchanged unless the optional head-guided early exit is used, which saves drafting/verification compute. <em>Effective:</em> The evidence directly measures the deployment metric (wall-clock speedup and τ on 8 benchmarks), not just a proxy, though only under the HF Transformers harness and on ≤8B targets. <em>Scalable:</em> Not tested beyond 8B; the authors themselves flag this as the open question, and nothing in the method obviously breaks at larger scale but nothing confirms it either. Deliverable: a promised code release (repo URL stated, not yet verified as live), plus a reusable recipe applicable to any speculative-decoding trainer; no model weights or dataset released.
+
+<strong>Strengths:</strong>
+- The core insight is clean and generalizable: the first-rejection point k* is observable during training under speculative sampling, making it usable as both a classification target and a weighting anchor — a reframing of draft training that applies across drafting architectures, demonstrated on both EAGLE-3 and DFlash.
+- The ablation program is unusually complete for this area: the weighting-scheme table alone distinguishes re-anchoring from hard cutoff, from confidence surrogates (D-PACE), and from masking (GRIFFIN), attributing the gain to the adaptation mechanism rather than the decay functional form (Table 3: τ 6.09 vs 6.08 across two base schedules).
+- Deployability is respected throughout: inference stays lossless and unchanged, overhead is quantified per-baseline with an explanation of why they differ, and the head doubles as an optional inference-time early-exit signal validated against an oracle.
+- Robustness checks (verification-rule sensitivity, corpus-temperature sensitivity, temperature-1 evaluation) address the most obvious &quot;greedy-only artifact&quot; objection preemptively.
+
+<strong>Author-Acknowledged Limitations:</strong>
+The authors explicitly state that evaluation is limited to models up to 8B parameters and that scaling verification-aware training to significantly larger models is a promising future direction. They also acknowledge the verification head&#x27;s occasional false rejections when used for early exit (τ drop, e.g., 7.67→7.35 on DFlash Math). They confront limitations directly rather than minimizing them, which is credible.
+
+<strong>Analyst-Identified Gaps:</strong>
+- No statistical rigor: single runs, no seeds, no confidence intervals — for gains of 2.5–3.8% (the LLaMA cases), run-to-run noise in draft training could be material.
+- Speedup is measured only under HuggingFace Transformers; acceptance-length gains are harness-independent, but wall-clock speedup ratios can shift substantially under batched/continuous-batching servers, where verification-pass amortization differs — the numbers most likely to be quoted in practice are the ones most sensitive to this.
+- The DFlash temperature-1 results (e.g., 1.23× on AIME25 for LLaMA-3.1-8B) reveal the baseline drafter nearly fails at high temperature on some tasks, yet the paper does not investigate why VAT&#x27;s relative gains shrink in precisely those high-variance regimes or how simulated verification behaves when the target&#x27;s greedy and sampled outputs diverge sharply.
+- Ablations are confined to one baseline/model pair; the component interactions under EAGLE-3 (where the target LM head is already computed) are not separately dissected, and the reported ablation budget differs (1 epoch in Table A vs 3 in main results), complicating cross-table comparison.
+- The verification head&#x27;s early-exit threshold (p=0.5/0.6) is tuned on the evaluation benchmarks themselves, a mild Goodhart risk for that optional feature.
+
+<strong>Bottom Line:</strong>
+This is a well-ablated, zero-inference-cost training fix that any team training EAGLE-3- or DFlash-style drafters should adopt, and it currently has no stronger alternative for verification-aligned draft training — its main open question, scale beyond 8B, is the authors&#x27; own, not a reason to skip it.</div>
+        </details>
+
+        <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
+    </div>
     <div class="paper-card" data-pid="2609.02095">
-        <h3><a href="https://arxiv.org/abs/2609.02095" target="_blank" rel="noopener">READY or Not: Reliable Enterprise Agent Deployment</a> <span class="rank-badge">#62 · score 67</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.02095" target="_blank" rel="noopener">READY or Not: Reliable Enterprise Agent Deployment</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 READY or Not - Reliable Enterprise Agent Deployment.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces READY, a deployment-qualification framework that converts agent-benchmark evidence into a statistically qualified oversight policy, selecting the minimum-cost human-review rule that meets a target reliability and certifying it on held-out cases.
@@ -147,7 +209,7 @@ Practitioners building enterprise agent-evaluation programs should read this: th
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.03161">
-        <h3><a href="https://arxiv.org/abs/2609.03161" target="_blank" rel="noopener">NEUROSTAR: Automata-guided Neuro-symbolic Specification Formalization</a> <span class="rank-badge">#68 · score 66</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.03161" target="_blank" rel="noopener">NEUROSTAR: Automata-guided Neuro-symbolic Specification Formalization</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 NEUROSTAR - Automata-guided Neuro-symbolic Specification Formalization.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces NEUROSTAR, a training-free framework that translates natural-language requirements into LTLf formulas by generating multiple candidate formulas with LLMs, compiling them to DFAs, extracting concrete witness traces where the candidates&#x27; behaviors disagree, and using LLM judges over those traces to drive iterative refinement until convergence.
@@ -202,7 +264,7 @@ This is the most credible semantics-grounded advance in NL-to-LTLf formalization
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.01481">
-        <h3><a href="https://arxiv.org/abs/2609.01481" target="_blank" rel="noopener">Harness-of-Harness: Multi-Day Autonomous Software Development with Continual Improvement</a> <span class="rank-badge">#98 · score 62</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.01481" target="_blank" rel="noopener">Harness-of-Harness: Multi-Day Autonomous Software Development with Continual Improvement</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Harness-of-Harness - Multi-Day Autonomous Software Development with Continual Improvement.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces Harness-of-Harness (HoH), a meta-orchestration protocol that wraps existing LLM coding-agent harnesses in repeated planning–coding–testing loops that carry both a versioned software artifact and an execution-evidence state across iterations to enable autonomous, multi-day software development.
@@ -257,7 +319,7 @@ A practitioner building long-horizon agent systems gains concrete, well-ablated 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2608.14071">
-        <h3><a href="https://arxiv.org/abs/2608.14071" target="_blank" rel="noopener">Scaling Domain Data Repetition in LLM Pretraining</a> <span class="rank-badge">#75 · score 65</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2608.14071" target="_blank" rel="noopener">Scaling Domain Data Repetition in LLM Pretraining</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Scaling Domain Data Repetition in LLM Pretraining.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper experimentally and theoretically characterizes how many times high-quality domain data (code, math, Wikipedia, medical) can be repeated during LLM pretraining before overfitting, under the practical regime where the training-token budget scales proportionally with model size (fixed tokens-per-parameter, TPP).
@@ -320,7 +382,7 @@ For anyone allocating a pretraining data budget across scarce high-quality domai
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.10715">
-        <h3><a href="https://arxiv.org/abs/2609.10715" target="_blank" rel="noopener">NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction</a> <span class="rank-badge">#69 · score 66</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.10715" target="_blank" rel="noopener">NCP-ArchPreview Technical Report: Moving towards Latent Space Language Models through Next Concept Prediction</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 NCP-ArchPreview Technical Report - Moving towards Latent Space Language Models through Next Concept Prediction.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper builds and trains NCP-ArchPreview, an 8.9B-parameter autoregressive language model that augments next-token prediction with next-concept prediction over a learned product-quantized discrete latent vocabulary, pretrained on 5.73T tokens of the Dolma-3 corpus.
@@ -391,7 +453,7 @@ For pretraining-architecture researchers, this is currently the best available l
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2608.13940">
-        <h3><a href="https://arxiv.org/abs/2608.13940" target="_blank" rel="noopener">AI Research Preference Models</a> <span class="rank-badge">#61 · score 67</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2608.13940" target="_blank" rel="noopener">AI Research Preference Models</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 AI Research Preference Models.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces AI Research Preference Models (RPMs), frozen-weight LLM judges that rank unexecuted candidate solutions in an AI research agent&#x27;s search tree so the agent spends its GPU-hours only on the most promising ones.
@@ -460,7 +522,7 @@ Practitioners building AI research agents or expensive-search systems should rea
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2608.25936">
-        <h3><a href="https://arxiv.org/abs/2608.25936" target="_blank" rel="noopener">One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation</a> <span class="rank-badge">#63 · score 66</span><span class="profile-tag">theoretical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2608.25936" target="_blank" rel="noopener">One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation</a> <span class="annotation-badge">✍️ 4 annotations</span></h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 One Symptom, Three Levers - A Critical Review of On-Policy Self-Distillation.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper delivers a critical, no-new-experiments review of On-Policy Self-Distillation (OPSD), organizing the field&#x27;s ~200 papers around one symptom (collapse of reasoning diversity) and three control levers (token-level signal weighting, the nature of the teacher&#x27;s privileged information, and the temporal dynamics of the self-teacher).
@@ -518,11 +580,17 @@ The authors confront limitations directly, which strengthens credibility. They s
 <strong>Bottom Line:</strong>
 Anyone training or evaluating small reasoning models should read this: it is the sharpest available synthesis of why OPSD collapses, how to measure that collapse honestly (pass@k, not entropy or mean score), and which safeguards (intermediate-abstraction privileged information, selective token weighting, controlled teacher dynamics) currently have evidence behind them — with the standing caveat that its framework is a well-argued conjecture built on six-month-old preprints, not a validated recipe.</div>
         </details>
+        <details><summary style="cursor:pointer;color:var(--text-muted);font-size:0.85rem;">Show all annotations</summary><ul class="annotation-list"><li>p.13 <em>Highlight</em>: pass@1 rises, but pass@k flattens</li>
+<li>p.13 <em>Highlight</em>: entropy tends towards zero:</li>
+<li>p.15 <em>Highlight</em>: this help serves to learn better, not to be copied.</li>
+<li>p.16 <em>Highlight</em>: “memorized” case: the student is asked to reproduce a behaviour it cannot justify
+from its own observations.</li>
+</ul></details>
 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.08368">
-        <h3><a href="https://arxiv.org/abs/2609.08368" target="_blank" rel="noopener">Miles v0.1: Production-Level Post-Training</a> <span class="rank-badge">#42 · score 70</span><span class="profile-tag">systems</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.08368" target="_blank" rel="noopener">Miles v0.1: Production-Level Post-Training</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Miles v0.1 - Production-Level Post-Training.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper presents Miles v0.1, an open-source full-stack system for frontier-scale LLM post-training that integrates SGLang-based rollout, a dual-backend trainer (Megatron-LM or PyTorch FSDP), three weight-synchronization transports, and token-exact trajectory handling into one asynchronous RL loop.
@@ -584,7 +652,7 @@ For practitioners building or choosing large-scale RL post-training infrastructu
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.02750">
-        <h3><a href="https://arxiv.org/abs/2609.02750" target="_blank" rel="noopener">Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems</a> <span class="rank-badge">#6 · score 77</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.02750" target="_blank" rel="noopener">Bilevel Coordinated Reflection: A Game-Theoretic Approach to Multi-Agent LLM Systems</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Bilevel Coordinated Reflection - A Game-Theoretic Approach to Multi-Agent LLM Systems.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces a game-theoretic and stochastic-process theory for orchestrator–worker LLM systems — modeling them as a bilevel approximate potential game with provable reflection-drift bounds — and derives from it SRMA, a verifier-gated memory-update algorithm with exact geometric or polynomial convergence rates.
@@ -647,7 +715,7 @@ This is one of the few multi-agent LLM papers where the theory and the experimen
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="http://anneschuth.nl/assets/hotting-schuth-2026-rules-as-executed.pdf">
-        <h3><a href="http://anneschuth.nl/assets/hotting-schuth-2026-rules-as-executed.pdf" target="_blank" rel="noopener">Rules as Executed: Publishing Machine-Executable Law to Rebalance the Powers</a> <span class="rank-badge">#25 · score 73</span><span class="profile-tag">systems</span></h3>
+        <h3><a href="http://anneschuth.nl/assets/hotting-schuth-2026-rules-as-executed.pdf" target="_blank" rel="noopener">Rules as Executed: Publishing Machine-Executable Law to Rebalance the Powers</a> </h3>
         <div class="meta">anneschuth.nl · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Rules as Executed - Publishing Machine-Executable Law to Rebalance the Powers.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This position paper proposes that Dutch government bodies publish law execution as machine-executable specifications in a restricted, declarative format, under a binding regime where the published specification is the one that decides cases and every decision carries a signed attestation (specification digests, inputs, execution trace) that a recipient can re-execute to verify.
@@ -710,7 +778,7 @@ For anyone working on rules-as-code, computational law, or algorithmic-governmen
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.05295">
-        <h3><a href="https://arxiv.org/abs/2609.05295" target="_blank" rel="noopener">RISE: Recursive Improvement via Self-Extrapolating Policy Distillation</a> <span class="rank-badge">#11 · score 75</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.05295" target="_blank" rel="noopener">RISE: Recursive Improvement via Self-Extrapolating Policy Distillation</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 RISE - Recursive Improvement via Self-Extrapolating Policy Distillation.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces RISE, a post-training method that constructs a synthetic teacher by extrapolating the displacement between the current RLVR checkpoint and an earlier anchor — in parameter space or logit space — and distills that extrapolated teacher back into the policy as dense per-token supervision, refreshed every iteration.
@@ -772,7 +840,7 @@ A practitioner running RLVR post-training should read and try this: the extrapol
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.10712">
-        <h3><a href="https://arxiv.org/abs/2609.10712" target="_blank" rel="noopener">An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics</a> <span class="rank-badge">#20 · score 73</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.10712" target="_blank" rel="noopener">An Open Recipe for IMO Gold: Training Nemotron for Olympiad Mathematics</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 An Open Recipe for IMO Gold - Training Nemotron for Olympiad Mathematics.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces an open, natural-language test-time-compute pipeline built on three post-trained variants of Nemotron 3 Ultra (550B-A55B MoE) that scored 30 out of 42 points at IMO 2026, above the gold-medal cutoff of 29, with no formal prover, external tools, or internet access.
@@ -840,7 +908,7 @@ For anyone building or evaluating LLM reasoning systems this is essential readin
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.04010">
-        <h3><a href="https://arxiv.org/abs/2609.04010" target="_blank" rel="noopener">Unlocking Lossless Speedups in LLMs via Discrete Diffusion</a> <span class="rank-badge">#3 · score 82</span><span class="profile-tag">systems</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.04010" target="_blank" rel="noopener">Unlocking Lossless Speedups in LLMs via Discrete Diffusion</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Unlocking Lossless Speedups in LLMs via Discrete Diffusion.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces &quot;diffusion-augmented LLMs&quot; (Uno), a single architecture that adds lightweight LoRA diffusion weights to every layer of a frozen autoregressive LLM, plus a Ψ-Spec sampler that drafts token blocks in parallel via one-step diffusion and verifies them against the AR distribution for provably lossless speculative decoding without a separate draft model.
@@ -907,7 +975,7 @@ For anyone building or deploying LLM inference systems, this is currently the st
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.05903">
-        <h3><a href="https://arxiv.org/abs/2609.05903" target="_blank" rel="noopener">EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents</a> <span class="rank-badge">#5 · score 78</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2609.05903" target="_blank" rel="noopener">EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents</a> <span class="annotation-badge">✍️ 2 annotations</span></h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 EvoSafeHarness - Evolving Model- and Domain-Specific Harnesses for Securing Agents.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces EvoSafeHarness, an automated search framework that synthesizes a deployable safety harness (natural-language policy plus executable code logic) for a specific frozen LLM in a specific application domain, rather than applying one fixed expert-designed defense.
@@ -975,11 +1043,16 @@ The authors confront limitations directly rather than minimizing them: residual 
 <strong>Bottom Line:</strong>
 This is the strongest evidence yet that agent safety harnesses should be searched per deployment rather than designed once — the evaluation rigor alone raises the bar for the field — but practitioners should read it as a well-instrumented existence proof whose headline comparison (searched vs. frozen) inflates the apparent advantage, and whose per-deployment search cost and expert-written domain specifications remain the open engineering problems.</div>
         </details>
+        <details><summary style="cursor:pointer;color:var(--text-muted);font-size:0.85rem;">Show all annotations</summary><ul class="annotation-list"><li>p.2 <em>Highlight</em>: or a document—that the agent must consume as data. If the agent treats this content as authoritative, it may
+execute actions that the user never requested. In a direct attack [Chen et al., 2026, Andri</li>
+<li>p.5 <em>Highlight</em>: mediates every interaction between M, the user, and the tools. Concretely, H is an ordered pipeline that (a)
+constructs the system message and initial query, (b) invokes M, (c) executes the tool calls</li>
+</ul></details>
 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2608.13545">
-        <h3><a href="https://arxiv.org/abs/2608.13545" target="_blank" rel="noopener">LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure</a> <span class="rank-badge">#7 · score 77</span><span class="profile-tag">empirical</span></h3>
+        <h3><a href="https://arxiv.org/abs/2608.13545" target="_blank" rel="noopener">LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure</a> </h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 LittleLearner - Language Models Under Pedagogically Controlled Knowledge Exposure.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces LittleCurriculum, an 88B-token pretraining corpus filtered to U.S. K–5 (kindergarten through Grade 5) curriculum content, and LittleLearner, a 5B-parameter LLM trained from scratch on it, as a controlled sandbox in which the model&#x27;s knowledge boundary is known by construction.
@@ -5048,7 +5121,7 @@ This is a well-organized Bachelor&#x27;s thesis that delivers a usable conceptua
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="https://link.springer.com/article/10.1007/s43684-026-00136-1">
-        <h3><a href="https://link.springer.com/article/10.1007/s43684-026-00136-1" target="_blank" rel="noopener">Safe integration of Large Language Models into industrial process control: a multi-agent architecture with P&amp;ID-grounded validation</a> </h3>
+        <h3><a href="https://link.springer.com/article/10.1007/s43684-026-00136-1" target="_blank" rel="noopener">Safe integration of Large Language Models into industrial process control: a multi-agent architecture with P&amp;ID-grounded validation</a> <span class="annotation-badge">✍️ 3 annotations</span></h3>
         <div class="meta">link.springer.com · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 Safe integration of Large Language Models into industrial process control - a multi-agent architecture with P&amp;ID-grounded validation.pdf">📄 Open PDF</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces the Autonomous Action Execution (AAE) framework, a four-layer multi-agent architecture that safely integrates LLMs into industrial process control by confining LLM inference to an observation-only Monitor layer and validating every proposal through a deterministic, P&amp;ID-grounded Verification Agent before any SCADA write occurs.
@@ -5117,6 +5190,16 @@ The authors explicitly enumerate nine limitations in Section 6.5: all data is sy
 <strong>Bottom Line</strong>
 A practitioner designing an LLM advisory layer for industrial process control gains a concrete, IEC-61511-aware architecture and the strongest published argument for why that safety must be architectural rather than prompt-based, but should treat the validation results as preliminary pilot evidence (synthetic scenarios, 14-23 tags, single LLM, self-annotated ground truth, FPR on 8 samples) and plan for substantial engineering work on P&amp;ID digitization and real-plant validation before any production deployment claim can be made.</div>
         </details>
+        <details><summary style="cursor:pointer;color:var(--text-muted);font-size:0.85rem;">Show all annotations</summary><ul class="annotation-list"><li>p.1 <em>Highlight</em>: framework. For safe architectural integration (RQ1), we present a four-layer multi-agent architecture that confines LLM
+inference to an observation-only Monitor layer while safety-critical decisions a</li>
+<li>p.2 <em>Highlight</em>: This paper argues that architectural separation of con-
+cerns, rather than model improvement alone, is the cor-
+rect systems engineering response. We present the Au-</li>
+<li>p.3 <em>Highlight</em>: sight, which introduces automation bias risks [20]. None of
+these approaches leverage the engineering documentation
+(P&amp;IDs, control loop definitions, fail-state specifications)
+that is uniquely availa</li>
+</ul></details>
 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
