@@ -1635,7 +1635,7 @@ Practitioners building AI research agents or expensive-search systems should rea
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2608.25936">
-        <h3><a href="https://arxiv.org/abs/2608.25936" target="_blank" rel="noopener">One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation</a> </h3>
+        <h3><a href="https://arxiv.org/abs/2608.25936" target="_blank" rel="noopener">One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation</a> <span class="annotation-badge">✍️ 4 annotations</span></h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 One Symptom, Three Levers - A Critical Review of On-Policy Self-Distillation.pdf">📄 Open PDF</a> · originally from <a href="digest_2026-09-12.html">digest 2026-09-12</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper delivers a critical, no-new-experiments review of On-Policy Self-Distillation (OPSD), organizing the field&#x27;s ~200 papers around one symptom (collapse of reasoning diversity) and three control levers (token-level signal weighting, the nature of the teacher&#x27;s privileged information, and the temporal dynamics of the self-teacher).
@@ -1693,6 +1693,12 @@ The authors confront limitations directly, which strengthens credibility. They s
 <strong>Bottom Line:</strong>
 Anyone training or evaluating small reasoning models should read this: it is the sharpest available synthesis of why OPSD collapses, how to measure that collapse honestly (pass@k, not entropy or mean score), and which safeguards (intermediate-abstraction privileged information, selective token weighting, controlled teacher dynamics) currently have evidence behind them — with the standing caveat that its framework is a well-argued conjecture built on six-month-old preprints, not a validated recipe.</div>
         </details>
+        <details><summary style="cursor:pointer;color:var(--text-muted);font-size:0.85rem;">Show all annotations</summary><ul class="annotation-list"><li>p.13 <em>Highlight</em>: pass@1 rises, but pass@k flattens</li>
+<li>p.13 <em>Highlight</em>: entropy tends towards zero:</li>
+<li>p.15 <em>Highlight</em>: this help serves to learn better, not to be copied.</li>
+<li>p.16 <em>Highlight</em>: “memorized” case: the student is asked to reproduce a behaviour it cannot justify
+from its own observations.</li>
+</ul></details>
 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
@@ -2082,7 +2088,7 @@ For anyone building or deploying LLM inference systems, this is currently the st
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2609.05903">
-        <h3><a href="https://arxiv.org/abs/2609.05903" target="_blank" rel="noopener">EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents</a> </h3>
+        <h3><a href="https://arxiv.org/abs/2609.05903" target="_blank" rel="noopener">EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses for Securing Agents</a> <span class="annotation-badge">✍️ 2 annotations</span></h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 EvoSafeHarness - Evolving Model- and Domain-Specific Harnesses for Securing Agents.pdf">📄 Open PDF</a> · originally from <a href="digest_2026-09-12.html">digest 2026-09-12</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces EvoSafeHarness, an automated search framework that synthesizes a deployable safety harness (natural-language policy plus executable code logic) for a specific frozen LLM in a specific application domain, rather than applying one fixed expert-designed defense.
@@ -2150,6 +2156,11 @@ The authors confront limitations directly rather than minimizing them: residual 
 <strong>Bottom Line:</strong>
 This is the strongest evidence yet that agent safety harnesses should be searched per deployment rather than designed once — the evaluation rigor alone raises the bar for the field — but practitioners should read it as a well-instrumented existence proof whose headline comparison (searched vs. frozen) inflates the apparent advantage, and whose per-deployment search cost and expert-written domain specifications remain the open engineering problems.</div>
         </details>
+        <details><summary style="cursor:pointer;color:var(--text-muted);font-size:0.85rem;">Show all annotations</summary><ul class="annotation-list"><li>p.2 <em>Highlight</em>: or a document—that the agent must consume as data. If the agent treats this content as authoritative, it may
+execute actions that the user never requested. In a direct attack [Chen et al., 2026, Andri</li>
+<li>p.5 <em>Highlight</em>: mediates every interaction between M, the user, and the tools. Concretely, H is an ordered pipeline that (a)
+constructs the system message and initial query, (b) invokes M, (c) executes the tool calls</li>
+</ul></details>
 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
@@ -3159,7 +3170,7 @@ This is a useful and potentially reusable open-source systems contribution for r
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
     <div class="paper-card" data-pid="2608.20634">
-        <h3><a href="https://arxiv.org/abs/2608.20634" target="_blank" rel="noopener">AGENTMERCURY: YOUR AGENT CAN SYNTHESIZE VERIFIABLE ENVIRONMENTS FOR BUSINESS SCENARIOS AT SCALE</a> </h3>
+        <h3><a href="https://arxiv.org/abs/2608.20634" target="_blank" rel="noopener">AGENTMERCURY: YOUR AGENT CAN SYNTHESIZE VERIFIABLE ENVIRONMENTS FOR BUSINESS SCENARIOS AT SCALE</a> <span class="annotation-badge">✍️ 3 annotations</span></h3>
         <div class="meta">arxiv.org · <a href="file:///Users/karypis/Google Drive/My Drive/Papers/Uncategorized/2026 AGENTMERCURY - YOUR AGENT CAN SYNTHESIZE VERIFIABLE ENVIRONMENTS FOR BUSINESS SCENARIOS AT SCALE.pdf">📄 Open PDF</a> · originally from <a href="digest_2026-08-29.html">digest 2026-08-29</a></div>
         <div class="tldr"><strong>TL;DR</strong>
 - <strong>What it does:</strong> This paper introduces AGENTMERCURY, a framework that converts high-level business scenarios into executable, stateful, multi-service environments with deterministic verification and uses them to train and evaluate agents.
@@ -3227,6 +3238,15 @@ The authors explicitly state that AGENTMERCURY does not close the environment–
 <strong>Bottom Line:</strong>
 AGENTMERCURY is a useful systems-and-benchmark-construction paper whose strongest contribution is the executable separation of persistent world synthesis from task instantiation and grading, but its policy-transfer claims are not yet causally persuasive because the study lacks matched environment baselines, reward ablations, compute accounting, and evidence that synthetic business structure predicts performance in real workflows.</div>
         </details>
+        <details><summary style="cursor:pointer;color:var(--text-muted);font-size:0.85rem;">Show all annotations</summary><ul class="annotation-list"><li>p.2 <em>Highlight</em>: tation, transition logic, and world-level invariants that govern the scenario. Business workflows
+provide a natural setting for this formulation because they combine structured operational processes
+w</li>
+<li>p.3 <em>Highlight</em>: state, transition dynamics, and world-level invariants. The resulting world can then give rise to di-
+verse tasks and trajectories through the same underlying workflow, while maintaining consistency
+a</li>
+<li>p.3 <em>Highlight</em>: across stateful and cross-service interactions. In particular, the world-level invariants are rendered as
+executable verification conditions rather than being hard-coded as transition rules, allowing </li>
+</ul></details>
 
         <div class="controls"><button class="ctl-btn" onclick="actBtn('mark_read', this)">✅ Mark as read</button><button class="ctl-btn" onclick="actBtn('archive', this)">🗃️ Archive</button><button class="ctl-btn danger" onclick="actBtn('unsave', this)">Unsave</button></div>
     </div>
